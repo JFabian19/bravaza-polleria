@@ -7,19 +7,23 @@ import { DEFAULT_MENU_DATA } from './data/menuData';
 // ==========================================
 // 📋 CONFIGURACIÓN DE LA PLANTILLA DEL MENÚ
 // ==========================================
-const RESTAURANTE_NAME = "Snack Tutti Frutti";
-const RESTAURANTE_SLOGAN = "Snack y Juguería Tropical";
-const WHATSAPP_NUMBER = "51942661467"; // Reemplaza con tu número de WhatsApp con código de país
-const FACEBOOK_URL = "";
-const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Puesto+E16+-+Interior+Mercado+2+-+Tarapoto";
-const LOGO_FOOTER_PATH = "/logo_tutti_frutti.png"; // Reemplaza con la ruta de tu logo en public/
-const BANNER_PATH = "/tropical_banner.png"; // Reemplaza con la ruta de tu banner en public/
-const MARQUEE_TEXT = "🍓 JUGOS FRESCOS Y NATURALES • 🌴 SABOR TROPICAL DESDE TARAPOTO • ¡PRUEBA NUESTROS ANTOJITOS DE LA SELVA! 🍍🍹 • ";
+const RESTAURANTE_NAME = "Cinco Fuegos";
+const RESTAURANTE_SLOGAN = "Cocina Marina-Criolla Contemporánea";
+const WHATSAPP_NUMBER = "51973581843"; // WhatsApp oficial de Cinco Fuegos
+const FACEBOOK_URL = "https://www.facebook.com/CincoFuegosTacna";
+const MAPS_URL = ""; // No especificado
+const LOGO_FOOTER_PATH = "/images/cinco_fuegos_logo.png";
+const BANNER_PATH = "/images/cinco_fuegos_banner.png";
+const MARQUEE_TEXT = "🔥 CINCO FUEGOS • CEVICHES CON HARTO JUGO • MARISCOS FLAMEADOS • CRIOLLOS Y PASTAS PARA SUBIR LA TEMPERATURA 🔥 • ";
 // ==========================================
 
-// Mapa de imágenes locales por defecto para platos conocidos (vacío por defecto para la plantilla)
+// Mapa de imágenes locales por defecto para platos conocidos
 const LOCAL_IMAGES: Record<string, string> = {
-  // "Nombre del Plato": "nombre_imagen.jpg",
+  "Ceviche Clásico / Norteño": "/images/ceviche.png",
+  "Ceviche Carretillero": "/images/ceviche.png",
+  "Arroz con Marisco": "/images/arroz_mariscos.png",
+  "Lomo Fino Saltado": "/images/lomo_saltado.png",
+  "Alitas BBQ / BBQ Hot": "/images/alitas.png"
 };
 
 interface Dish {
@@ -48,6 +52,7 @@ export default function App() {
   const [showSummary, setShowSummary] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [optionModalDish, setOptionModalDish] = useState<Dish | null>(null);
 
   // States for Birthday Form
   const [showBirthdayForm, setShowBirthdayForm] = useState(false);
@@ -128,18 +133,26 @@ export default function App() {
 
   const cartCount = useMemo(() => cart.reduce((acc, item) => acc + item.cantidad, 0), [cart]);
 
-  const addToCart = (dish: Dish) => {
+  const addProductToCart = (nombre: string, precio: string) => {
     setCart(prev => {
-      const existing = prev.find(i => i.nombre === dish.nombre && i.precio === dish.precio);
+      const existing = prev.find(i => i.nombre === nombre && i.precio === precio);
       if (existing) {
         return prev.map(i =>
-          (i.nombre === dish.nombre && i.precio === dish.precio)
+          (i.nombre === nombre && i.precio === precio)
             ? { ...i, cantidad: i.cantidad + 1 }
             : i
         );
       }
-      return [...prev, { nombre: dish.nombre, precio: dish.precio, cantidad: 1 }];
+      return [...prev, { nombre, precio, cantidad: 1 }];
     });
+  };
+
+  const addToCart = (dish: Dish) => {
+    if (dish.precio.includes('|') || dish.precio.includes('/')) {
+      setOptionModalDish(dish);
+      return;
+    }
+    addProductToCart(dish.nombre, dish.precio);
   };
 
   const updateQuantity = (nombre: string, precio: string, delta: number) => {
@@ -247,8 +260,8 @@ export default function App() {
     <div className="max-w-md mx-auto bg-white min-h-screen relative shadow-2xl overflow-hidden flex flex-col font-sans">
       <header className="sticky top-0 bg-white/95 backdrop-blur-md z-50 px-5 py-4 flex justify-between items-center border-b border-gray-100">
         <div className="flex flex-col items-start">
-          <h1 className="font-title text-[28px] text-primary leading-none tracking-wide">{RESTAURANTE_NAME}</h1>
-          <span className="font-slogan text-[11px] text-secondary font-bold tracking-wider mt-0.5">{RESTAURANTE_SLOGAN}</span>
+          <h1 className="font-brand font-black text-2xl text-primary leading-none tracking-tight uppercase">{RESTAURANTE_NAME}</h1>
+          <span className="font-sans text-[10px] text-gray-500 font-semibold tracking-wider mt-1 uppercase">{RESTAURANTE_SLOGAN}</span>
         </div>
         <div className="flex items-center gap-2">
           {FACEBOOK_URL && (
@@ -280,7 +293,7 @@ export default function App() {
           >
             <ShoppingBag size={22} className="text-primary" />
             {cartCount > 0 && (
-              <span className="absolute -top-0.5 -right-0.5 min-w-[20px] h-5 bg-secondary text-white rounded-full text-[10px] font-bold flex items-center justify-center px-1">
+              <span className="absolute -top-0.5 -right-0.5 min-w-[20px] h-5 bg-primary text-white rounded-full text-[10px] font-bold flex items-center justify-center px-1">
                 {cartCount}
               </span>
             )}
@@ -301,23 +314,25 @@ export default function App() {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.95 }}
           animate={{ 
-            boxShadow: ["0px 0px 0px 0px rgba(245,158,11,0.6)", "0px 0px 20px 8px rgba(245,158,11,0)", "0px 0px 0px 0px rgba(245,158,11,0)"] 
+            boxShadow: ["0px 0px 0px 0px rgba(242,47,53,0.6)", "0px 0px 20px 8px rgba(242,47,53,0)", "0px 0px 0px 0px rgba(242,47,53,0)"] 
           }}
           transition={{ repeat: Infinity, duration: 1.5 }}
           onClick={() => setShowBirthdayForm(true)}
-          className="w-full bg-gradient-to-r from-yellow-500 via-secondary to-amber-500 text-white py-3 px-4 rounded-2xl flex items-center justify-center gap-2 font-bold text-[10px] sm:text-[11px] uppercase tracking-wide border border-yellow-400 relative overflow-hidden group text-center"
+          className="w-full bg-gradient-to-r from-red-600 via-orange-500 to-amber-500 text-white py-3.5 px-4 rounded-2xl flex items-center justify-center gap-2 font-bold text-[10px] sm:text-[11px] uppercase tracking-wide border border-red-500 relative overflow-hidden group text-center cursor-pointer"
         >
           <div className="absolute inset-0 shimmer opacity-30 mix-blend-overlay"></div>
           <Gift size={18} className="animate-bounce shrink-0" />
-          <span>¡Ponle sabor y color a tu cumpleaños! 🍓 <span className="text-yellow-100 font-black underline">Regístrate aquí</span> y llévate un batido Tutti Frutti de cortesía para celebrar de forma tropical. 🥤🎁</span>
+          <span>¡Celebra tu cumpleaños con todo el sabor de Cinco Fuegos y recibe una sorpresa especial! 🎁🔥 <span className="text-yellow-200 font-black underline">Regístrate aquí</span></span>
         </motion.button>
       </div>
 
       <div className="px-5 pt-4 pb-3">
-        <div className="relative w-full rounded-3xl overflow-hidden shadow-xl aspect-[2/1] bg-gradient-to-br from-primary/10 to-secondary/15 flex flex-col items-center justify-center text-center p-4 border border-dashed border-primary/20">
-          <p className="font-dish font-bold text-primary text-sm uppercase tracking-wider">
-            aca va a imagen
-          </p>
+        <div className="relative w-full rounded-[2rem] overflow-hidden shadow-xl aspect-[2/1] bg-dark">
+          <img src={BANNER_PATH} alt={RESTAURANTE_NAME} className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/45 to-transparent flex flex-col justify-end p-5">
+            <h2 className="text-white font-brand font-black text-lg tracking-wider uppercase">{RESTAURANTE_NAME}</h2>
+            <p className="text-white/80 text-[10px] font-sans font-medium tracking-wide uppercase mt-0.5">{RESTAURANTE_SLOGAN}</p>
+          </div>
         </div>
       </div>
 
@@ -327,7 +342,7 @@ export default function App() {
             <button
               key={cat.id}
               onClick={() => scrollToCategory(cat.id)}
-              className={`px-4 py-2 rounded-full text-[11px] font-category font-semibold whitespace-nowrap transition-all duration-200 border
+              className={`px-4.5 py-2.5 rounded-full text-[13px] font-category tracking-wide uppercase whitespace-nowrap transition-all duration-200 border cursor-pointer
                 ${activeCategory === cat.id
                   ? 'bg-primary text-white border-primary shadow-md shadow-primary/20'
                   : 'bg-white text-dark border-gray-200 hover:border-primary/40 hover:text-primary'
@@ -345,7 +360,7 @@ export default function App() {
             <div className="mb-5 pt-2">
               <div className="flex items-center gap-2 mb-1">
                 <Utensils className="text-primary wave-icon" size={22} />
-                <h3 className="font-category font-semibold text-primary text-[26px] leading-none tracking-wide category-underline">
+                <h3 className="font-category text-primary text-[26px] leading-none tracking-wider uppercase category-underline">
                   {cat.nombre}
                 </h3>
               </div>
@@ -358,30 +373,42 @@ export default function App() {
                   whileHover={{ y: -4 }}
                   className="bg-white rounded-[2rem] overflow-hidden flex flex-col shadow-sm border border-gray-100 hover:border-primary/30 hover:shadow-md transition-all duration-200"
                 >
-                  <div className="bg-primary/5 aspect-square flex items-center justify-center relative overflow-hidden p-4 border-b border-gray-100">
-                    <span className="font-dish font-bold text-[11px] text-primary uppercase tracking-wider text-center">
-                      aca va a imagen
-                    </span>
+                  <div className="bg-dark/5 aspect-square flex items-center justify-center relative overflow-hidden border-b border-gray-100">
+                    {dish.imagen ? (
+                      <img
+                        src={dish.imagen}
+                        alt={dish.nombre}
+                        className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
+                        onClick={() => setSelectedImage(dish.imagen)}
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-primary/5 to-orange-500/10 flex flex-col items-center justify-center p-4 text-center">
+                        <Utensils className="text-primary/20 w-8 h-8 mb-1" />
+                        <span className="font-brand font-black text-[9px] text-primary/35 uppercase tracking-widest">
+                          Cinco Fuegos
+                        </span>
+                      </div>
+                    )}
                   </div>
                   
                   <div className="p-4 flex flex-col flex-1">
-                    <h4 className="font-dish font-bold text-dark text-[13px] leading-tight mb-1">
+                    <h4 className="font-dish font-bold text-dark text-[15px] tracking-wide leading-tight mb-1">
                       {dish.nombre}
                     </h4>
                     {dish.descripcion && (
-                      <p className="text-[10px] text-gray-400 leading-tight mb-2 line-clamp-3">
+                      <p className="font-sans text-[11px] text-gray-500 leading-tight mb-2 line-clamp-3">
                         {dish.descripcion}
                       </p>
                     )}
                     <div className="flex-1"></div>
                     <div className="flex items-center justify-between mt-2">
-                      <span className="font-dish font-bold text-primary text-[16px] whitespace-nowrap">
+                      <span className="font-price font-bold text-primary text-base whitespace-nowrap">
                         {dish.precio}
                       </span>
                       <motion.button
                         whileTap={{ scale: 0.8 }}
                         onClick={() => addToCart(dish)}
-                        className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary transition-colors duration-200 shrink-0"
+                        className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary transition-colors duration-200 shrink-0 cursor-pointer"
                       >
                         <Plus size={16} strokeWidth={3} />
                       </motion.button>
@@ -406,12 +433,11 @@ export default function App() {
           </motion.button>
         </section>
 
-        <footer className="mt-8 pt-8 pb-10 border-t border-gray-200 flex flex-col items-center justify-center">
-          <p className="font-title text-2xl text-primary mb-4">{RESTAURANTE_NAME}</p>
-          <div className="w-32 h-32 mb-6 rounded-2xl border border-dashed border-primary/30 bg-primary/5 flex items-center justify-center text-center p-2">
-            <span className="font-dish font-bold text-[10px] text-primary uppercase tracking-wide">aca va a imagen</span>
-          </div>
-          <p className="text-[11px] text-gray-400 font-medium">© 2026 Todos los derechos reservados.</p>
+        <footer className="mt-8 pt-8 pb-10 border-t border-gray-100 bg-white flex flex-col items-center justify-center text-center">
+          <img src={LOGO_FOOTER_PATH} alt={RESTAURANTE_NAME} className="w-24 h-24 mb-4 object-contain rounded-2xl shadow-sm" />
+          <p className="font-brand font-black text-lg text-primary tracking-wide">{RESTAURANTE_NAME}</p>
+          <p className="text-xs text-gray-400 mt-1 max-w-[250px]">{RESTAURANTE_SLOGAN}</p>
+          <p className="text-[10px] text-gray-400 mt-6">© 2026 Todos los derechos reservados.</p>
         </footer>
 
         <div className="bg-dark py-6 flex flex-col items-center justify-center">
@@ -583,9 +609,9 @@ export default function App() {
 
               <div className="flex flex-col items-center text-center mb-5 mt-2">
                 <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mb-3">
-                  <Gift size={24} className="text-secondary" />
+                  <Gift size={24} className="text-primary" />
                 </div>
-                <h2 className="font-title text-2xl text-dark leading-none mb-2">¡Tu Cumpleaños!</h2>
+                <h2 className="font-title text-2xl text-dark leading-none tracking-wide mb-2">¡TU CUMPLEAÑOS!</h2>
                 <p className="text-xs text-gray-500">Déjanos tus datos para enviarte una sorpresa en tu día especial.</p>
               </div>
 
@@ -597,29 +623,29 @@ export default function App() {
                 <form onSubmit={handleBirthdaySubmit} className="space-y-3">
                   <div>
                     <label className="text-[10px] font-bold text-gray-400 uppercase ml-1">Nombre Completo</label>
-                    <input required type="text" value={birthdayData.nombre} onChange={e => setBirthdayData({...birthdayData, nombre: e.target.value})} className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-secondary/50 transition-colors" placeholder="Ej. Juan Pérez" />
+                    <input required type="text" value={birthdayData.nombre} onChange={e => setBirthdayData({...birthdayData, nombre: e.target.value})} className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-primary/50 transition-colors" placeholder="Ej. Juan Pérez" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-gray-400 uppercase ml-1">Teléfono</label>
                     <input required type="tel" minLength={9} maxLength={11} pattern="[0-9]*" value={birthdayData.telefono} onChange={e => {
                       const val = e.target.value.replace(/\D/g, '');
                       setBirthdayData({...birthdayData, telefono: val});
-                    }} className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-secondary/50 transition-colors" placeholder="Ej. 987654321" />
+                    }} className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-primary/50 transition-colors" placeholder="Ej. 987654321" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-gray-400 uppercase ml-1">Fecha de Nacimiento</label>
-                    <input required type="date" value={birthdayData.fechaNacimiento} onChange={e => setBirthdayData({...birthdayData, fechaNacimiento: e.target.value})} className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-secondary/50 transition-colors text-gray-700" />
+                    <input required type="date" value={birthdayData.fechaNacimiento} onChange={e => setBirthdayData({...birthdayData, fechaNacimiento: e.target.value})} className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-primary/50 transition-colors text-gray-700" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-gray-400 uppercase ml-1">Distrito</label>
-                    <input required type="text" value={birthdayData.distrito} onChange={e => setBirthdayData({...birthdayData, distrito: e.target.value})} className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-secondary/50 transition-colors" placeholder="Ej. Miraflores" />
+                    <input required type="text" value={birthdayData.distrito} onChange={e => setBirthdayData({...birthdayData, distrito: e.target.value})} className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-primary/50 transition-colors" placeholder="Ej. Miraflores" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-gray-400 uppercase ml-1">Correo Electrónico (Opcional)</label>
-                    <input type="email" value={birthdayData.correo} onChange={e => setBirthdayData({...birthdayData, correo: e.target.value})} className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-secondary/50 transition-colors" placeholder="correo@ejemplo.com" />
+                    <input type="email" value={birthdayData.correo} onChange={e => setBirthdayData({...birthdayData, correo: e.target.value})} className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-primary/50 transition-colors" placeholder="correo@ejemplo.com" />
                   </div>
                   
-                  <button disabled={isSubmittingBirthday} type="submit" className="w-full bg-secondary text-white py-3 rounded-xl font-bold text-sm shadow-md shadow-secondary/20 mt-2 disabled:opacity-70 flex justify-center items-center">
+                  <button disabled={isSubmittingBirthday} type="submit" className="w-full bg-primary text-white py-3 rounded-xl font-bold text-sm shadow-md shadow-primary/20 mt-2 disabled:opacity-70 flex justify-center items-center cursor-pointer">
                     {isSubmittingBirthday ? <Loader2 size={18} className="animate-spin" /> : "Guardar mis datos"}
                   </button>
                 </form>
@@ -711,6 +737,69 @@ export default function App() {
                   </button>
                 </form>
               )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {optionModalDish && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[70] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              className="bg-white w-full max-w-sm rounded-[2rem] p-6 shadow-2xl relative"
+            >
+              <button
+                onClick={() => setOptionModalDish(null)}
+                className="absolute top-4 right-4 w-8 h-8 bg-gray-50 rounded-full flex items-center justify-center cursor-pointer"
+              >
+                <X size={18} className="text-gray-400" />
+              </button>
+
+              <div className="flex flex-col items-center text-center mb-5 mt-2">
+                <h2 className="font-title text-2xl text-dark leading-none tracking-wider mb-2">SELECCIONA TAMAÑO</h2>
+                <p className="text-xs text-gray-500 font-medium">{optionModalDish.nombre}</p>
+              </div>
+
+              <div className="space-y-3">
+                {(() => {
+                  const delimiter = optionModalDish.precio.includes('|') ? '|' : '/';
+                  const options = optionModalDish.precio.split(delimiter).map(opt => opt.trim());
+                  
+                  return options.map((opt, i) => {
+                    let label = opt;
+                    let price = opt;
+                    if (opt.includes(':')) {
+                      const parts = opt.split(':');
+                      label = parts[0].trim();
+                      price = parts[1].trim();
+                    } else {
+                      label = i === 0 ? "Porción Chica / Simple" : "Porción Grande / Especial";
+                    }
+
+                    return (
+                      <button
+                        key={i}
+                        onClick={() => {
+                          addProductToCart(`${optionModalDish.nombre} (${label})`, price);
+                          setOptionModalDish(null);
+                        }}
+                        className="w-full bg-gray-50 hover:bg-primary/5 hover:text-primary border border-gray-100 hover:border-primary/30 rounded-2xl py-3 px-4 flex justify-between items-center font-bold text-sm transition-colors cursor-pointer text-left"
+                      >
+                        <span>{label}</span>
+                        <span className="text-primary">{price}</span>
+                      </button>
+                    );
+                  });
+                })()}
+              </div>
             </motion.div>
           </motion.div>
         )}
