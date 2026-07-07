@@ -13,277 +13,133 @@ export interface Category {
 
 export const DEFAULT_MENU_DATA: Category[] = [
   {
-    id: "para-empezar",
-    nombre: "Para Empezar",
+    id: "platos-a-la-carta",
+    nombre: "Platos a la Carta",
     items: [
       {
-        nombre: "Cevichop Clásico",
-        descripcion: "Clásica leche de tigre, acompaña chicharrón de pota.",
-        precio: "S/.19.00",
+        nombre: "Salchipapa clásica",
+        descripcion: "Salchipapa tradicional de estilo popular.",
+        precio: "S/.15.00",
         imagen: ""
       },
       {
-        nombre: "Leche en Salsa de Rocoto",
-        descripcion: "Leche en salsa de rocoto en chicharrón de pota.",
-        precio: "S/.24.00",
-        imagen: ""
-      },
-      {
-        nombre: "Leche Cinco Fuegos",
-        descripcion: "Mega copa de leche de tigre con pescado o mariscos flameados.",
-        precio: "S/.29.00",
-        imagen: ""
-      },
-      {
-        nombre: "Causa Marina",
-        descripcion: "Clásica base de papa amarilla acompañada de mariscos flameados.",
-        precio: "S/.26.00",
-        imagen: ""
-      },
-      {
-        nombre: "Causa de Langostinos al Panko en Salsa Golf",
-        descripcion: "Clásica base de papa amarilla con langostinos crocantes en salsa golf.",
-        precio: "S/.28.00",
-        imagen: ""
-      },
-      {
-        nombre: "Pulpitos a la Chalaca",
-        descripcion: "Pulpo en salsa con cebolla, tomate y ají amarillo.",
-        precio: "S/.26.00",
-        imagen: ""
-      },
-      {
-        nombre: "Pulpo al Olivo",
-        descripcion: "Pulpo en salsa al olivo, acompaña palta y soda.",
-        precio: "S/.30.00",
-        imagen: ""
-      }
-    ]
-  },
-  {
-    id: "tequenos",
-    nombre: "Tequeños",
-    items: [
-      {
-        nombre: "Tequeños Napolitanos",
-        descripcion: "Tequeños rellenos de jamón y queso, acompaña crema de palta.",
-        precio: "S/.14.00",
-        imagen: ""
-      },
-      {
-        nombre: "Tequeños de Ají de Gallina",
-        descripcion: "Tequeños de ají de gallina, acompaña crema de palta.",
-        precio: "S/.16.00",
-        imagen: ""
-      },
-      {
-        nombre: "Tequeños de Lomo Fino",
-        descripcion: "Tequeños de lomo fino saltado, acompaña crema de palta.",
+        nombre: "Salchipapa a lo pobre",
+        descripcion: "Salchipapa en versión a lo pobre.",
         precio: "S/.18.00",
         imagen: ""
       },
       {
-        nombre: "Tequeños de Cinco Fuegos",
-        descripcion: "Combinación de 15 tequeños en todos los sabores disponibles.",
-        precio: "S/.24.00",
-        imagen: ""
-      }
-    ]
-  },
-  {
-    id: "ceviches",
-    nombre: "Ceviches",
-    items: [
-      {
-        nombre: "Ceviche Clásico / Norteño",
-        descripcion: "Ceviche de la casa o al estilo norteño con limón y sal.",
-        precio: "S/.30.00",
-        imagen: "/images/ceviche.png"
-      },
-      {
-        nombre: "Ceviche Carretillero",
-        descripcion: "Ceviche clásico acompañado de chicharrón de pota.",
-        precio: "S/.34.00",
-        imagen: "/images/ceviche.png"
-      },
-      {
-        nombre: "Ceviche Mixto",
-        descripcion: "Frutos del mar acompañado de pesca del día.",
-        precio: "S/.36.00",
-        imagen: ""
-      },
-      {
-        nombre: "Ceviche Cinco Fuegos",
-        descripcion: "Cantidad de frutos del mar flameados en crema de rocoto.",
-        precio: "S/.42.00",
-        imagen: ""
-      }
-    ]
-  },
-  {
-    id: "fondos-marinos",
-    nombre: "Fondos Marinos",
-    items: [
-      {
-        nombre: "Sudado de Pescado",
-        descripcion: "Pescado grillado, ajíes flameados al sudado fumet y guarnición.",
-        precio: "S/.28.00 / S/.38.00",
-        imagen: ""
-      },
-      {
-        nombre: "Pescado en Salsa de Ajo",
-        descripcion: "Pescado entero o filete en salsa blanca de ajo y champiñones.",
-        precio: "S/.32.00 / S/.42.00",
-        imagen: ""
-      },
-      {
-        nombre: "Pescado en Salsa a lo Macho",
-        descripcion: "Pescado entero o filete bañado en salsa de mariscos picante.",
-        precio: "S/.36.00 / S/.46.00",
-        imagen: ""
-      },
-      {
-        nombre: "Parihuela Especial",
-        descripcion: "Mariscos flameados, filete o pescado entero, jaiba y guarnición.",
-        precio: "S/.45.00 / S/.55.00",
-        imagen: ""
-      },
-      {
-        nombre: "Chicharrón de Pescado",
-        descripcion: "Trozos de pescado crocantes, acompaña yuca y sarza criolla.",
+        nombre: "Tallarín saltado",
+        descripcion: "Tallarín saltado de estilo criollo-oriental.",
         precio: "S/.28.00",
         imagen: ""
       },
       {
-        nombre: "Chaufa de Mariscos",
-        descripcion: "Arroz frito al wok con huevo y mariscos en salsa oriental.",
+        nombre: "Lomo saltado",
+        descripcion: "Clásico lomo saltado criollo.",
+        precio: "S/.35.00",
+        imagen: ""
+      },
+      {
+        nombre: "Lomo saltado a lo pobre",
+        descripcion: "Lomo saltado en versión a lo pobre.",
+        precio: "S/.38.00",
+        imagen: ""
+      },
+      {
+        nombre: "Pollo saltado",
+        descripcion: "Pollo saltado de estilo criollo.",
         precio: "S/.30.00",
         imagen: ""
       },
       {
-        nombre: "Trucha en Salsa a la Menier",
-        descripcion: "Filete de trucha en salsa blanca con ajo y perejil.",
-        precio: "S/.32.00",
+        nombre: "Bistec tradicional",
+        descripcion: "Bistec tradicional.",
+        precio: "S/.30.00",
         imagen: ""
       },
       {
-        nombre: "Chicharrón Mixto",
-        descripcion: "Trozos de pescado y mariscos crocantes con sarza criolla.",
+        nombre: "Fetuccini al pesto con pollo a la brasa",
+        descripcion: "Fetuccini al pesto acompañado con pollo a la brasa.",
+        precio: "S/.30.00",
+        imagen: ""
+      },
+      {
+        nombre: "Fetuccini al pesto con churrasco",
+        descripcion: "Fetuccini al pesto acompañado con churrasco.",
         precio: "S/.35.00",
         imagen: ""
       },
       {
-        nombre: "Arroz con Marisco",
-        descripcion: "Cremoso arroz con mariscos flameados en pisco.",
+        nombre: "Fetuccini a lo Alfredo con pechuga al grill",
+        descripcion: "Fetuccini a lo Alfredo acompañado con pechuga al grill.",
         precio: "S/.35.00",
-        imagen: "/images/arroz_mariscos.png"
-      },
-      {
-        nombre: "Fetuccinni en Salsa de Mariscos",
-        descripcion: "Fetuccinni acompañado de salsa de mariscos frescos a la diabla o regular.",
-        precio: "S/.38.00",
         imagen: ""
       },
       {
-        nombre: "Tacu - Tacu en Salsa de Mariscos",
-        descripcion: "Tacu - Tacu dorado montado en salsa de mariscos a lo macho.",
-        precio: "S/.40.00",
-        imagen: ""
-      }
-    ]
-  },
-  {
-    id: "arma-tu-combo",
-    nombre: "Arma tu Combo",
-    items: [
-      {
-        nombre: "Matrimonio Marino",
-        descripcion: "Causa de mariscos más lomo fino saltado.",
-        precio: "S/.40.00",
+        nombre: "Aeropuerto",
+        descripcion: "Plato tipo aeropuerto de estilo chifa.",
+        precio: "S/.20.00",
         imagen: ""
       },
       {
-        nombre: "Divorcio Marino",
-        descripcion: "Lomo fino saltado más ceviche clásico.",
+        nombre: "Chaufa de pollo",
+        descripcion: "Arroz chaufa preparado con pollo.",
+        precio: "S/.16.00",
+        imagen: ""
+      },
+      {
+        nombre: "Chaufa de carne",
+        descripcion: "Arroz chaufa preparado con carne.",
+        precio: "S/.18.00",
+        imagen: ""
+      },
+      {
+        nombre: "Chaufa mixto",
+        descripcion: "Arroz chaufa mixto.",
+        precio: "S/.20.00",
+        imagen: ""
+      },
+      {
+        nombre: "Bife",
+        descripcion: "Corte de bife.",
         precio: "S/.36.00",
         imagen: ""
       },
       {
-        nombre: "Duo Marino",
-        descripcion: "Combo de 2 opciones a elección: ceviche clásico, arroz con mariscos, chaufa de mariscos, chicharrón de pescado, causa acevichada o frutos del mar.",
-        precio: "S/.35.00",
+        nombre: "Churrasco",
+        descripcion: "Churrasco a la parrilla o a la plancha.",
+        precio: "S/.20.00",
         imagen: ""
       },
       {
-        nombre: "Trio Marino",
-        descripcion: "Combo de 3 opciones a elección: ceviche clásico, arroz con mariscos, chaufa de mariscos, chicharrón de pescado, causa acevichada o frutos del mar.",
-        precio: "S/.45.00",
+        nombre: "Pechuga a la parrilla",
+        descripcion: "Pechuga de pollo a la parrilla.",
+        precio: "S/.20.00",
         imagen: ""
       }
     ]
   },
   {
-    id: "criollos",
-    nombre: "Criollos",
+    id: "guarnicion",
+    nombre: "Guarnición",
     items: [
       {
-        nombre: "Ají de Pollo",
-        descripcion: "Clásico ají de pollo al estilo del restaurante.",
-        precio: "S/.32.00",
+        nombre: "Papas fritas",
+        descripcion: "Porción de papas fritas.",
+        precio: "S/.8.00",
         imagen: ""
       },
       {
-        nombre: "Lomitos de Cordero",
-        descripcion: "300 gr de lomitos de cordero acompañado de guarnición.",
-        precio: "S/.34.00",
+        nombre: "Nuggets 6 und.",
+        descripcion: "Porción de 6 nuggets.",
+        precio: "S/.8.00",
         imagen: ""
       },
       {
-        nombre: "Lomo Fino Saltado",
-        descripcion: "Trozos de lomo fino flameados, cebolla, ají amarillo, papas y arroz.",
-        precio: "S/.38.00",
-        imagen: "/images/lomo_saltado.png"
-      },
-      {
-        nombre: "Medallón de Lomo Fino con Puré",
-        descripcion: "Corte de medallón de lomo fino acompañado de puré de la casa.",
-        precio: "S/.40.00",
-        imagen: ""
-      },
-      {
-        nombre: "Costillar Dorado",
-        descripcion: "Cordero candaraveño dorado, acompaña papas doradas y sarza.",
-        precio: "S/.42.00",
-        imagen: ""
-      },
-      {
-        nombre: "Tacu Tacu con Lomo a lo Pobre",
-        descripcion: "Crocante arroz de tacu - tacu montado en lomo fino saltado.",
-        precio: "S/.42.00",
-        imagen: ""
-      }
-    ]
-  },
-  {
-    id: "pastas",
-    nombre: "Pastas",
-    items: [
-      {
-        nombre: "Rigatoni en Salsa a la Bolognesa",
-        descripcion: "Fideos rigatoni en salsa de tomate al estilo del restaurante.",
-        precio: "S/.38.00",
-        imagen: ""
-      },
-      {
-        nombre: "Fetuccini al Pesto / Huancaína con Lomo Fino",
-        descripcion: "Lomo fino saltado con fetuccini en salsa al pesto o a la huancaína.",
-        precio: "S/.38.00",
-        imagen: ""
-      },
-      {
-        nombre: "Tallarín Saltado 5 Fuegos",
-        descripcion: "Tallarines al wok con lomo fino, frutos del mar y pollo.",
-        precio: "S/.42.00",
+        nombre: "Arroz blanco",
+        descripcion: "Porción de arroz blanco.",
+        precio: "S/.5.00",
         imagen: ""
       }
     ]
@@ -293,81 +149,9 @@ export const DEFAULT_MENU_DATA: Category[] = [
     nombre: "Alitas",
     items: [
       {
-        nombre: "Alitas al Grill",
-        descripcion: "Alitas sazonadas al grill, papas nativas o fritas.",
-        precio: "S/.22.00",
-        imagen: ""
-      },
-      {
-        nombre: "Alitas BBQ / BBQ Hot",
-        descripcion: "Alitas en salsa BBQ con o sin picante más papas nativas o fritas.",
-        precio: "S/.25.00",
-        imagen: "/images/alitas.png"
-      },
-      {
-        nombre: "Alitas Acevichadas",
-        descripcion: "Alitas crocantes bañadas en salsa acevichada.",
-        precio: "S/.25.00",
-        imagen: ""
-      },
-      {
-        nombre: "Alitas Cinco Fuegos",
-        descripcion: "Puedes combinar 3 sabores de alitas a elección.",
-        precio: "S/.40.00",
-        imagen: ""
-      }
-    ]
-  },
-  {
-    id: "kids-promo-jr",
-    nombre: "Kids / Promo Jr",
-    items: [
-      {
-        nombre: "Hamburguesa Clásica",
-        descripcion: "Hamburguesa al grill, acompaña papas crocantes.",
-        precio: "S/.15.00",
-        imagen: ""
-      },
-      {
-        nombre: "Chicharrón de Pollo",
-        descripcion: "Trozos de pollo acompañado de guarnición.",
-        precio: "S/.19.00",
-        imagen: ""
-      },
-      {
-        nombre: "Nuggets",
-        descripcion: "Clásicos trozos de pollo deshuesados y empanizados.",
-        precio: "S/.20.00",
-        imagen: ""
-      },
-      {
-        nombre: "Milanesa + (2) Bolas Helados + Jugo del Día",
-        descripcion: "Filete de pollo al panko acompañado de papas, dos bolas de helado y jugo del día.",
+        nombre: "12 und. Alitas",
+        descripcion: "Alitas en sabores BBQ y acevichadas.",
         precio: "S/.30.00",
-        imagen: ""
-      }
-    ]
-  },
-  {
-    id: "salchipapas",
-    nombre: "Salchipapas",
-    items: [
-      {
-        nombre: "Clásica",
-        descripcion: "Salchichas al estilo del restaurante con papas fritas crocantes.",
-        precio: "S/.15.00",
-        imagen: ""
-      },
-      {
-        nombre: "La Chorri",
-        descripcion: "Salchichas y chorizo sazonados con papas fritas crocantes.",
-        precio: "S/.17.00",
-        imagen: ""
-      },
-      {
-        nombre: "La Braseada",
-        descripcion: "Salchicha, chorizo, pollo desmenuzado a la brasa y papas fritas.",
-        precio: "S/.19.00",
         imagen: ""
       }
     ]
@@ -378,200 +162,290 @@ export const DEFAULT_MENU_DATA: Category[] = [
     items: [
       {
         nombre: "Limonada",
-        descripcion: "Bebida refrescante de limón.",
-        precio: "1 LT: S/.14.00 | 1 1/2: S/.18.00",
+        descripcion: "Refresco disponible en vaso o jarra.",
+        precio: "Vaso S/.7.00 | Jarra S/.15.00",
         imagen: ""
       },
       {
-        nombre: "Limonada / Hierba Buena",
-        descripcion: "Limonada con hierba buena.",
-        precio: "1 LT: S/.14.00 | 1 1/2: S/.18.00",
+        nombre: "Chicha",
+        descripcion: "Refresco disponible en vaso o jarra.",
+        precio: "Vaso S/.7.00 | Jarra S/.15.00",
         imagen: ""
       },
       {
         nombre: "Maracuyá",
-        descripcion: "Bebida natural de maracuyá.",
-        precio: "1 LT: S/.14.00 | 1 1/2: S/.18.00",
+        descripcion: "Refresco disponible en vaso o jarra.",
+        precio: "Vaso S/.7.00 | Jarra S/.15.00",
         imagen: ""
       },
       {
-        nombre: "Maracumango",
-        descripcion: "Bebida frutal de maracuyá con mango.",
-        precio: "1 LT: S/.16.00 | 1 1/2: S/.18.00",
-        imagen: ""
-      },
-      {
-        nombre: "Mango",
-        descripcion: "Bebida natural de mango.",
-        precio: "1 LT: S/.14.00 | 1 1/2: S/.18.00",
-        imagen: ""
-      },
-      {
-        nombre: "Fresa",
-        descripcion: "Bebida natural de fresa.",
-        precio: "1 LT: S/.14.00 | 1 1/2: S/.18.00",
-        imagen: ""
-      },
-      {
-        nombre: "Chicha Morada",
-        descripcion: "Bebida tradicional peruana de maíz morado.",
-        precio: "1 LT: S/.16.00 | 1 1/2: S/.19.00",
-        imagen: ""
-      },
-      {
-        nombre: "Piña",
-        descripcion: "Bebida natural de piña.",
-        precio: "1 LT: S/.15.00 | 1 1/2: S/.19.00",
-        imagen: ""
-      }
-    ]
-  },
-  {
-    id: "tradicionales",
-    nombre: "Tradicionales",
-    items: [
-      {
-        nombre: "Pisco Sour",
-        descripcion: "Pisco, limón, jarabe de azúcar y clara de huevo.",
-        precio: "S/.16.00",
-        imagen: ""
-      },
-      {
-        nombre: "Tacna Sour",
-        descripcion: "Pisco, licor de damasco, limón y clara de huevo.",
-        precio: "S/.16.00",
-        imagen: ""
-      },
-      {
-        nombre: "Algarrobina",
-        descripcion: "Pisco, leche, algarrobina y licor de cacao.",
-        precio: "S/.16.00",
-        imagen: ""
-      },
-      {
-        nombre: "Chilcano",
-        descripcion: "Pisco, bitter de cítricos y ginger ale.",
-        precio: "S/.16.00",
-        imagen: ""
-      },
-      {
-        nombre: "Mojito",
-        descripcion: "Ron, zumo de fruta de estación y hierba buena.",
-        precio: "S/.17.00",
-        imagen: ""
-      },
-      {
-        nombre: "Piña Colada",
-        descripcion: "Ron, zumo de piña y crema de coco.",
-        precio: "S/.17.00",
-        imagen: ""
-      },
-      {
-        nombre: "Negroni",
-        descripcion: "London Dry Gin, Campari y Vermouth Rosso.",
-        precio: "S/.17.00",
-        imagen: ""
-      },
-      {
-        nombre: "Gin Tonic",
-        descripcion: "London Dry Gin y agua tónica.",
-        precio: "S/.20.00",
-        imagen: ""
-      },
-      {
-        nombre: "Orgasmo",
-        descripcion: "Báileys, amaretto y licor de café.",
-        precio: "S/.17.00",
-        imagen: ""
-      },
-      {
-        nombre: "Ruso Blanco / Negro",
-        descripcion: "Vodka, licor de café y crema de leche.",
-        precio: "S/.17.00",
-        imagen: ""
-      },
-      {
-        nombre: "Clavo Oxidado",
-        descripcion: "Whisky escocés y Drambuie.",
-        precio: "S/.17.00",
-        imagen: ""
-      },
-      {
-        nombre: "Padrino",
-        descripcion: "Whisky escocés y Amaretto.",
-        precio: "S/.17.00",
-        imagen: ""
-      },
-      {
-        nombre: "Té Piteado",
-        descripcion: "Amaretto, té canela y clavo, pisco o whisky.",
-        precio: "S/.17.00",
-        imagen: ""
-      },
-      {
-        nombre: "Manhattan",
-        descripcion: "Bourbon, Vermouth Rosso y bitter Angostura.",
-        precio: "S/.16.00",
-        imagen: ""
-      },
-      {
-        nombre: "Margarita",
-        descripcion: "Tequila, Cointreau y zumo de limón.",
-        precio: "S/.16.00",
-        imagen: ""
-      },
-      {
-        nombre: "Tequila Sunrise",
-        descripcion: "Tequila, zumo de naranja y granadina.",
-        precio: "S/.16.00",
-        imagen: ""
-      },
-      {
-        nombre: "Mojito Corona",
-        descripcion: "Ron, zumo de fruta, hierba buena y Coronita.",
-        precio: "S/.22.00",
-        imagen: ""
-      },
-      {
-        nombre: "Sex on the Beach",
-        descripcion: "Vodka, licor de damasco, jugo de naranja y granadina.",
-        precio: "S/.17.00",
-        imagen: ""
-      }
-    ]
-  },
-  {
-    id: "cervezas",
-    nombre: "Cervezas",
-    items: [
-      {
-        nombre: "Pilsen Callao",
-        descripcion: "Cerveza Pilsen Callao.",
-        precio: "S/.10.00",
-        imagen: ""
-      },
-      {
-        nombre: "Cuzqueña",
-        descripcion: "Cerveza Cuzqueña.",
+        nombre: "Refrescante de Maracuyá",
+        descripcion: "Bebida refrescante fría de maracuyá.",
         precio: "S/.12.00",
         imagen: ""
       },
       {
-        nombre: "Stella Artois",
-        descripcion: "Cerveza Stella Artois.",
-        precio: "S/.9.00",
+        nombre: "Refrescante de Mango",
+        descripcion: "Bebida refrescante fría de mango.",
+        precio: "S/.12.00",
         imagen: ""
       },
       {
-        nombre: "Corona",
-        descripcion: "Cerveza Corona.",
-        precio: "S/.9.00",
+        nombre: "Refrescante de Frutos Rojos",
+        descripcion: "Bebida refrescante fría de frutos rojos.",
+        precio: "S/.12.00",
         imagen: ""
       },
       {
-        nombre: "Heineken",
-        descripcion: "Cerveza Heineken.",
-        precio: "S/.10.00",
+        nombre: "Inca Kola / Coca Cola 600 ml",
+        descripcion: "Gaseosa regular y sin azúcar.",
+        precio: "S/.5.90",
+        imagen: ""
+      },
+      {
+        nombre: "Inca Kola / Coca Cola 1.5 L",
+        descripcion: "Gaseosa familiar de 1.5 litros.",
+        precio: "S/.10.90",
+        imagen: ""
+      },
+      {
+        nombre: "Infusiones",
+        descripcion: "Té, anís y manzanilla.",
+        precio: "S/.3.50",
+        imagen: ""
+      },
+      {
+        nombre: "Agua personal",
+        descripcion: "Botella San Luis 625 ml, con o sin gas.",
+        precio: "S/.3.00",
+        imagen: ""
+      }
+    ]
+  },
+  {
+    id: "chilcanos",
+    nombre: "Chilcanos",
+    items: [
+      {
+        nombre: "Chilcano clásico",
+        descripcion: "Chilcano clásico.",
+        precio: "S/.18.90",
+        imagen: ""
+      },
+      {
+        nombre: "Chilcano Maracumango",
+        descripcion: "Chilcano sabor maracumango.",
+        precio: "S/.19.90",
+        imagen: ""
+      },
+      {
+        nombre: "Chilcano Frutos del bosque",
+        descripcion: "Chilcano sabor frutos del bosque.",
+        precio: "S/.19.90",
+        imagen: ""
+      },
+      {
+        nombre: "Chilcano Fresa",
+        descripcion: "Chilcano sabor fresa.",
+        precio: "S/.19.90",
+        imagen: ""
+      }
+    ]
+  },
+  {
+    id: "pisco-sour",
+    nombre: "Pisco Sour",
+    items: [
+      {
+        nombre: "Pisco Sour clásico",
+        descripcion: "Pisco sour clásico.",
+        precio: "S/.18.90",
+        imagen: ""
+      },
+      {
+        nombre: "Pisco Sour Maracuyá",
+        descripcion: "Pisco sour sabor maracuyá.",
+        precio: "S/.19.90",
+        imagen: ""
+      }
+    ]
+  },
+  {
+    id: "cocteles",
+    nombre: "Cocteles",
+    items: [
+      {
+        nombre: "Copa de Sangría",
+        descripcion: "Copa de sangría.",
+        precio: "S/.16.90",
+        imagen: ""
+      },
+      {
+        nombre: "Algarrobina",
+        descripcion: "Coctel de algarrobina.",
+        precio: "S/.19.90",
+        imagen: ""
+      },
+      {
+        nombre: "Machu Picchu",
+        descripcion: "Coctel Machu Picchu.",
+        precio: "S/.19.90",
+        imagen: ""
+      },
+      {
+        nombre: "Piña Colada",
+        descripcion: "Coctel de piña colada.",
+        precio: "S/.20.90",
+        imagen: ""
+      }
+    ]
+  },
+  {
+    id: "happy-day",
+    nombre: "Happy Day",
+    items: [
+      {
+        nombre: "Happy Day 2x26.90",
+        descripcion: "Promoción de cocteles disponible todo el día a toda hora.",
+        precio: "S/.26.90",
+        imagen: ""
+      },
+      {
+        nombre: "Ice Chilcano de Maracumango",
+        descripcion: "Ice chilcano de maracumango con precio individual y precio 2x.",
+        precio: "S/.23.90 | 2x S/.29.90",
+        imagen: ""
+      },
+      {
+        nombre: "Ice Chilcano de Fresa",
+        descripcion: "Ice chilcano de fresa con precio individual y precio 2x.",
+        precio: "S/.23.90 | 2x S/.29.90",
+        imagen: ""
+      },
+      {
+        nombre: "Ice Piña Colada",
+        descripcion: "Ice piña colada con precio individual y precio 2x.",
+        precio: "S/.24.90 | 2x S/.32.90",
+        imagen: ""
+      }
+    ]
+  },
+  {
+    id: "para-ti",
+    nombre: "Para Ti",
+    items: [
+      {
+        nombre: "1/4 Pollo a la Brasa",
+        descripcion: "Incluye guarnición clásica mediana y ensalada personal.",
+        precio: "S/.18.00",
+        imagen: ""
+      }
+    ]
+  },
+  {
+    id: "para-dos",
+    nombre: "Para Dos",
+    items: [
+      {
+        nombre: "1/2 Pollo a la Brasa",
+        descripcion: "Incluye papas fritas, ensalada mediana y cremas.",
+        precio: "S/.33.00",
+        imagen: ""
+      }
+    ]
+  },
+  {
+    id: "familiar",
+    nombre: "Familiar",
+    items: [
+      {
+        nombre: "1 Pollo a la Brasa",
+        descripcion: "Incluye papas fritas, ensalada familiar y cremas.",
+        precio: "S/.60.00",
+        imagen: ""
+      }
+    ]
+  },
+  {
+    id: "bravaza-powers",
+    nombre: "BravaZa Powers",
+    items: [
+      {
+        nombre: "Mostrito",
+        descripcion: "Plato combinado de la casa, de formato personal.",
+        precio: "S/.13.00",
+        imagen: ""
+      },
+      {
+        nombre: "Mostro",
+        descripcion: "Plato combinado más contundente de la casa.",
+        precio: "S/.23.00",
+        imagen: ""
+      },
+      {
+        nombre: "Brabaza Parrillera",
+        descripcion: "Plato parrillero combinado de la casa. En la carta figura como 'Brabaza Parrillera'.",
+        precio: "S/.25.00",
+        imagen: ""
+      }
+    ]
+  },
+  {
+    id: "caldos",
+    nombre: "Caldos",
+    items: [
+      {
+        nombre: "Caldo de Gallina",
+        descripcion: "Caldo tradicional de gallina.",
+        precio: "S/.14.00",
+        imagen: ""
+      },
+      {
+        nombre: "Dieta de Pollo",
+        descripcion: "Sopa ligera de pollo.",
+        precio: "S/.15.00",
+        imagen: ""
+      }
+    ]
+  },
+  {
+    id: "bravaza-kids",
+    nombre: "BravaZa Kids",
+    items: [
+      {
+        nombre: "1/8 Pollo a la Brasa",
+        descripcion: "Incluye papas fritas y 1 vaso de chicha.",
+        precio: "S/.13.50",
+        imagen: ""
+      },
+      {
+        nombre: "8 Nuggets Redondos",
+        descripcion: "Incluye papas fritas y 1 vaso de chicha.",
+        precio: "S/.13.50",
+        imagen: ""
+      }
+    ]
+  },
+  {
+    id: "parrillas",
+    nombre: "Parrillas",
+    items: [
+      {
+        nombre: "1. La Favorita",
+        descripcion: "1 chuleta de cerdo, 1 chorizo ahumado, 1/4 pollo a la brasa, papas fritas, ensalada y gaseosa 450 ml.",
+        precio: "S/.57.90",
+        imagen: ""
+      },
+      {
+        nombre: "2. Bipersonal",
+        descripcion: "1/2 cuadril, 1 chorizo ahumado, 1 chorizo de pollo, 1 anticucho de corazón de res, papas fritas más ensalada y 2 gaseosas de 450 ml.",
+        precio: "S/.69.90",
+        imagen: ""
+      },
+      {
+        nombre: "3. Familiar",
+        descripcion: "1 lomo fino, 1 filete de pechuga, 1 chuleta de cerdo, 2 anticuchos de corazón de res, 1 chorizo ahumado, 1 chorizo de pollo, 1/2 pollo a la brasa, papas fritas, ensalada y gaseosa 1.5 L.",
+        precio: "S/.120.00",
         imagen: ""
       }
     ]

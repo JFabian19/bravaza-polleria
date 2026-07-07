@@ -1,30 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=League+Spartan:wght@700;800;900&family=Montserrat:wght@700;800;900&family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=League+Spartan:wght@700;800;900&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=Archivo+Black&display=swap');
 @import "tailwindcss";
 
 @theme {
-  /* TIPOGRAFÍAS DE CINCO FUEGOS (Usa Google Fonts) */
+  /* TIPOGRAFÍAS DE BRAVAZA POLLERÍA */
   --font-sans: "Poppins", system-ui, -apple-system, sans-serif;
-  --font-brand: "League Spartan", "Montserrat", sans-serif;
-  --font-title: "Anton", sans-serif;   /* Tipografía para Títulos (Anton) */
-  --font-category: "Anton", sans-serif; /* Tipografía para Categorías (Anton) */
-  --font-dish: "Barlow Condensed", sans-serif;     /* Tipografía para Platos (Barlow Condensed) */
-  --font-price: "Roboto Condensed", sans-serif;     /* Tipografía para Precios (Roboto Condensed) */
-  --font-slogan: "Poppins", sans-serif;  /* Tipografía para Eslogans/Marquee (Poppins) */
+  --font-brand: "Montserrat", sans-serif;
+  --font-title: "Anton", sans-serif;
+  --font-category: "Anton", sans-serif;
+  --font-dish: "Montserrat", sans-serif;
+  --font-price: "Archivo Black", sans-serif;
+  --font-slogan: "Montserrat", sans-serif;
   
-  /* COLORES DE CINCO FUEGOS (Tema de Fuego / Marino-Criollo) */
-  --color-primary: #F22F35;      /* Color principal de la marca (Rojo Fuego) */
-  --color-secondary: #FFFFFF;    /* Color de acento/secundario (Blanco) */
-  --color-dark: #111827;         /* Color de texto oscuro principal (Negro Carbón) */
-  --color-light: #F3F4F6;        /* Color de fondo del body (Gris Claro) */
+  /* COLORES DE BRAVAZA POLLERÍA */
+  --color-primary: #F97316;      /* Naranja Fuego */
+  --color-secondary: #FACC15;    /* Amarillo Brasa */
+  --color-dark: #1A1A1A;         /* Madera Oscura / Carbón */
+  --color-light: #2B1B14;        /* Fondo Fuego / Madera Cálida */
   
-  --shadow-glass: 0 8px 32px 0 rgba(242, 47, 53, 0.12);
-  --glass-bg: rgba(255, 255, 255, 0.95);
-  --glass-border: rgba(255, 255, 255, 0.4);
+  --shadow-glass: 0 8px 32px 0 rgba(249, 115, 22, 0.15);
+  --glass-bg: rgba(26, 26, 26, 0.95);
+  --glass-border: rgba(249, 115, 22, 0.2);
 }
 
 body {
   background-color: var(--color-light);
-  color: var(--color-dark);
+  color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
   font-family: var(--font-sans);
 }
