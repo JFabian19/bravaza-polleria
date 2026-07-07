@@ -251,8 +251,8 @@ export default function App() {
   }
 
   return (
-    <div className="max-w-md mx-auto bg-[#1A1A1A] min-h-screen relative shadow-2xl overflow-hidden flex flex-col font-sans text-white">
-      <header className="sticky top-0 bg-[#1A1A1A]/95 backdrop-blur-md z-50 px-5 py-4 flex justify-between items-center border-b border-primary/20">
+    <div className="max-w-md mx-auto bg-[#0D0D0D] min-h-screen relative shadow-2xl overflow-hidden flex flex-col font-sans text-white">
+      <header className="sticky top-0 bg-[#0D0D0D]/95 backdrop-blur-md z-50 px-5 py-4 flex justify-between items-center border-b border-primary/20">
         <div className="flex flex-col items-start">
           <h1 className="font-brand font-black text-2xl text-primary leading-none tracking-tight uppercase">{RESTAURANTE_NAME}</h1>
           <span className="font-sans text-[10px] text-secondary font-semibold tracking-wider mt-1 uppercase">{RESTAURANTE_SLOGAN}</span>
@@ -308,22 +308,22 @@ export default function App() {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.95 }}
           animate={{ 
-            boxShadow: ["0px 0px 0px 0px rgba(249,115,22,0.6)", "0px 0px 20px 8px rgba(249,115,22,0)", "0px 0px 0px 0px rgba(249,115,22,0)"] 
+            boxShadow: ["0px 0px 0px 0px rgba(220,38,38,0.6)", "0px 0px 20px 8px rgba(220,38,38,0)", "0px 0px 0px 0px rgba(220,38,38,0)"] 
           }}
           transition={{ repeat: Infinity, duration: 1.5 }}
           onClick={() => setShowBirthdayForm(true)}
-          className="w-full bg-gradient-to-r from-orange-600 via-primary to-secondary text-white py-3.5 px-4 rounded-2xl flex items-center justify-center gap-2 font-bold text-[10px] sm:text-[11px] uppercase tracking-wide border border-primary relative overflow-hidden group text-center cursor-pointer"
+          className="w-full bg-gradient-to-r from-red-600 via-primary to-secondary text-white py-3.5 px-4 rounded-2xl flex items-center justify-center gap-2 font-bold text-[10px] sm:text-[11px] uppercase tracking-wide border border-primary relative overflow-hidden group text-center cursor-pointer"
         >
           <div className="absolute inset-0 shimmer opacity-30 mix-blend-overlay"></div>
           <Gift size={18} className="animate-bounce shrink-0" />
-          <span>¡Celebra tu cumpleaños con sabor BravaZa y recibe una sorpresa especial! 🎁🔥 <span className="text-[#1A1A1A] font-black underline ml-1">Regístrate aquí</span></span>
+          <span>¡Celebra tu cumpleaños con sabor BravaZa y recibe una sorpresa especial! 🎁🔥 <span className="text-black font-black underline ml-1">Regístrate aquí</span></span>
         </motion.button>
       </div>
 
       <div className="px-5 pt-4 pb-3">
         <div className="relative w-full rounded-[2rem] overflow-hidden shadow-xl aspect-[2/1] bg-dark border border-primary/20">
           <img src={BANNER_PATH} alt={RESTAURANTE_NAME} className="w-full h-full object-cover opacity-80" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/40 to-transparent flex flex-col justify-end p-5">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-[#0D0D0D]/40 to-transparent flex flex-col justify-end p-5">
             <h2 className="text-white font-brand font-black text-xl tracking-wider uppercase">{RESTAURANTE_NAME}</h2>
             <p className="text-secondary text-[10px] font-sans font-medium tracking-wide uppercase mt-0.5">{RESTAURANTE_SLOGAN}</p>
           </div>
@@ -339,7 +339,7 @@ export default function App() {
               className={`px-4.5 py-2.5 rounded-full text-[13px] font-category tracking-wide uppercase whitespace-nowrap transition-all duration-200 border cursor-pointer
                 ${activeCategory === cat.id
                   ? 'bg-primary text-white border-primary shadow-md shadow-primary/20'
-                  : 'bg-[#2B1B14] text-white/85 border-primary/20 hover:border-primary/40 hover:text-primary'
+                  : 'bg-[#1F1F1F] text-white/85 border-primary/20 hover:border-primary/40 hover:text-primary'
                 }`}
             >
               {cat.nombre}
@@ -365,7 +365,7 @@ export default function App() {
                 <motion.div
                   key={idx}
                   whileHover={{ y: -4 }}
-                  className="bg-[#2B1B14] rounded-[2rem] overflow-hidden flex flex-col shadow-sm border border-primary/10 hover:border-primary/30 transition-all duration-200"
+                  className="bg-[#1F1F1F] rounded-[2rem] overflow-hidden flex flex-col shadow-sm border border-primary/10 hover:border-primary/30 transition-all duration-200"
                 >
                   <div className="bg-dark/40 aspect-square flex items-center justify-center relative overflow-hidden border-b border-primary/10">
                     {dish.imagen ? (
@@ -414,27 +414,27 @@ export default function App() {
           </section>
         ))}
 
-        <section className="mt-8 mb-4 border border-primary/20 bg-[#2B1B14] rounded-3xl p-5 text-center shadow-sm">
+        <section className="mt-8 mb-4 border border-primary/20 bg-[#1F1F1F] rounded-3xl p-5 text-center shadow-sm">
           <h3 className="font-title text-primary text-[22px] leading-tight mb-2">¿Cómo estuvo todo?</h3>
           <p className="text-[11px] text-white/70 mb-4 px-4">Ayúdanos a mejorar calificando tu experiencia con nosotros</p>
           <motion.button 
             whileTap={{ scale: 0.95 }}
             onClick={() => setShowReviewForm(true)}
-            className="bg-primary hover:bg-orange-600 text-white px-6 py-3 rounded-2xl font-bold text-sm shadow-md shadow-primary/20 flex items-center justify-center gap-2 mx-auto w-full cursor-pointer"
+            className="bg-primary hover:bg-red-700 text-white px-6 py-3 rounded-2xl font-bold text-sm shadow-md shadow-primary/20 flex items-center justify-center gap-2 mx-auto w-full cursor-pointer"
           >
             <Star size={18} className="fill-white" />
             Reseña nuestra comida
           </motion.button>
         </section>
 
-        <footer className="mt-8 pt-8 pb-10 border-t border-primary/20 bg-[#1A1A1A] flex flex-col items-center justify-center text-center">
+        <footer className="mt-8 pt-8 pb-10 border-t border-primary/20 bg-[#0D0D0D] flex flex-col items-center justify-center text-center">
           <img src={LOGO_FOOTER_PATH} alt={RESTAURANTE_NAME} className="w-24 h-24 mb-4 object-contain rounded-2xl shadow-sm border border-primary/10" />
           <p className="font-brand font-black text-lg text-primary tracking-wide">{RESTAURANTE_NAME}</p>
           <p className="text-xs text-secondary mt-1 max-w-[250px]">{RESTAURANTE_SLOGAN}</p>
           <p className="text-[10px] text-white/50 mt-6">© 2026 Todos los derechos reservados.</p>
         </footer>
 
-        <div className="bg-[#1A1A1A] py-6 flex flex-col items-center justify-center">
+        <div className="bg-[#0D0D0D] py-6 flex flex-col items-center justify-center">
           <p className="text-[10px] font-bold tracking-[0.2em] uppercase mb-1 opacity-50 text-white/50">Digital Menu Experience</p>
           <motion.a 
             href="https://tymasolutions.lat/"
@@ -492,13 +492,13 @@ export default function App() {
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               exit={{ y: "100%" }}
-              className="bg-[#1A1A1A] border-t border-primary/20 w-full max-w-md rounded-t-[3rem] p-6 max-h-[85vh] overflow-y-auto text-white"
+              className="bg-[#161616] border-t border-primary/20 w-full max-w-md rounded-t-[3rem] p-6 max-h-[85vh] overflow-y-auto text-white"
             >
               <div className="flex justify-between items-center mb-6">
                 <h2 className="font-title text-2xl text-primary">Mi Pedido</h2>
                 <button
                   onClick={() => setShowSummary(false)}
-                  className="w-10 h-10 bg-[#2B1B14] rounded-full flex items-center justify-center cursor-pointer"
+                  className="w-10 h-10 bg-[#1F1F1F] rounded-full flex items-center justify-center cursor-pointer"
                 >
                   <X size={20} className="text-white/60" />
                 </button>
@@ -507,13 +507,13 @@ export default function App() {
                 {cart.map(item => (
                   <div
                     key={`${item.nombre}-${item.precio}`}
-                    className="flex items-center gap-4 bg-[#2B1B14] border border-primary/10 p-4 rounded-2xl"
+                    className="flex items-center gap-4 bg-[#1F1F1F] border border-primary/10 p-4 rounded-2xl"
                   >
                     <div className="flex-1 min-w-0">
                       <h4 className="font-dish font-semibold text-white text-sm truncate">{item.nombre}</h4>
                       <p className="font-dish text-xs text-secondary font-bold">{item.precio}</p>
                     </div>
-                    <div className="flex items-center gap-3 bg-[#1A1A1A] px-3 py-1.5 rounded-xl border border-primary/10">
+                    <div className="flex items-center gap-3 bg-[#121212] px-3 py-1.5 rounded-xl border border-primary/10">
                       <button onClick={() => updateQuantity(item.nombre, item.precio, -1)} className="text-white/60 cursor-pointer">
                         <Minus size={16} />
                       </button>
@@ -592,11 +592,11 @@ export default function App() {
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="bg-[#1A1A1A] border border-primary/20 w-full max-w-sm rounded-[2rem] p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
+              className="bg-[#161616] border border-primary/20 w-full max-w-sm rounded-[2rem] p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
             >
               <button
                 onClick={() => setShowBirthdayForm(false)}
-                className="absolute top-4 right-4 w-8 h-8 bg-[#2B1B14] rounded-full flex items-center justify-center cursor-pointer"
+                className="absolute top-4 right-4 w-8 h-8 bg-[#1F1F1F] rounded-full flex items-center justify-center cursor-pointer"
               >
                 <X size={18} className="text-white/60" />
               </button>
@@ -617,29 +617,29 @@ export default function App() {
                 <form onSubmit={handleBirthdaySubmit} className="space-y-3">
                   <div>
                     <label className="text-[10px] font-bold text-secondary uppercase ml-1">Nombre Completo</label>
-                    <input required type="text" value={birthdayData.nombre} onChange={e => setBirthdayData({...birthdayData, nombre: e.target.value})} className="w-full bg-[#2B1B14] border border-primary/20 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-primary/50 transition-colors text-white" placeholder="Ej. Juan Pérez" />
+                    <input required type="text" value={birthdayData.nombre} onChange={e => setBirthdayData({...birthdayData, nombre: e.target.value})} className="w-full bg-[#1F1F1F] border border-primary/20 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-primary/50 transition-colors text-white" placeholder="Ej. Juan Pérez" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-secondary uppercase ml-1">Teléfono</label>
                     <input required type="tel" minLength={9} maxLength={11} pattern="[0-9]*" value={birthdayData.telefono} onChange={e => {
                       const val = e.target.value.replace(/\D/g, '');
                       setBirthdayData({...birthdayData, telefono: val});
-                    }} className="w-full bg-[#2B1B14] border border-primary/20 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-primary/50 transition-colors text-white" placeholder="Ej. 987654321" />
+                    }} className="w-full bg-[#1F1F1F] border border-primary/20 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-primary/50 transition-colors text-white" placeholder="Ej. 987654321" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-secondary uppercase ml-1">Fecha de Nacimiento</label>
-                    <input required type="date" value={birthdayData.fechaNacimiento} onChange={e => setBirthdayData({...birthdayData, fechaNacimiento: e.target.value})} className="w-full bg-[#2B1B14] border border-primary/20 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-primary/50 transition-colors text-white" />
+                    <input required type="date" value={birthdayData.fechaNacimiento} onChange={e => setBirthdayData({...birthdayData, fechaNacimiento: e.target.value})} className="w-full bg-[#1F1F1F] border border-primary/20 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-primary/50 transition-colors text-white" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-secondary uppercase ml-1">Distrito</label>
-                    <input required type="text" value={birthdayData.distrito} onChange={e => setBirthdayData({...birthdayData, distrito: e.target.value})} className="w-full bg-[#2B1B14] border border-primary/20 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-primary/50 transition-colors text-white" placeholder="Ej. Miraflores" />
+                    <input required type="text" value={birthdayData.distrito} onChange={e => setBirthdayData({...birthdayData, distrito: e.target.value})} className="w-full bg-[#1F1F1F] border border-primary/20 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-primary/50 transition-colors text-white" placeholder="Ej. Miraflores" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-secondary uppercase ml-1">Correo Electrónico (Opcional)</label>
-                    <input type="email" value={birthdayData.correo} onChange={e => setBirthdayData({...birthdayData, correo: e.target.value})} className="w-full bg-[#2B1B14] border border-primary/20 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-primary/50 transition-colors text-white" placeholder="correo@ejemplo.com" />
+                    <input type="email" value={birthdayData.correo} onChange={e => setBirthdayData({...birthdayData, correo: e.target.value})} className="w-full bg-[#1F1F1F] border border-primary/20 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-primary/50 transition-colors text-white" placeholder="correo@ejemplo.com" />
                   </div>
                   
-                  <button disabled={isSubmittingBirthday} type="submit" className="w-full bg-primary hover:bg-orange-600 text-white py-3 rounded-xl font-bold text-sm shadow-md shadow-primary/20 mt-2 disabled:opacity-70 flex justify-center items-center cursor-pointer">
+                  <button disabled={isSubmittingBirthday} type="submit" className="w-full bg-primary hover:bg-red-700 text-white py-3 rounded-xl font-bold text-sm shadow-md shadow-primary/20 mt-2 disabled:opacity-70 flex justify-center items-center cursor-pointer">
                     {isSubmittingBirthday ? <Loader2 size={18} className="animate-spin" /> : "Guardar mis datos"}
                   </button>
                 </form>
@@ -661,11 +661,11 @@ export default function App() {
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="bg-[#1A1A1A] border border-primary/20 w-full max-w-sm rounded-[2rem] p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
+              className="bg-[#161616] border border-primary/20 w-full max-w-sm rounded-[2rem] p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
             >
               <button
                 onClick={() => setShowReviewForm(false)}
-                className="absolute top-4 right-4 w-8 h-8 bg-[#2B1B14] rounded-full flex items-center justify-center cursor-pointer"
+                className="absolute top-4 right-4 w-8 h-8 bg-[#1F1F1F] rounded-full flex items-center justify-center cursor-pointer"
               >
                 <X size={18} className="text-white/60" />
               </button>
@@ -685,7 +685,7 @@ export default function App() {
               ) : (
                 <form onSubmit={handleReviewSubmit} className="space-y-5">
                   
-                  <div className="bg-[#2B1B14] p-4 rounded-2xl border border-primary/10 flex flex-col items-center">
+                  <div className="bg-[#1F1F1F] p-4 rounded-2xl border border-primary/10 flex flex-col items-center">
                     <p className="text-xs font-bold text-secondary mb-2">Atención del Mozo</p>
                     <div className="flex gap-1">
                       {[1,2,3,4,5].map(star => (
@@ -700,7 +700,7 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="bg-[#2B1B14] p-4 rounded-2xl border border-primary/10 flex flex-col items-center">
+                  <div className="bg-[#1F1F1F] p-4 rounded-2xl border border-primary/10 flex flex-col items-center">
                     <p className="text-xs font-bold text-secondary mb-2">Calidad de la Comida</p>
                     <div className="flex gap-1">
                       {[1,2,3,4,5].map(star => (
@@ -721,12 +721,12 @@ export default function App() {
                       rows={3} 
                       value={reviewData.comentario} 
                       onChange={e => setReviewData({...reviewData, comentario: e.target.value})} 
-                      className="w-full bg-[#2B1B14] border border-primary/20 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary/50 transition-colors resize-none mt-1 text-white" 
+                      className="w-full bg-[#1F1F1F] border border-primary/20 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary/50 transition-colors resize-none mt-1 text-white" 
                       placeholder="Cuéntanos más sobre tu experiencia..." 
                     />
                   </div>
                   
-                  <button disabled={isSubmittingReview} type="submit" className="w-full bg-primary hover:bg-orange-600 text-white py-3 rounded-xl font-bold text-sm shadow-md shadow-primary/20 mt-2 disabled:opacity-70 flex justify-center items-center cursor-pointer">
+                  <button disabled={isSubmittingReview} type="submit" className="w-full bg-primary hover:bg-red-700 text-white py-3 rounded-xl font-bold text-sm shadow-md shadow-primary/20 mt-2 disabled:opacity-70 flex justify-center items-center cursor-pointer">
                     {isSubmittingReview ? <Loader2 size={18} className="animate-spin" /> : "Enviar Reseña"}
                   </button>
                 </form>
@@ -748,11 +748,11 @@ export default function App() {
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="bg-[#1A1A1A] border border-primary/20 w-full max-w-sm rounded-[2rem] p-6 shadow-2xl relative text-white"
+              className="bg-[#161616] border border-primary/20 w-full max-w-sm rounded-[2rem] p-6 shadow-2xl relative text-white"
             >
               <button
                 onClick={() => setOptionModalDish(null)}
-                className="absolute top-4 right-4 w-8 h-8 bg-[#2B1B14] rounded-full flex items-center justify-center cursor-pointer"
+                className="absolute top-4 right-4 w-8 h-8 bg-[#1F1F1F] rounded-full flex items-center justify-center cursor-pointer"
               >
                 <X size={18} className="text-white/60" />
               </button>
@@ -785,7 +785,7 @@ export default function App() {
                           addProductToCart(`${optionModalDish.nombre} (${label})`, price);
                           setOptionModalDish(null);
                         }}
-                        className="w-full bg-[#2B1B14] hover:bg-primary/10 hover:text-primary border border-primary/10 hover:border-primary/30 rounded-2xl py-3 px-4 flex justify-between items-center font-bold text-sm transition-colors cursor-pointer text-left text-white"
+                        className="w-full bg-[#1F1F1F] hover:bg-primary/10 hover:text-primary border border-primary/10 hover:border-primary/30 rounded-2xl py-3 px-4 flex justify-between items-center font-bold text-sm transition-colors cursor-pointer text-left text-white"
                       >
                         <span>{label}</span>
                         <span className="text-secondary">{price}</span>
