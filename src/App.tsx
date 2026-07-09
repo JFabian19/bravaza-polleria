@@ -142,6 +142,48 @@ export default function App() {
   };
 
   const addToCart = (dish: Dish) => {
+    if (["Limonada", "Chicha", "Maracuyá"].includes(dish.nombre)) {
+      setOptionModalDish({
+        ...dish,
+        precio: "Vaso: S/.7.00 | Jarra: S/.15.00"
+      });
+      return;
+    }
+    if (["Inca Kola / Coca Cola 600 ml", "Inca Kola / Coca Cola 1.5 L"].includes(dish.nombre)) {
+      setOptionModalDish({
+        ...dish,
+        precio: `Inka Cola: ${dish.precio} | Coca Cola: ${dish.precio}`
+      });
+      return;
+    }
+    if (dish.nombre === "Infusiones") {
+      setOptionModalDish({
+        ...dish,
+        precio: `Té: ${dish.precio} | Anís: ${dish.precio} | Manzanilla: ${dish.precio}`
+      });
+      return;
+    }
+    if (dish.nombre === "Agua personal") {
+      setOptionModalDish({
+        ...dish,
+        precio: `Agua con gas: ${dish.precio} | Agua sin gas: ${dish.precio}`
+      });
+      return;
+    }
+    if (["Ice Chilcano de Maracumango", "Ice Chilcano de Fresa"].includes(dish.nombre)) {
+      setOptionModalDish({
+        ...dish,
+        precio: "Individual: S/.23.90 | X2: S/.29.90"
+      });
+      return;
+    }
+    if (dish.nombre === "Ice Piña Colada") {
+      setOptionModalDish({
+        ...dish,
+        precio: "Individual: S/.24.90 | X2: S/.32.90"
+      });
+      return;
+    }
     if (dish.precio.includes('|') || dish.precio.includes('/')) {
       setOptionModalDish(dish);
       return;
@@ -252,10 +294,9 @@ export default function App() {
 
   return (
     <div className="max-w-md mx-auto bg-[#0D0D0D] min-h-screen relative shadow-2xl overflow-hidden flex flex-col font-sans text-white">
-      <header className="sticky top-0 bg-[#0D0D0D]/95 backdrop-blur-md z-50 px-5 py-4 flex justify-between items-center border-b border-primary/20">
-        <div className="flex flex-col items-start">
-          <h1 className="font-brand font-black text-2xl text-primary leading-none tracking-tight uppercase">{RESTAURANTE_NAME}</h1>
-          <span className="font-sans text-[10px] text-secondary font-semibold tracking-wider mt-1 uppercase">{RESTAURANTE_SLOGAN}</span>
+      <header className="sticky top-0 bg-[#0D0D0D]/95 backdrop-blur-md z-50 px-5 py-2 flex justify-between items-center border-b border-primary/20">
+        <div className="flex items-center">
+          <img src="/logo.png" alt={RESTAURANTE_NAME} className="h-10 w-auto object-contain" />
         </div>
         <div className="flex items-center gap-2">
           {FACEBOOK_URL && (
@@ -323,10 +364,6 @@ export default function App() {
       <div className="px-5 pt-4 pb-3">
         <div className="relative w-full rounded-[2rem] overflow-hidden shadow-xl aspect-[2/1] bg-dark border border-primary/20">
           <img src={BANNER_PATH} alt={RESTAURANTE_NAME} className="w-full h-full object-cover opacity-80" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-[#0D0D0D]/40 to-transparent flex flex-col justify-end p-5">
-            <h2 className="text-white font-brand font-black text-xl tracking-wider uppercase">{RESTAURANTE_NAME}</h2>
-            <p className="text-secondary text-[10px] font-sans font-medium tracking-wide uppercase mt-0.5">{RESTAURANTE_SLOGAN}</p>
-          </div>
         </div>
       </div>
 
@@ -758,7 +795,14 @@ export default function App() {
               </button>
 
               <div className="flex flex-col items-center text-center mb-5 mt-2">
-                <h2 className="font-title text-2xl text-white leading-none tracking-wider mb-2">SELECCIONA TAMAÑO</h2>
+                <h2 className="font-title text-2xl text-white leading-none tracking-wider mb-2">
+                  {["Inca Kola / Coca Cola 600 ml", "Inca Kola / Coca Cola 1.5 L"].includes(optionModalDish.nombre)
+                    ? "SELECCIONA SABOR"
+                    : ["Limonada", "Chicha", "Maracuyá"].includes(optionModalDish.nombre)
+                      ? "SELECCIONA TAMAÑO"
+                      : "SELECCIONA OPCIÓN"
+                  }
+                </h2>
                 <p className="text-xs text-secondary font-medium">{optionModalDish.nombre}</p>
               </div>
 
