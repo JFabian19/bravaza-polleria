@@ -13,6 +13,90 @@ export interface Category {
 
 export const DEFAULT_MENU_DATA: Category[] = [
   {
+    id: "para-ti",
+    nombre: "Para Ti",
+    items: [
+      {
+        nombre: "1/4 Pollo a la Brasa",
+        descripcion: "Incluye guarnición clásica mediana y ensalada personal.",
+        precio: "S/.18.00",
+        imagen: "/images/pollo_1_4.jpg"
+      }
+    ]
+  },
+  {
+    id: "para-dos",
+    nombre: "Para Dos",
+    items: [
+      {
+        nombre: "1/2 Pollo a la Brasa",
+        descripcion: "Incluye papas fritas, ensalada mediana and cremas.",
+        precio: "S/.33.00",
+        imagen: "/images/pollo_1_2.jpg"
+      }
+    ]
+  },
+  {
+    id: "familiar",
+    nombre: "Familiar",
+    items: [
+      {
+        nombre: "1 Pollo a la Brasa",
+        descripcion: "Incluye papas fritas, ensalada familiar y cremas.",
+        precio: "S/.60.00",
+        imagen: "/images/pollo_1.png"
+      }
+    ]
+  },
+  {
+    id: "parrillas",
+    nombre: "Parrillas",
+    items: [
+      {
+        nombre: "1. La Favorita",
+        descripcion: "1 chuleta de cerdo, 1 chorizo ahumado, 1/4 pollo a la brasa, papas fritas, ensalada y gaseosa 450 ml.",
+        precio: "S/.57.90",
+        imagen: "/images/la_favorita.jpg"
+      },
+      {
+        nombre: "2. Bipersonal",
+        descripcion: "1/2 cuadril, 1 chorizo ahumado, 1 chorizo de pollo, 1 anticucho de corazón de res, papas fritas más ensalada y 2 gaseosas de 450 ml.",
+        precio: "S/.69.90",
+        imagen: "/images/bipersonal.jpg"
+      },
+      {
+        nombre: "3. Familiar",
+        descripcion: "1 lomo fino, 1 filete de pechuga, 1 chuleta de cerdo, 2 anticuchos de corazón de res, 1 chorizo ahumado, 1 chorizo de pollo, 1/2 pollo a la brasa, papas fritas, ensalada y gaseosa 1.5 L.",
+        precio: "S/.120.00",
+        imagen: "/images/familiar.jpg"
+      }
+    ]
+  },
+  {
+    id: "bravaza-powers",
+    nombre: "BravaZa Powers",
+    items: [
+      {
+        nombre: "Mostrito",
+        descripcion: "Plato combinado de la casa, de formato personal.",
+        precio: "S/.13.00",
+        imagen: "/images/mostrito.png"
+      },
+      {
+        nombre: "Mostro",
+        descripcion: "Plato combinado más contundente de la casa.",
+        precio: "S/.23.00",
+        imagen: "/images/mostro.jpg"
+      },
+      {
+        nombre: "Brabaza Parrillera",
+        descripcion: "Plato parrillero combinado de la casa. En la carta figura como 'Brabaza Parrillera'.",
+        precio: "S/.25.00",
+        imagen: "/images/bravaza_parrillera.jpg"
+      }
+    ]
+  },
+  {
     id: "platos-a-la-carta",
     nombre: "Platos a la Carta",
     items: [
@@ -121,6 +205,54 @@ export const DEFAULT_MENU_DATA: Category[] = [
     ]
   },
   {
+    id: "caldos",
+    nombre: "Caldos",
+    items: [
+      {
+        nombre: "Caldo de Gallina",
+        descripcion: "Caldo tradicional de gallina.",
+        precio: "S/.14.00",
+        imagen: "/images/caldo_gallina.jpg"
+      },
+      {
+        nombre: "Dieta de Pollo",
+        descripcion: "Sopa ligera de pollo.",
+        precio: "S/.15.00",
+        imagen: "/images/dieta_pollo.jpg"
+      }
+    ]
+  },
+  {
+    id: "bravaza-kids",
+    nombre: "BravaZa Kids",
+    items: [
+      {
+        nombre: "1/8 Pollo a la Brasa",
+        descripcion: "Incluye papas fritas y 1 vaso de chicha.",
+        precio: "S/.13.50",
+        imagen: "/images/pollo_1_8.jpg"
+      },
+      {
+        nombre: "8 Nuggets Redondos",
+        descripcion: "Incluye papas fritas y 1 vaso de chicha.",
+        precio: "S/.13.50",
+        imagen: "/images/nuggets_redondos.jpg"
+      }
+    ]
+  },
+  {
+    id: "alitas",
+    nombre: "Alitas",
+    items: [
+      {
+        nombre: "12 und. Alitas",
+        descripcion: "Alitas en sabores BBQ y acevichadas.",
+        precio: "S/.30.00",
+        imagen: "/images/alitas.jpg"
+      }
+    ]
+  },
+  {
     id: "guarnicion",
     nombre: "Guarnición",
     items: [
@@ -141,18 +273,6 @@ export const DEFAULT_MENU_DATA: Category[] = [
         descripcion: "Porción de arroz blanco.",
         precio: "S/.5.00",
         imagen: "/images/arroz_blanco.jpg"
-      }
-    ]
-  },
-  {
-    id: "alitas",
-    nombre: "Alitas",
-    items: [
-      {
-        nombre: "12 und. Alitas",
-        descripcion: "Alitas en sabores BBQ y acevichadas.",
-        precio: "S/.30.00",
-        imagen: "/images/alitas.jpg"
       }
     ]
   },
@@ -327,126 +447,6 @@ export const DEFAULT_MENU_DATA: Category[] = [
         descripcion: "Ice piña colada con precio individual y precio 2x.",
         precio: "S/.24.90",
         imagen: "/images/ice_pina_colada.png"
-      }
-    ]
-  },
-  {
-    id: "para-ti",
-    nombre: "Para Ti",
-    items: [
-      {
-        nombre: "1/4 Pollo a la Brasa",
-        descripcion: "Incluye guarnición clásica mediana y ensalada personal.",
-        precio: "S/.18.00",
-        imagen: "/images/pollo_1_4.jpg"
-      }
-    ]
-  },
-  {
-    id: "para-dos",
-    nombre: "Para Dos",
-    items: [
-      {
-        nombre: "1/2 Pollo a la Brasa",
-        descripcion: "Incluye papas fritas, ensalada mediana and cremas.",
-        precio: "S/.33.00",
-        imagen: "/images/pollo_1_2.jpg"
-      }
-    ]
-  },
-  {
-    id: "familiar",
-    nombre: "Familiar",
-    items: [
-      {
-        nombre: "1 Pollo a la Brasa",
-        descripcion: "Incluye papas fritas, ensalada familiar y cremas.",
-        precio: "S/.60.00",
-        imagen: "/images/pollo_1.png"
-      }
-    ]
-  },
-  {
-    id: "bravaza-powers",
-    nombre: "BravaZa Powers",
-    items: [
-      {
-        nombre: "Mostrito",
-        descripcion: "Plato combinado de la casa, de formato personal.",
-        precio: "S/.13.00",
-        imagen: "/images/mostrito.png"
-      },
-      {
-        nombre: "Mostro",
-        descripcion: "Plato combinado más contundente de la casa.",
-        precio: "S/.23.00",
-        imagen: "/images/mostro.jpg"
-      },
-      {
-        nombre: "Brabaza Parrillera",
-        descripcion: "Plato parrillero combinado de la casa. En la carta figura como 'Brabaza Parrillera'.",
-        precio: "S/.25.00",
-        imagen: "/images/bravaza_parrillera.jpg"
-      }
-    ]
-  },
-  {
-    id: "caldos",
-    nombre: "Caldos",
-    items: [
-      {
-        nombre: "Caldo de Gallina",
-        descripcion: "Caldo tradicional de gallina.",
-        precio: "S/.14.00",
-        imagen: "/images/caldo_gallina.jpg"
-      },
-      {
-        nombre: "Dieta de Pollo",
-        descripcion: "Sopa ligera de pollo.",
-        precio: "S/.15.00",
-        imagen: "/images/dieta_pollo.jpg"
-      }
-    ]
-  },
-  {
-    id: "bravaza-kids",
-    nombre: "BravaZa Kids",
-    items: [
-      {
-        nombre: "1/8 Pollo a la Brasa",
-        descripcion: "Incluye papas fritas y 1 vaso de chicha.",
-        precio: "S/.13.50",
-        imagen: "/images/pollo_1_8.jpg"
-      },
-      {
-        nombre: "8 Nuggets Redondos",
-        descripcion: "Incluye papas fritas y 1 vaso de chicha.",
-        precio: "S/.13.50",
-        imagen: "/images/nuggets_redondos.jpg"
-      }
-    ]
-  },
-  {
-    id: "parrillas",
-    nombre: "Parrillas",
-    items: [
-      {
-        nombre: "1. La Favorita",
-        descripcion: "1 chuleta de cerdo, 1 chorizo ahumado, 1/4 pollo a la brasa, papas fritas, ensalada y gaseosa 450 ml.",
-        precio: "S/.57.90",
-        imagen: "/images/la_favorita.jpg"
-      },
-      {
-        nombre: "2. Bipersonal",
-        descripcion: "1/2 cuadril, 1 chorizo ahumado, 1 chorizo de pollo, 1 anticucho de corazón de res, papas fritas más ensalada y 2 gaseosas de 450 ml.",
-        precio: "S/.69.90",
-        imagen: "/images/bipersonal.jpg"
-      },
-      {
-        nombre: "3. Familiar",
-        descripcion: "1 lomo fino, 1 filete de pechuga, 1 chuleta de cerdo, 2 anticuchos de corazón de res, 1 chorizo ahumado, 1 chorizo de pollo, 1/2 pollo a la brasa, papas fritas, ensalada y gaseosa 1.5 L.",
-        precio: "S/.120.00",
-        imagen: "/images/familiar.jpg"
       }
     ]
   }

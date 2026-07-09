@@ -15,11 +15,11 @@
   --color-primary: #DC2626;      /* Rojo Brasa/Fuego */
   --color-secondary: #FACC15;    /* Amarillo Brasa */
   --color-dark: #0D0D0D;         /* Negro Carbón */
-  --color-light: #0A0A0A;        /* Negro Profundo / Fondo */
+  --color-light: #000000;        /* Negro Puro / Fondo */
   
-  --shadow-glass: 0 8px 32px 0 rgba(220, 38, 38, 0.15);
-  --glass-bg: rgba(13, 13, 13, 0.95);
-  --glass-border: rgba(220, 38, 38, 0.2);
+  --shadow-glass: none;
+  --glass-bg: #000000;
+  --glass-border: #FACC15;
 }
 
 body {
@@ -31,10 +31,7 @@ body {
 
 .glass {
   background: var(--glass-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow-glass);
+  border: 2px solid var(--glass-border);
 }
 
 @keyframes marquee {
@@ -58,14 +55,7 @@ body {
 }
 
 .shimmer {
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  display: none;
 }
 
 /* Wave decoration for sections */
@@ -91,6 +81,6 @@ body {
   left: 0;
   width: 60px;
   height: 3.5px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-  border-radius: 2px;
+  background: var(--color-primary);
+  border-radius: 0;
 }
