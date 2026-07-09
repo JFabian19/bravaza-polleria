@@ -251,10 +251,10 @@ export default function App() {
       return;
     }
 
-    const drinkCategories = ["bebidas", "chilcanos", "pisco-sour", "cocteles", "happy-day"];
-    const isDrink = catId && drinkCategories.includes(catId);
+    const noSaucesCategories = ["bebidas", "chilcanos", "pisco-sour", "cocteles", "happy-day", "guarnicion"];
+    const isNoSauces = catId && noSaucesCategories.includes(catId);
 
-    if (catId && !isDrink) {
+    if (catId && !isNoSauces) {
       setSaucesModalDish(dish);
       setSelectedSauces([]);
       setDishNote('');
