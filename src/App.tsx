@@ -308,7 +308,7 @@ export default function App() {
       return `S/.${dish.complementos[0].precio.toFixed(2)}`;
     }
     const precio = dish.precio;
-    if (precio.includes('|') || precio.includes('/')) {
+    if (precio.includes('|') || precio.includes(' / ')) {
       const delimiter = precio.includes('|') ? '|' : '/';
       const firstOpt = precio.split(delimiter)[0].trim();
       if (firstOpt.includes(':')) {
