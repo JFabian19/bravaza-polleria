@@ -20,17 +20,17 @@ const CATEGORY_ORDER = [
   "para-ti",
   "para-dos",
   "familiar",
+  "super-combos",
   "parrillas",
   "bravaza-powers",
-  "platos-a-la-carta",
+  "especiales-bravaza",
+  "platos-criollos",
   "caldos",
   "bravaza-kids",
-  "alitas",
+  "aperitivos-bravaza",
   "guarnicion",
   "bebidas",
-  "chilcanos",
-  "pisco-sour",
-  "cocteles",
+  "bebidas-alcohol",
   "happy-day"
 ];
 // ==========================================
@@ -43,6 +43,12 @@ interface Dish {
   descripcion?: string;
   imagen?: string;
   precio: string;
+  requiere_complemento?: boolean;
+  complementos?: {
+    id: string;
+    nombre: string;
+    precio: number;
+  }[];
 }
 
 interface Category {
@@ -67,6 +73,8 @@ export default function App() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [optionModalDish, setOptionModalDish] = useState<Dish | null>(null);
+  const [complementModalDish, setComplementModalDish] = useState<Dish | null>(null);
+  const [selectedComplement, setSelectedComplement] = useState<{ id: string; nombre: string; precio: number } | null>(null);
 
   // States for Cremas & Nota Modal
   const [saucesModalDish, setSaucesModalDish] = useState<Dish | null>(null);
@@ -203,6 +211,17 @@ export default function App() {
   };
 
   const addToCart = (dish: Dish, catId?: string) => {
+    if (dish.requiere_complemento) {
+      setComplementModalDish(dish);
+      if (dish.complementos && dish.complementos.length > 0) {
+        setSelectedComplement(dish.complementos[0]);
+      } else {
+        setSelectedComplement(null);
+      }
+      setSelectedSauces([]);
+      setDishNote('');
+      return;
+    }
     if (["Limonada", "Chicha", "Maracuyá"].includes(dish.nombre)) {
       setOptionModalDish({
         ...dish,
@@ -1103,6 +1122,122 @@ export default function App() {
                   className="w-full bg-[#25D366] hover:bg-[#1ebd53] text-white py-4 rounded-xl flex items-center justify-center gap-3 font-bold cursor-pointer transition-colors mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Confirmar y Enviar a WhatsApp
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {complementModalDish && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[70] bg-black/90 flex items-center justify-center p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              className="bg-black border-2 border-secondary w-full max-w-sm rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
+            >
+              <button
+                onClick={() => setComplementModalDish(null)}
+                className="absolute top-4 right-4 w-8 h-8 bg-black border border-[#1A1A1A] hover:border-secondary rounded-full flex items-center justify-center cursor-pointer text-white"
+              >
+                <X size={18} />
+              </button>
+
+              <div className="flex flex-col items-center text-center mb-5 mt-2">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-3">
+                  <Utensils size={24} className="text-white" />
+                </div>
+                <h2 className="font-title text-2xl text-white leading-none tracking-wide mb-1 uppercase">ARMA TU PLATO</h2>
+                <p className="text-xs text-secondary font-medium">{complementModalDish.nombre}</p>
+              </div>
+
+              <div className="space-y-4">
+                <div>
+                  <label className="text-[10px] font-bold text-secondary uppercase ml-1 block mb-2">Selecciona el complemento</label>
+                  <div className="space-y-2 max-h-48 overflow-y-auto pr-1 no-scrollbar">
+                    {complementModalDish.complementos?.map(comp => {
+                      const isSelected = selectedComplement?.id === comp.id;
+                      return (
+                        <button
+                          key={comp.id}
+                          type="button"
+                          onClick={() => setSelectedComplement(comp)}
+                          className={`w-full py-2.5 px-4 rounded-xl border font-bold text-xs flex justify-between items-center transition-colors cursor-pointer text-left
+                            ${isSelected
+                              ? "bg-secondary text-black border-secondary"
+                              : "bg-black border-[#1A1A1A] text-gray-300 hover:border-secondary"
+                            }`}
+                        >
+                          <span>{comp.nombre}</span>
+                          <span className={isSelected ? "text-black font-extrabold" : "text-secondary"}>
+                            S/.{comp.precio.toFixed(2)}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="text-[10px] font-bold text-secondary uppercase ml-1 block mb-2">Selecciona tus cremas</label>
+                  <div className="grid grid-cols-2 gap-2">
+                    {["Mayonesa", "Ají", "Chimichurri", "Mostaza", "Ketchup", "Vinagreta"].map(sauce => {
+                      const isSelected = selectedSauces.includes(sauce);
+                      return (
+                        <button
+                          key={sauce}
+                          type="button"
+                          onClick={() => {
+                            setSelectedSauces(prev =>
+                              prev.includes(sauce) ? prev.filter(s => s !== sauce) : [...prev, sauce]
+                            );
+                          }}
+                          className={`py-2 px-3 rounded-xl border font-bold text-xs transition-colors cursor-pointer text-center block w-full
+                            ${isSelected
+                              ? "bg-primary border-primary text-white"
+                              : "bg-black border-[#1A1A1A] text-gray-400 hover:border-secondary hover:text-white"
+                            }`}
+                        >
+                          {sauce}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="text-[10px] font-bold text-secondary uppercase ml-1 block mb-1">Nota / Especificación (Opcional)</label>
+                  <textarea
+                    rows={2}
+                    value={dishNote}
+                    onChange={e => setDishNote(e.target.value)}
+                    className="w-full bg-black border border-[#1A1A1A] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors resize-none mt-1 text-white"
+                    placeholder="Ej. Sin ensalada, cremas aparte, etc..."
+                  />
+                </div>
+
+                <button
+                  onClick={() => {
+                    if (selectedComplement) {
+                      addProductToCart(
+                        `${complementModalDish.nombre} con ${selectedComplement.nombre}`,
+                        `S/.${selectedComplement.precio.toFixed(2)}`,
+                        selectedSauces,
+                        dishNote
+                      );
+                      setComplementModalDish(null);
+                    }
+                  }}
+                  className="w-full bg-secondary text-black hover:bg-primary hover:text-white py-3 rounded-xl font-bold text-sm border-2 border-secondary hover:border-primary mt-2 flex justify-center items-center cursor-pointer transition-colors"
+                >
+                  Agregar al Pedido
                 </button>
               </div>
             </motion.div>
