@@ -24,6 +24,7 @@ const CATEGORY_ORDER = [
   "parrillas",
   "bravaza-powers",
   "especiales-bravaza",
+  "fetuccinis",
   "platos-criollos",
   "caldos",
   "bravaza-kids",
@@ -302,6 +303,22 @@ export default function App() {
     );
   };
 
+  const getDisplayPrice = (dish: Dish) => {
+    if (dish.requiere_complemento && dish.complementos && dish.complementos.length > 0) {
+      return `S/.${dish.complementos[0].precio.toFixed(2)}`;
+    }
+    const precio = dish.precio;
+    if (precio.includes('|') || precio.includes('/')) {
+      const delimiter = precio.includes('|') ? '|' : '/';
+      const firstOpt = precio.split(delimiter)[0].trim();
+      if (firstOpt.includes(':')) {
+        return firstOpt.split(':')[1].trim();
+      }
+      return firstOpt;
+    }
+    return precio;
+  };
+
   const calculateTotal = () => {
     return cart.reduce((acc, item) => {
       const cleanPrice = item.precio.replace(/^[^\d]*/, '');
@@ -539,7 +556,7 @@ export default function App() {
                     <div className="flex-1"></div>
                     <div className="flex items-center justify-between mt-2">
                       <span className="font-price font-bold text-secondary text-base whitespace-nowrap">
-                        {dish.precio}
+                        {getDisplayPrice(dish)}
                       </span>
                       <motion.button
                         whileTap={{ scale: 0.8 }}
