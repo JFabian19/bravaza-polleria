@@ -61,17 +61,20 @@ export const DEFAULT_MENU_DATA: Category[] = [
       {
         nombre: "Super Combo 1 Pollo",
         descripcion: "1 Pollo entero a la brasa + papas + ensalada + cremas + 1 gaseosa de 1.5 lt.",
-        precio: "S/.69.00"
+        precio: "S/.69.00",
+        imagen: "/images/super_combo_1_pollo.png"
       },
       {
         nombre: "Super Combo 1/2 Pollo",
         descripcion: "1/2 Pollo a la brasa + papas + ensalada + cremas + arroz chaufa O gaseosa de 1.5 lt.",
-        precio: "Arroz Chaufa: S/.42.00 | Gaseosa 1.5 L: S/.42.00"
+        precio: "Arroz Chaufa: S/.42.00 | Gaseosa 1.5 L: S/.42.00",
+        imagen: "/images/super_combo_medio_pollo.jpg"
       },
       {
         nombre: "Super Combo 1 y 1/2 Pollo",
         descripcion: "1 Pollo + 1/2 pollo + papas + ensalada + cremas + arroz chaufa O gaseosa de 1.5 lt.",
-        precio: "Arroz Chaufa: S/.99.00 | Gaseosa 1.5 L: S/.99.00"
+        precio: "Arroz Chaufa: S/.99.00 | Gaseosa 1.5 L: S/.99.00",
+        imagen: "/images/super_combo_1_y_medio_pollo.jpg"
       }
     ]
   },
@@ -100,17 +103,20 @@ export const DEFAULT_MENU_DATA: Category[] = [
       {
         nombre: "Chuleta a la parrilla 250 gr",
         descripcion: "Chuleta tierna a la parrilla con papas fritas o sancochadas, ensalada y cremas.",
-        precio: "S/.22.00"
+        precio: "S/.22.00",
+        imagen: "/images/chuleta_parrilla_250g.jpg"
       },
       {
         nombre: "Churrasco a la parrilla 250 gr",
         descripcion: "Churrasco a la parrilla jugoso con papas fritas o sancochadas, ensalada y cremas.",
-        precio: "S/.24.00"
+        precio: "S/.24.00",
+        imagen: "/images/churrasco_parrilla_250g.png"
       },
       {
         nombre: "Pechuga a la parrilla 250 gr",
         descripcion: "Pechuga de pollo a la parrilla con papas fritas o sancochadas, ensalada y cremas.",
-        precio: "S/.21.00"
+        precio: "S/.21.00",
+        imagen: "/images/pechuga_parrilla_250g.png"
       },
       {
         nombre: "Mollejitas a la parrilla 250 gr",
@@ -187,7 +193,8 @@ export const DEFAULT_MENU_DATA: Category[] = [
           { id: "chuleta", nombre: "Chuleta", precio: 24.00 },
           { id: "churrasco", nombre: "Churrasco", precio: 25.00 },
           { id: "lomo-saltado", nombre: "Lomo Saltado", precio: 25.00 }
-        ]
+        ],
+        imagen: "/images/fetuccini_huancaina.jpg"
       },
       {
         nombre: "Fetuccini al Pesto",
@@ -200,7 +207,8 @@ export const DEFAULT_MENU_DATA: Category[] = [
           { id: "chuleta", nombre: "Chuleta", precio: 24.00 },
           { id: "churrasco", nombre: "Churrasco", precio: 25.00 },
           { id: "lomo-saltado", nombre: "Lomo Saltado", precio: 25.00 }
-        ]
+        ],
+        imagen: "/images/fetuccini_pesto.jpg"
       },
       {
         nombre: "Fetuccini a lo Alfredo",
@@ -214,7 +222,8 @@ export const DEFAULT_MENU_DATA: Category[] = [
           { id: "churrasco", nombre: "Churrasco", precio: 26.00 },
           { id: "lomo-saltado", nombre: "Lomo Saltado", precio: 26.00 },
           { id: "pechuga-americana", nombre: "Pechuga Americana", precio: 26.00 }
-        ]
+        ],
+        imagen: "/images/fetuccini_alfredo.png"
       }
     ]
   },
@@ -225,47 +234,56 @@ export const DEFAULT_MENU_DATA: Category[] = [
       {
         nombre: "Lomo saltado",
         descripcion: "Jugoso lomo saltado con cebolla, tomate, papas fritas y arroz blanco.",
-        precio: "S/.23.00"
+        precio: "S/.23.00",
+        imagen: "/images/lomo_saltado.jpg"
       },
       {
         nombre: "Pollo saltado",
         descripcion: "Jugoso pollo saltado con cebolla, tomate, papas fritas y arroz blanco.",
-        precio: "S/.20.00"
+        precio: "S/.20.00",
+        imagen: "/images/pollo_saltado.jpg"
       },
       {
         nombre: "Tallarín saltado de pollo",
         descripcion: "Fideos salteados al wok con trozos de pollo y vegetales frescos.",
-        precio: "S/.20.00"
+        precio: "S/.20.00",
+        imagen: "/images/tallarin_saltado_pollo.jpg"
       },
       {
         nombre: "Tallarín saltado de carne",
         descripcion: "Fideos salteados al wok con trozos de carne y vegetales frescos.",
-        precio: "S/.23.00"
+        precio: "S/.23.00",
+        imagen: "/images/tallarin_saltado_carne.png"
       },
       {
         nombre: "Lomo saltado a la pobre",
         descripcion: "Lomo saltado tradicional acompañado con huevo frito, plátano frito y papas fritas.",
-        precio: "S/.25.00"
+        precio: "S/.25.00",
+        imagen: "/images/lomo_saltado_a_lo_pobre.jpg"
       },
       {
         nombre: "Pollo saltado a lo pobre",
         descripcion: "Pollo saltado tradicional acompañado con huevo frito, plátano frito y papas fritas.",
-        precio: "S/.23.00"
+        precio: "S/.23.00",
+        imagen: "/images/pollo_saltado_a_lo_pobre.jpg"
       },
       {
         nombre: "Bistec a lo pobre",
         descripcion: "Bistec a la plancha con arroz blanco, papas fritas, huevo frito y plátano frito.",
-        precio: "S/.25.00"
+        precio: "S/.25.00",
+        imagen: "/images/bistec_a_lo_pobre.jpg"
       },
       {
         nombre: "Pechuga a lo pobre",
         descripcion: "Pechuga de pollo a la plancha con arroz blanco, papas fritas, huevo frito y plátano frito.",
-        precio: "S/.25.00"
+        precio: "S/.25.00",
+        imagen: "/images/pechuga_a_lo_pobre.png"
       },
       {
         nombre: "Arroz a la cubana",
         descripcion: "Clásico plato de arroz blanco con plátano frito y huevo frito.",
-        precio: "S/.15.00"
+        precio: "S/.15.00",
+        imagen: "/images/arroz_cubana.jpg"
       }
     ]
   },
@@ -312,37 +330,44 @@ export const DEFAULT_MENU_DATA: Category[] = [
       {
         nombre: "Tequeños (pollo brasa + queso)",
         descripcion: "Tequeños crujientes rellenos de sabroso pollo a la brasa y queso derretido.",
-        precio: "6 Unidades: S/.12.00 | 12 Unidades: S/.20.00"
+        precio: "6 Unidades: S/.12.00 | 12 Unidades: S/.20.00",
+        imagen: "/images/tequenos.png"
       },
       {
         nombre: "Salchipapas",
         descripcion: "Salchipapa clásica con hot dog y porción generosa de papas fritas crocantes.",
-        precio: "S/.15.00"
+        precio: "S/.15.00",
+        imagen: "/images/salchipapas.png"
       },
       {
         nombre: "SALCHIPAPA A LO Pobre",
         descripcion: "Nuestra clásica salchipapa montada con huevo y plátanos fritos.",
-        precio: "S/.18.00"
+        precio: "S/.18.00",
+        imagen: "/images/salchipapa_a_lo_pobre.png"
       },
       {
         nombre: "Alitas Broaster Crispy",
         descripcion: "Alitas de pollo super crujientes y doradas.",
-        precio: "6 Piezas: S/.18.00 | 12 Piezas: S/.30.00"
+        precio: "6 Piezas: S/.18.00 | 12 Piezas: S/.30.00",
+        imagen: "/images/alitas_crispy.png"
       },
       {
         nombre: "Alitas Acevichadas",
         descripcion: "Alitas bañadas en una cremosa y refrescante salsa acevichada.",
-        precio: "6 Piezas: S/.18.00 | 12 Piezas: S/.30.00"
+        precio: "6 Piezas: S/.18.00 | 12 Piezas: S/.30.00",
+        imagen: "/images/alitas_acevichadas.jpg"
       },
       {
         nombre: "Alitas a la BBQ",
         descripcion: "Alitas glaseadas en deliciosa salsa BBQ dulce y ahumada.",
-        precio: "6 Piezas: S/.18.00 | 12 Piezas: S/.30.00"
+        precio: "6 Piezas: S/.18.00 | 12 Piezas: S/.30.00",
+        imagen: "/images/alitas_bbq.jpg"
       },
       {
         nombre: "Alitas Picantes",
         descripcion: "Alitas bañadas en salsa picante estilo BravaZa.",
-        precio: "6 Piezas: S/.18.00 | 12 Piezas: S/.30.00"
+        precio: "6 Piezas: S/.18.00 | 12 Piezas: S/.30.00",
+        imagen: "/images/alitas_picantes.png"
       }
     ]
   },
@@ -359,7 +384,8 @@ export const DEFAULT_MENU_DATA: Category[] = [
       {
         nombre: "1/2 porción de papas fritas",
         descripcion: "Media porción de papas fritas.",
-        precio: "S/.8.00"
+        precio: "S/.8.00",
+        imagen: "/images/medio_papas_fritas.png"
       },
       {
         nombre: "Arroz blanco",
@@ -370,17 +396,20 @@ export const DEFAULT_MENU_DATA: Category[] = [
       {
         nombre: "Plátanos fritos",
         descripcion: "Porción de plátanos fritos maduros y dulces.",
-        precio: "S/.5.00"
+        precio: "S/.5.00",
+        imagen: "/images/platanos_fritos.png"
       },
       {
         nombre: "Huevo frito",
         descripcion: "Un huevo frito perfecto.",
-        precio: "S/.2.00"
+        precio: "S/.2.00",
+        imagen: "/images/huevo_frito.png"
       },
       {
         nombre: "Ensalada Bravaza",
         descripcion: "Fresca ensalada mixta de la casa.",
-        precio: "S/.5.00"
+        precio: "S/.5.00",
+        imagen: "/images/ensalada_bravaza.jpg"
       },
       {
         nombre: "Nuggets (5 u)",
@@ -415,27 +444,32 @@ export const DEFAULT_MENU_DATA: Category[] = [
       {
         nombre: "Frozen de frutos rojos",
         descripcion: "Bebida batida frozen sabor frutos rojos refrescante.",
-        precio: "S/.10.00"
+        precio: "S/.10.00",
+        imagen: "/images/frozen_frutos_rojos.png"
       },
       {
         nombre: "Frozen de chicha",
         descripcion: "Bebida batida frozen de deliciosa chicha morada.",
-        precio: "S/.10.00"
+        precio: "S/.10.00",
+        imagen: "/images/frozen_chicha.png"
       },
       {
         nombre: "Frozen de limon",
         descripcion: "Batido frozen refrescante a base de limón.",
-        precio: "S/.10.00"
+        precio: "S/.10.00",
+        imagen: "/images/frozen_limon.png"
       },
       {
         nombre: "Frozen de maracuyá",
         descripcion: "Batido frozen refrescante sabor maracuyá.",
-        precio: "S/.10.00"
+        precio: "S/.10.00",
+        imagen: "/images/frozen_maracuya.png"
       },
       {
         nombre: "Gaseosa personal pet (192 ml)",
         descripcion: "Selecciona el sabor de tu gaseosa personal.",
-        precio: "Coca Cola: S/.2.50 | Inca Kola: S/.2.50 | Sprite: S/.2.50 | Fanta: S/.2.50"
+        precio: "S/.2.50",
+        imagen: "/images/gaseosa_personal.png"
       },
       {
         nombre: "Inca Kola / Coca Cola 600 ml",
@@ -470,32 +504,38 @@ export const DEFAULT_MENU_DATA: Category[] = [
       {
         nombre: "Cerveza Heineken 330 ML",
         descripcion: "Cerveza Heineken botella personal 330 ml.",
-        precio: "S/.10.00"
+        precio: "S/.10.00",
+        imagen: "/images/heineken_330ml.png"
       },
       {
         nombre: "Cerveza Corona 330 ML",
         descripcion: "Cerveza Corona botella personal 330 ml.",
-        precio: "S/.10.00"
+        precio: "S/.10.00",
+        imagen: "/images/corona_330ml.png"
       },
       {
         nombre: "Cerveza Cusqueña Trigo 310 ML",
         descripcion: "Cerveza Cusqueña Trigo de 310 ml.",
-        precio: "S/.11.00"
+        precio: "S/.11.00",
+        imagen: "/images/cusquena_trigo_310ml.png"
       },
       {
         nombre: "Cerveza Cusqueña Negra 310 ML",
         descripcion: "Cerveza Cusqueña Negra de 310 ml.",
-        precio: "S/.12.00"
+        precio: "S/.12.00",
+        imagen: "/images/cusquena_negra_310ml.png"
       },
       {
         nombre: "Cerveza PILSEN 305 ML",
         descripcion: "Cerveza Pilsen botella de 305 ml.",
-        precio: "S/.9.00"
+        precio: "S/.9.00",
+        imagen: "/images/pilsen_305ml.png"
       },
       {
         nombre: "PILSEN LATON X 473 ML",
         descripcion: "Cerveza Pilsen en lata grande de 473 ml.",
-        precio: "S/.7.50"
+        precio: "S/.7.50",
+        imagen: "/images/pilsen_laton_473ml.png"
       }
     ]
   },
@@ -506,37 +546,39 @@ export const DEFAULT_MENU_DATA: Category[] = [
       {
         nombre: "Chilcanos clásico y maracuyá",
         descripcion: "Refrescantes chilcanos (2 x S/.30.00 todo el día). Selecciona el sabor.",
-        precio: "Clásico: S/.18.00 | Maracuyá: S/.18.00"
+        precio: "Individual (Clásico): S/.18.00 | Individual (Maracuyá): S/.18.00 | X2 (Promo): S/.30.00"
       },
       {
         nombre: "Mojitos clásico",
         descripcion: "Mojito tradicional con ron, limón y menta (2 x S/.30.00 todo el día).",
-        precio: "S/.18.00"
+        precio: "Individual: S/.18.00 | X2: S/.30.00"
       },
       {
         nombre: "Cuba libre",
         descripcion: "Cuba libre tradicional con ron, limón y gaseosa cola (2 x S/.30.00 todo el día).",
-        precio: "S/.18.00"
+        precio: "Individual: S/.18.00 | X2: S/.30.00"
       },
       {
         nombre: "Sour DE MARACUYÁ",
         descripcion: "Pisco sour peruano sabor maracuyá (2 x S/.30.00 todo el día).",
-        precio: "S/.18.00"
+        precio: "Individual: S/.18.00 | X2: S/.30.00"
       },
       {
         nombre: "Sour DE CLASICO",
         descripcion: "Clásico pisco sour peruano espumoso (2 x S/.30.00 todo el día).",
-        precio: "S/.18.00"
+        precio: "Individual: S/.18.00 | X2: S/.30.00"
       },
       {
         nombre: "Daiquieri de durazno",
         descripcion: "Exquisito y dulce daiquiri licuado de durazno.",
-        precio: "S/.19.00"
+        precio: "S/.19.00",
+        imagen: "/images/daiquiri_durazno.png"
       },
       {
         nombre: "Sangria de 1 lt",
         descripcion: "Jarra de Sangría refrescante de 1 litro ideal para compartir.",
-        precio: "S/.35.00"
+        precio: "S/.35.00",
+        imagen: "/images/sangria_1l.png"
       }
     ]
   }

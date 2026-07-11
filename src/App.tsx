@@ -230,7 +230,7 @@ export default function App() {
       });
       return;
     }
-    if (["Inca Kola / Coca Cola 600 ml", "Inca Kola / Coca Cola 1.5 L"].includes(dish.nombre)) {
+    if (["Inca Kola / Coca Cola 600 ml", "Inca Kola / Coca Cola 1.5 L", "Gaseosa personal pet (192 ml)"].includes(dish.nombre)) {
       setOptionModalDish({
         ...dish,
         precio: `Inka Cola: ${dish.precio} | Coca Cola: ${dish.precio}`
