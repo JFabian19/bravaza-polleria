@@ -17,22 +17,20 @@ const BANNER_PATH = "/banner.png";
 const MARQUEE_TEXT = "🔥 BRAVAZA POLLERÍA • POLLO A LA BRASA • PARRILLAS • MOSTRITOS • ALITAS BBQ Y ACEVICHADAS • SABOR A FUEGO TODO EL DÍA 🔥 • ";
 
 const CATEGORY_ORDER = [
-  "para-ti",
-  "para-dos",
-  "familiar",
-  "super-combos",
-  "parrillas",
-  "bravaza-powers",
-  "especiales-bravaza",
-  "fetuccinis",
-  "platos-criollos",
+  "para-comenzar",
+  "criollos",
+  "pastas-bravazas",
+  "del-horno-a-tu-mesa",
+  "para-los-engreídos",
   "caldos",
-  "bravaza-kids",
-  "aperitivos-bravaza",
-  "guarnicion",
-  "bebidas",
-  "bebidas-alcohol",
-  "happy-day"
+  "guarniciones",
+  "entradas-parrilleras-y-cortes",
+  "parrillas-familiares",
+  "cocteles-happy-day",
+  "vinos-y-cervezas",
+  "gaseosas",
+  "bebidas-naturales",
+  "frozen"
 ];
 // ==========================================
 
@@ -223,55 +221,13 @@ export default function App() {
       setDishNote('');
       return;
     }
-    if (["Limonada", "Chicha", "Maracuyá"].includes(dish.nombre)) {
-      setOptionModalDish({
-        ...dish,
-        precio: "Vaso: S/.7.00 | Jarra: S/.15.00"
-      });
-      return;
-    }
-    if (["Inca Kola / Coca Cola 600 ml", "Inca Kola / Coca Cola 1.5 L", "Gaseosa personal pet (192 ml)"].includes(dish.nombre)) {
-      setOptionModalDish({
-        ...dish,
-        precio: `Inka Cola: ${dish.precio} | Coca Cola: ${dish.precio}`
-      });
-      return;
-    }
-    if (dish.nombre === "Infusiones") {
-      setOptionModalDish({
-        ...dish,
-        precio: `Té: ${dish.precio} | Anís: ${dish.precio} | Manzanilla: ${dish.precio}`
-      });
-      return;
-    }
-    if (dish.nombre === "Agua personal") {
-      setOptionModalDish({
-        ...dish,
-        precio: `Agua con gas: ${dish.precio} | Agua sin gas: ${dish.precio}`
-      });
-      return;
-    }
-    if (["Ice Chilcano de Maracumango", "Ice Chilcano de Fresa"].includes(dish.nombre)) {
-      setOptionModalDish({
-        ...dish,
-        precio: "Individual: S/.23.90 | X2: S/.29.90"
-      });
-      return;
-    }
-    if (dish.nombre === "Ice Piña Colada") {
-      setOptionModalDish({
-        ...dish,
-        precio: "Individual: S/.24.90 | X2: S/.32.90"
-      });
-      return;
-    }
     const slashCount = (dish.precio.match(/\//g) || []).length;
     if (dish.precio.includes('|') || slashCount > 1) {
       setOptionModalDish(dish);
       return;
     }
 
-    const noSaucesCategories = ["bebidas", "chilcanos", "pisco-sour", "cocteles", "happy-day", "guarnicion"];
+    const noSaucesCategories = ["cocteles-happy-day", "vinos-y-cervezas", "gaseosas", "bebidas-naturales", "frozen", "guarniciones"];
     const isNoSauces = catId && noSaucesCategories.includes(catId);
 
     if (catId && !isNoSauces) {
