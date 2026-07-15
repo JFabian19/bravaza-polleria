@@ -1054,25 +1054,25 @@ export default function App() {
                       onClick={() => setSelectedPaymentMethod(method)}
                       className={`w-full py-3.5 px-4 rounded-xl border font-bold text-sm text-left flex justify-between items-center transition-colors cursor-pointer shadow-sm
                         ${isSelected 
-                          ? "bg-gradient-to-r from-[#FF9A1F] to-[#D94700] text-white border-transparent" 
+                          ? "bg-[#FACC15] text-black border-transparent" 
                           : "bg-[#151515] text-white border border-[#FF6A00]/15 hover:border-primary"
                         }`}
                     >
                       <span>{method}</span>
-                      {isSelected && <span className="w-2.5 h-2.5 rounded-full bg-white shadow-sm"></span>}
+                      {isSelected && <span className="w-2.5 h-2.5 rounded-full bg-black shadow-sm"></span>}
                     </button>
                   );
                 })}
  
                 {selectedPaymentMethod === "Yape/Plin" && (
                   <div className="bg-[#151515] border border-[#FF6A00]/25 p-4 rounded-xl space-y-2 mt-4 text-center shadow-inner">
-                    <p className="text-[10px] font-bold text-[#FF9A1F] uppercase tracking-wider">Detalles de Transferencia</p>
+                    <p className="text-[10px] font-bold text-[#FACC15] uppercase tracking-wider">Detalles de Transferencia</p>
                     <div className="text-sm font-black text-white">Inversiones Darkred S.A.C.</div>
                     <div className="flex items-center justify-center gap-2">
-                      <span className="text-lg font-black text-white tracking-widest">992 047 922</span>
+                      <span className="text-lg font-black text-[#FACC15] tracking-widest">992 047 922</span>
                       <button
                         onClick={handleCopyNumber}
-                        className="py-1 px-3.5 bg-gradient-to-r from-[#FF9A1F] to-[#F4511E] hover:brightness-110 text-white text-[10px] font-black rounded-lg transition-colors cursor-pointer uppercase border-0 shadow-sm"
+                        className="py-1 px-3.5 bg-[#DC2626] hover:bg-[#B91C1C] text-white text-[10px] font-black rounded-lg transition-colors cursor-pointer uppercase border-0 shadow-sm"
                       >
                         {copied ? "¡Copiado!" : "Copiar"}
                       </button>
@@ -1141,13 +1141,13 @@ export default function App() {
                           onClick={() => setSelectedComplement(comp)}
                           className={`w-full py-2.5 px-4 rounded-xl border font-bold text-xs flex justify-between items-center transition-colors cursor-pointer text-left shadow-sm
                             ${isSelected
-                              ? "bg-gradient-to-r from-[#FF9A1F] to-[#D94700] text-white border-transparent"
+                              ? "bg-[#FACC15] text-black border-transparent"
                               : "bg-[#151515] border border-[#FF6A00]/15 text-gray-300 hover:border-primary"
                             }`}
                         >
                           <span>{comp.nombre}</span>
                           {comp.precio > 0 && (
-                            <span className={isSelected ? "text-white font-extrabold" : "text-[#FF9A1F]"}>
+                            <span className={isSelected ? "text-black font-extrabold" : "text-[#FF9A1F]"}>
                               + S/.{comp.precio.toFixed(2)}
                             </span>
                           )}
@@ -1173,7 +1173,7 @@ export default function App() {
                           }}
                           className={`py-2 px-3 rounded-xl border font-bold text-xs transition-colors cursor-pointer text-center block w-full
                             ${isSelected
-                              ? "bg-gradient-to-r from-[#FF9A1F] to-[#F4511E] border-transparent text-white shadow-sm"
+                              ? "bg-[#DC2626] border-transparent text-white shadow-sm"
                               : "bg-[#151515] border border-[#FF6A00]/15 text-gray-400 hover:border-primary hover:text-white"
                             }`}
                         >
