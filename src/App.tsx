@@ -260,9 +260,6 @@ export default function App() {
   };
 
   const getDisplayPrice = (dish: Dish) => {
-    if (dish.requiere_complemento && dish.complementos && dish.complementos.length > 0) {
-      return `S/.${dish.complementos[0].precio.toFixed(2)}`;
-    }
     const precio = dish.precio;
     if (precio.includes('|') || precio.includes(' / ')) {
       const delimiter = precio.includes('|') ? '|' : '/';
@@ -1149,9 +1146,11 @@ export default function App() {
                             }`}
                         >
                           <span>{comp.nombre}</span>
-                          <span className={isSelected ? "text-white font-extrabold" : "text-[#FF9A1F]"}>
-                            S/.{comp.precio.toFixed(2)}
-                          </span>
+                          {comp.precio > 0 && (
+                            <span className={isSelected ? "text-white font-extrabold" : "text-[#FF9A1F]"}>
+                              + S/.{comp.precio.toFixed(2)}
+                            </span>
+                          )}
                         </button>
                       );
                     })}
@@ -1199,9 +1198,11 @@ export default function App() {
                 <button
                   onClick={() => {
                     if (selectedComplement) {
+                      const basePriceNum = parseFloat(complementModalDish.precio.replace(/[^\d.]/g, '')) || 0;
+                      const totalItemPrice = basePriceNum + selectedComplement.precio;
                       addProductToCart(
                         `${complementModalDish.nombre} con ${selectedComplement.nombre}`,
-                        `S/.${selectedComplement.precio.toFixed(2)}`,
+                        `S/.${totalItemPrice.toFixed(2)}`,
                         selectedSauces,
                         dishNote
                       );
