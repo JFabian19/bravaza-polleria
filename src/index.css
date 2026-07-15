@@ -12,14 +12,18 @@
   --font-slogan: "Montserrat", sans-serif;
   
   /* COLORES DE BRAVAZA POLLERÍA */
-  --color-primary: #DC2626;      /* Rojo Brasa/Fuego */
-  --color-secondary: #FACC15;    /* Amarillo Brasa */
-  --color-dark: #0D0D0D;         /* Negro Carbón */
-  --color-light: #000000;        /* Negro Puro / Fondo */
+  --color-primary: #FF6A00;      /* Naranja Principal */
+  --color-secondary: #FF9A1F;    /* Naranja Claro */
+  --color-dark: #101010;         /* Negro Carbón */
+  --color-light: #080808;        /* Negro Puro / Fondo */
+  
+  --color-orange-dark: #D94700;
+  --color-text-secondary: #BDBDBD;
+  --color-border-orange: rgba(255, 106, 0, 0.45);
   
   --shadow-glass: none;
-  --glass-bg: #000000;
-  --glass-border: #FACC15;
+  --glass-bg: #101010;
+  --glass-border: rgba(255, 106, 0, 0.45);
 }
 
 body {
@@ -31,7 +35,18 @@ body {
 
 .glass {
   background: var(--glass-bg);
-  border: 2px solid var(--glass-border);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+.bg-wood {
+  background-color: #080808;
+  background-image: 
+    linear-gradient(rgba(8, 8, 8, 0.93), rgba(8, 8, 8, 0.97)),
+    repeating-linear-gradient(0deg, #151515 0px, #151515 1.5px, transparent 1.5px, transparent 80px),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.015) 0%, transparent 80%);
+  background-attachment: fixed;
 }
 
 @keyframes marquee {
@@ -79,8 +94,8 @@ body {
   position: absolute;
   bottom: -4px;
   left: 0;
-  width: 60px;
+  width: 50px;
   height: 3.5px;
-  background: var(--color-primary);
-  border-radius: 0;
+  background: linear-gradient(90deg, #FF6A00, #D94700);
+  border-radius: 2px;
 }

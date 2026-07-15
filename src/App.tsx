@@ -376,8 +376,8 @@ export default function App() {
   }
 
   return (
-    <div className="max-w-md mx-auto bg-black min-h-screen relative shadow-2xl overflow-hidden flex flex-col font-sans text-white">
-      <header className="sticky top-0 bg-black z-50 px-5 py-2 flex justify-between items-center border-b border-[#1A1A1A]">
+    <div className="max-w-md mx-auto bg-wood min-h-screen relative shadow-2xl overflow-hidden flex flex-col font-sans text-white border-x border-[#FF6A00]/10">
+      <header className="sticky top-0 bg-black/90 backdrop-blur-md z-50 px-5 py-2 flex justify-between items-center border-b border-[#FF6A00]/25">
         <div className="flex items-center">
           <img src="/logo.png" alt={RESTAURANTE_NAME} className="h-10 w-auto object-contain" />
         </div>
@@ -388,7 +388,7 @@ export default function App() {
               target="_blank"
               rel="noopener noreferrer"
               whileTap={{ scale: 0.95 }}
-              className="w-11 h-11 bg-black border border-[#1A1A1A] hover:border-secondary rounded-full flex items-center justify-center text-primary hover:text-secondary cursor-pointer transition-colors"
+              className="w-11 h-11 bg-[#101010] border border-[#FF6A00]/20 hover:border-primary rounded-full flex items-center justify-center text-primary hover:text-secondary cursor-pointer transition-colors"
             >
               <Facebook size={22} />
             </motion.a>
@@ -399,7 +399,7 @@ export default function App() {
               target="_blank"
               rel="noopener noreferrer"
               whileTap={{ scale: 0.95 }}
-              className="w-11 h-11 bg-black border border-[#1A1A1A] hover:border-secondary rounded-full flex items-center justify-center text-primary hover:text-secondary cursor-pointer transition-colors"
+              className="w-11 h-11 bg-[#101010] border border-[#FF6A00]/20 hover:border-primary rounded-full flex items-center justify-center text-primary hover:text-secondary cursor-pointer transition-colors"
             >
               <MapPin size={22} />
             </motion.a>
@@ -407,11 +407,11 @@ export default function App() {
           <motion.div
             onClick={() => cartCount > 0 && setShowSummary(true)}
             whileTap={{ scale: 0.95 }}
-            className="w-11 h-11 bg-black border border-[#1A1A1A] hover:border-secondary rounded-full flex items-center justify-center relative cursor-pointer transition-colors text-primary hover:text-secondary"
+            className="w-11 h-11 bg-[#101010] border border-[#FF6A00]/20 hover:border-primary rounded-full flex items-center justify-center relative cursor-pointer transition-colors text-primary hover:text-secondary"
           >
             <ShoppingBag size={22} />
             {cartCount > 0 && (
-              <span className="absolute -top-0.5 -right-0.5 min-w-[20px] h-5 bg-secondary text-black rounded-full text-[10px] font-black flex items-center justify-center px-1">
+              <span className="absolute -top-0.5 -right-0.5 min-w-[20px] h-5 bg-primary text-white rounded-full text-[10px] font-black flex items-center justify-center px-1 shadow-sm">
                 {cartCount}
               </span>
             )}
@@ -419,8 +419,8 @@ export default function App() {
         </div>
       </header>
 
-      <div className="w-full bg-primary py-2 overflow-hidden flex items-center">
-        <div className="animate-marquee flex gap-6 text-white font-slogan font-bold text-[11px] tracking-widest uppercase whitespace-nowrap">
+      <div className="w-full bg-gradient-to-r from-[#D94700] via-[#FF8A00] to-[#D94700] py-2.5 overflow-hidden flex items-center shadow-md">
+        <div className="animate-marquee flex gap-6 text-white font-slogan font-black text-[11px] tracking-widest uppercase whitespace-nowrap">
           {[...Array(10)].map((_, i) => (
             <span key={i}>{MARQUEE_TEXT}</span>
           ))}
@@ -432,10 +432,10 @@ export default function App() {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setShowBirthdayForm(true)}
-          className="w-full bg-secondary text-black py-3.5 px-4 rounded-2xl flex items-center justify-center gap-2 font-bold text-[10px] sm:text-[11px] uppercase tracking-wide relative overflow-hidden group text-center cursor-pointer"
+          className="w-full bg-gradient-to-r from-[#D94700] via-[#FF9A1F] to-[#D94700] text-white py-3.5 px-4 rounded-2xl flex items-center justify-center gap-2 font-bold text-[10px] sm:text-[11px] uppercase tracking-wide relative overflow-hidden group text-center cursor-pointer shadow-lg shadow-orange-950/30 border border-[#FF9A1F]/20"
         >
-          <Gift size={18} className="animate-bounce shrink-0" />
-          <span>¡Celebra tu cumpleaños con sabor BravaZa y recibe una sorpresa especial! 🎁🔥 <span className="text-primary font-black underline ml-1">Regístrate aquí</span></span>
+          <Gift size={18} className="animate-bounce shrink-0 text-white" />
+          <span>¡Celebra tu cumpleaños con sabor BravaZa y recibe una sorpresa especial! 🎁🔥 <span className="text-white font-black underline ml-1 hover:text-orange-100 transition-colors">Regístrate aquí</span></span>
         </motion.button>
       </div>
 
@@ -451,10 +451,10 @@ export default function App() {
             <button
               key={cat.id}
               onClick={() => scrollToCategory(cat.id)}
-              className={`px-4.5 py-2.5 rounded-full text-[13px] font-category tracking-wide uppercase whitespace-nowrap transition-all duration-200 border cursor-pointer
+              className={`px-5 py-2.5 rounded-full text-[13px] font-category tracking-wide uppercase whitespace-nowrap transition-all duration-200 border cursor-pointer shadow-sm
                 ${activeCategory === cat.id
-                  ? 'bg-secondary text-black border-secondary'
-                  : 'bg-black text-white border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-secondary'
+                  ? 'bg-gradient-to-b from-[#FF9A1F] via-[#F4511E] to-[#D94700] text-white border-transparent shadow-md shadow-orange-900/30'
+                  : 'bg-[#101010] text-white border-[#FF6A00]/30 hover:bg-[#FF6A00]/10 hover:border-[#FF6A00] hover:text-white'
                 }`}
             >
               {cat.nombre}
@@ -467,8 +467,8 @@ export default function App() {
         {categories.map(cat => (
           <section key={cat.id} id={`cat-${cat.id}`} className="mb-10 scroll-mt-28">
             <div className="mb-5 pt-2">
-              <div className="flex items-center gap-2 mb-1">
-                <Utensils className="text-primary wave-icon" size={22} />
+              <div className="flex items-center gap-2.5 mb-1">
+                <span className="w-1.5 h-6.5 bg-gradient-to-b from-[#FF9A1F] to-[#D94700] rounded-sm shrink-0 shadow-sm"></span>
                 <h3 className="font-category text-white text-[26px] leading-none tracking-wider uppercase category-underline">
                   {cat.nombre}
                 </h3>
@@ -480,9 +480,9 @@ export default function App() {
                 <motion.div
                   key={idx}
                   whileHover={{ y: -4 }}
-                  className="bg-black rounded-2xl overflow-hidden flex flex-col border border-[#1A1A1A] hover:border-secondary transition-all duration-200"
+                  className="bg-[#101010] rounded-[18px] overflow-hidden flex flex-col border border-[#FF6A00]/20 hover:border-[#FF6A00]/60 transition-all duration-200 shadow-md shadow-black/45 h-full"
                 >
-                  <div className="bg-black aspect-square flex items-center justify-center relative overflow-hidden border-b border-[#1A1A1A]">
+                  <div className={`aspect-square flex items-center justify-center relative overflow-hidden border-b border-[#FF6A00]/10 ${dish.imagen ? 'bg-white' : 'bg-[#151515]'}`}>
                     {dish.imagen ? (
                       <img
                         src={dish.imagen}
@@ -491,9 +491,9 @@ export default function App() {
                         onClick={() => setSelectedImage(dish.imagen)}
                       />
                     ) : (
-                      <div className="w-full h-full bg-[#1A1A1A] flex flex-col items-center justify-center p-4 text-center">
-                        <Utensils className="text-[#DC2626] w-8 h-8 mb-1" />
-                        <span className="font-brand font-black text-[9px] text-[#FACC15] uppercase tracking-widest">
+                      <div className="w-full h-full bg-[#151515] flex flex-col items-center justify-center p-4 text-center">
+                        <Utensils className="text-[#FF6A00] w-8 h-8 mb-1" />
+                        <span className="font-brand font-black text-[9px] text-[#FF9A1F] uppercase tracking-widest">
                           BravaZa
                         </span>
                       </div>
@@ -505,19 +505,19 @@ export default function App() {
                       {dish.nombre}
                     </h4>
                     {dish.descripcion && (
-                      <p className="font-sans text-[11px] text-gray-400 leading-tight mb-2 line-clamp-3">
+                      <p className="font-sans text-[11px] text-[#BDBDBD] leading-tight mb-2 line-clamp-3">
                         {dish.descripcion}
                       </p>
                     )}
                     <div className="flex-1"></div>
                     <div className="flex items-center justify-between mt-2">
-                      <span className="font-price font-bold text-secondary text-base whitespace-nowrap">
+                      <span className="font-price font-bold text-[#FF6A00] text-[17px] tracking-wide whitespace-nowrap">
                         {getDisplayPrice(dish)}
                       </span>
                       <motion.button
                         whileTap={{ scale: 0.8 }}
                         onClick={() => addToCart(dish, cat.id)}
-                        className="w-8 h-8 bg-secondary text-black rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors duration-200 shrink-0 cursor-pointer"
+                        className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 shrink-0 cursor-pointer bg-gradient-to-br from-[#FF9A1F] to-[#F4511E] text-white hover:scale-105 active:brightness-90 shadow-md shadow-orange-950/20"
                       >
                         <Plus size={16} strokeWidth={3} />
                       </motion.button>
@@ -529,27 +529,27 @@ export default function App() {
           </section>
         ))}
 
-        <section className="mt-8 mb-4 border border-[#1A1A1A] bg-black rounded-2xl p-5 text-center">
-          <h3 className="font-title text-primary text-[22px] leading-tight mb-2">¿Cómo estuvo todo?</h3>
-          <p className="text-[11px] text-white/70 mb-4 px-4">Ayúdanos a mejorar calificando tu experiencia con nosotros</p>
+        <section className="mt-8 mb-4 border border-[#FF6A00]/25 bg-[#101010] rounded-[18px] p-5 text-center shadow-md">
+          <h3 className="font-title text-[#FF6A00] text-[22px] leading-tight mb-2 uppercase tracking-wide">¿Cómo estuvo todo?</h3>
+          <p className="text-[11px] text-[#BDBDBD] mb-4 px-4">Ayúdanos a mejorar calificando tu experiencia con nosotros</p>
           <motion.button 
             whileTap={{ scale: 0.95 }}
             onClick={() => setShowReviewForm(true)}
-            className="bg-primary hover:bg-[#B91C1C] text-white px-6 py-3 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 mx-auto w-full cursor-pointer transition-colors"
+            className="w-full bg-gradient-to-b from-[#FF9A1F] via-[#F4511E] to-[#D94700] text-white px-6 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 mx-auto cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-orange-950/30 uppercase tracking-wide border-0"
           >
             <Star size={18} className="fill-white" />
             Reseña nuestra comida
           </motion.button>
         </section>
 
-        <footer className="mt-8 pt-8 pb-10 border-t border-[#1A1A1A] bg-black flex flex-col items-center justify-center text-center">
-          <img src={LOGO_FOOTER_PATH} alt={RESTAURANTE_NAME} className="w-24 h-24 mb-4 object-contain rounded-2xl border border-[#1A1A1A]" />
+        <footer className="mt-8 pt-8 pb-10 border-t border-[#FF6A00]/20 bg-transparent flex flex-col items-center justify-center text-center">
+          <img src={LOGO_FOOTER_PATH} alt={RESTAURANTE_NAME} className="w-24 h-24 mb-4 object-contain rounded-2xl border border-[#FF6A00]/25 bg-black p-1 shadow-sm" />
           <p className="font-brand font-black text-lg text-primary tracking-wide">{RESTAURANTE_NAME}</p>
           <p className="text-xs text-secondary mt-1 max-w-[250px]">{RESTAURANTE_SLOGAN}</p>
           <p className="text-[10px] text-gray-500 mt-6">© 2026 Todos los derechos reservados.</p>
         </footer>
 
-        <div className="bg-black py-6 flex flex-col items-center justify-center">
+        <div className="bg-transparent py-6 flex flex-col items-center justify-center">
           <p className="text-[10px] font-bold tracking-[0.2em] uppercase mb-1 text-gray-500">Digital Menu Experience</p>
           <motion.a 
             href="https://tymasolutions.lat/"
@@ -558,8 +558,8 @@ export default function App() {
             className="flex items-center gap-1 font-bold text-sm tracking-tight group cursor-pointer"
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-white group-hover:text-secondary transition-colors duration-200">Hecho por Tyma</span>
-            <span className="text-secondary group-hover:text-white transition-colors duration-200">Solutions</span>
+            <span className="text-white group-hover:text-[#FF9A1F] transition-colors duration-200">Hecho por Tyma</span>
+            <span className="text-[#FF9A1F] group-hover:text-white transition-colors duration-200">Solutions</span>
           </motion.a>
         </div>
       </main>
@@ -572,9 +572,9 @@ export default function App() {
             exit={{ y: 100 }}
             className="fixed bottom-0 w-full max-w-md p-5 z-40"
           >
-            <div className="glass rounded-2xl p-4 flex items-center justify-between shadow-2xl">
+            <div className="glass rounded-[20px] p-4 flex items-center justify-between shadow-2xl">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center relative overflow-hidden">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#FF9A1F] to-[#D94700] rounded-xl flex items-center justify-center relative overflow-hidden shadow-md shadow-orange-950/15">
                   <ShoppingBag size={20} className="text-white" />
                 </div>
                 <div>
@@ -584,7 +584,7 @@ export default function App() {
               </div>
               <button
                 onClick={() => setShowSummary(true)}
-                className="bg-secondary text-black hover:bg-primary hover:text-white px-6 py-3 rounded-2xl flex items-center gap-2 font-bold text-sm border-2 border-secondary hover:border-primary transition-colors"
+                className="bg-gradient-to-r from-[#FF9A1F] via-[#F4511E] to-[#D94700] text-white px-6 py-3 rounded-xl flex items-center gap-2 font-bold text-sm border-0 transition-all hover:brightness-110 active:scale-95 shadow-md shadow-orange-950/20 cursor-pointer uppercase tracking-wider"
               >
                 Ver Pedido
                 <ChevronRight size={18} />
@@ -600,19 +600,19 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-black/90 flex items-end justify-center p-4 lg:p-0"
+            className="fixed inset-0 z-[60] bg-black/95 flex items-end justify-center p-4 lg:p-0"
           >
             <motion.div
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               exit={{ y: "100%" }}
-              className="bg-black border-t-2 border-secondary w-full max-w-md rounded-t-3xl p-6 max-h-[85vh] overflow-y-auto text-white"
+              className="bg-[#101010] border-t-2 border-primary w-full max-w-md rounded-t-3xl p-6 max-h-[85vh] overflow-y-auto text-white shadow-2xl"
             >
               <div className="flex justify-between items-center mb-6">
-                <h2 className="font-title text-2xl text-primary">Mi Pedido</h2>
+                <h2 className="font-title text-2xl text-primary uppercase tracking-wide">Mi Pedido</h2>
                 <button
                   onClick={() => setShowSummary(false)}
-                  className="w-10 h-10 bg-black border-2 border-primary hover:border-secondary rounded-full flex items-center justify-center cursor-pointer text-white"
+                  className="w-10 h-10 bg-[#151515] border border-[#FF6A00]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
                 >
                   <X size={20} />
                 </button>
@@ -621,7 +621,7 @@ export default function App() {
                 {cart.map(item => (
                   <div
                     key={`${item.nombre}-${item.precio}-${JSON.stringify(item.cremas || [])}-${item.nota || ''}`}
-                    className="flex items-center gap-4 bg-black border border-[#1A1A1A] p-4 rounded-xl"
+                    className="flex items-center gap-4 bg-[#151515] border border-[#FF6A00]/15 p-4 rounded-xl shadow-sm"
                   >
                     <div className="flex-1 min-w-0">
                       <h4 className="font-dish font-semibold text-white text-sm truncate">{item.nombre}</h4>
@@ -637,28 +637,28 @@ export default function App() {
                         </p>
                       )}
                     </div>
-                    <div className="flex items-center gap-3 bg-black px-3 py-1.5 rounded-xl border border-[#1A1A1A]">
-                      <button onClick={() => updateQuantity(item.nombre, item.precio, -1, item.cremas, item.nota)} className="text-white cursor-pointer">
+                    <div className="flex items-center gap-3 bg-[#101010] px-3 py-1.5 rounded-xl border border-[#FF6A00]/15">
+                      <button onClick={() => updateQuantity(item.nombre, item.precio, -1, item.cremas, item.nota)} className="text-white hover:text-primary cursor-pointer transition-colors">
                         <Minus size={16} />
                       </button>
                       <span className="font-dish font-bold text-sm w-4 text-center text-white">{item.cantidad}</span>
-                      <button onClick={() => updateQuantity(item.nombre, item.precio, 1, item.cremas, item.nota)} className="text-primary cursor-pointer">
+                      <button onClick={() => updateQuantity(item.nombre, item.precio, 1, item.cremas, item.nota)} className="text-primary hover:text-secondary cursor-pointer transition-colors">
                         <Plus size={16} />
                       </button>
                     </div>
                     <button
                       onClick={() => updateQuantity(item.nombre, item.precio, -item.cantidad, item.cremas, item.nota)}
-                      className="text-primary hover:text-secondary ml-1 cursor-pointer"
+                      className="text-primary hover:text-secondary ml-1 cursor-pointer transition-colors"
                     >
                       <Trash2 size={18} />
                     </button>
                   </div>
                 ))}
               </div>
-              <div className="border-t-2 border-dashed border-primary pt-6 mb-8">
+              <div className="border-t border-dashed border-[#FF6A00]/30 pt-6 mb-8">
                 <div className="flex justify-between items-center">
-                  <h3 className="font-dish text-xl font-bold text-white">Total a pagar</h3>
-                  <h3 className="font-dish text-xl font-bold text-secondary">S/.{calculateTotal().toFixed(2)}</h3>
+                  <h3 className="font-dish text-xl font-bold text-white uppercase tracking-wide">Total a pagar</h3>
+                  <h3 className="font-dish text-2xl font-black text-primary">S/.{calculateTotal().toFixed(2)}</h3>
                 </div>
               </div>
               <button
@@ -666,7 +666,7 @@ export default function App() {
                   setShowSummary(false);
                   setShowPaymentModal(true);
                 }}
-                className="w-full bg-secondary text-black hover:bg-primary hover:text-white py-4 rounded-xl flex items-center justify-center gap-3 border-2 border-secondary hover:border-primary font-bold cursor-pointer transition-colors"
+                className="w-full bg-gradient-to-b from-[#FF9A1F] via-[#F4511E] to-[#D94700] text-white py-4 rounded-xl flex items-center justify-center gap-3 font-bold cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-orange-600/20 border-0 uppercase tracking-wide"
               >
                 Completar Pedido (Pagar)
                 <ChevronRight size={20} />
@@ -713,29 +713,29 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[70] bg-black/90 flex items-center justify-center p-4"
+            className="fixed inset-0 z-[70] bg-black/95 flex items-center justify-center p-4"
           >
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="bg-black border-2 border-secondary w-full max-w-sm rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
+              className="bg-[#101010] border border-[#FF6A00]/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
             >
               <button
                 onClick={() => setShowBirthdayForm(false)}
-                className="absolute top-4 right-4 w-8 h-8 bg-black border border-[#1A1A1A] hover:border-secondary rounded-full flex items-center justify-center cursor-pointer text-white"
+                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-[#FF6A00]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
               >
                 <X size={18} />
               </button>
-
+ 
               <div className="flex flex-col items-center text-center mb-5 mt-2">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#FF9A1F] to-[#D94700] rounded-full flex items-center justify-center mb-3 shadow-md shadow-orange-950/20">
                   <Gift size={24} className="text-white" />
                 </div>
-                <h2 className="font-title text-2xl text-white leading-none tracking-wide mb-2">¡TU CUMPLEAÑOS!</h2>
-                <p className="text-xs text-secondary font-medium">Déjanos tus datos para enviarte una sorpresa en tu día especial.</p>
+                <h2 className="font-title text-2xl text-primary leading-none tracking-wide mb-2">¡TU CUMPLEAÑOS!</h2>
+                <p className="text-xs text-[#BDBDBD] font-medium">Déjanos tus datos para enviarte una sorpresa en tu día especial.</p>
               </div>
-
+ 
               {birthdaySuccess ? (
                 <div className="bg-green-950/40 text-green-400 p-4 rounded-2xl text-center text-sm font-bold border border-green-500/20">
                   ¡Gracias! Tus datos han sido guardados.
@@ -743,30 +743,30 @@ export default function App() {
               ) : (
                 <form onSubmit={handleBirthdaySubmit} className="space-y-3">
                   <div>
-                    <label className="text-[10px] font-bold text-secondary uppercase ml-1">Nombre Completo</label>
-                    <input required type="text" value={birthdayData.nombre} onChange={e => setBirthdayData({...birthdayData, nombre: e.target.value})} className="w-full bg-black border border-[#1A1A1A] focus:border-secondary rounded-xl px-4 py-2.5 text-sm focus:outline-none transition-colors text-white" placeholder="Ej. Juan Pérez" />
+                    <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1">Nombre Completo</label>
+                    <input required type="text" value={birthdayData.nombre} onChange={e => setBirthdayData({...birthdayData, nombre: e.target.value})} className="w-full bg-[#151515] border border-[#FF6A00]/25 focus:border-primary rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-white placeholder-gray-600" placeholder="Ej. Juan Pérez" />
                   </div>
                   <div>
-                    <label className="text-[10px] font-bold text-secondary uppercase ml-1">Teléfono</label>
+                    <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1">Teléfono</label>
                     <input required type="tel" minLength={9} maxLength={11} pattern="[0-9]*" value={birthdayData.telefono} onChange={e => {
                       const val = e.target.value.replace(/\D/g, '');
                       setBirthdayData({...birthdayData, telefono: val});
-                    }} className="w-full bg-black border border-[#1A1A1A] focus:border-secondary rounded-xl px-4 py-2.5 text-sm focus:outline-none transition-colors text-white" placeholder="Ej. 987654321" />
+                    }} className="w-full bg-[#151515] border border-[#FF6A00]/25 focus:border-primary rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-white placeholder-gray-600" placeholder="Ej. 987654321" />
                   </div>
                   <div>
-                    <label className="text-[10px] font-bold text-secondary uppercase ml-1">Fecha de Nacimiento</label>
-                    <input required type="date" value={birthdayData.fechaNacimiento} onChange={e => setBirthdayData({...birthdayData, fechaNacimiento: e.target.value})} className="w-full bg-black border border-[#1A1A1A] focus:border-secondary rounded-xl px-4 py-2.5 text-sm focus:outline-none transition-colors text-white" />
+                    <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1">Fecha de Nacimiento</label>
+                    <input required type="date" value={birthdayData.fechaNacimiento} onChange={e => setBirthdayData({...birthdayData, fechaNacimiento: e.target.value})} className="w-full bg-[#151515] border border-[#FF6A00]/25 focus:border-primary rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-white" />
                   </div>
                   <div>
-                    <label className="text-[10px] font-bold text-secondary uppercase ml-1">Distrito</label>
-                    <input required type="text" value={birthdayData.distrito} onChange={e => setBirthdayData({...birthdayData, distrito: e.target.value})} className="w-full bg-black border border-[#1A1A1A] focus:border-secondary rounded-xl px-4 py-2.5 text-sm focus:outline-none transition-colors text-white" placeholder="Ej. Miraflores" />
+                    <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1">Distrito</label>
+                    <input required type="text" value={birthdayData.distrito} onChange={e => setBirthdayData({...birthdayData, distrito: e.target.value})} className="w-full bg-[#151515] border border-[#FF6A00]/25 focus:border-primary rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-white placeholder-gray-600" placeholder="Ej. Miraflores" />
                   </div>
                   <div>
-                    <label className="text-[10px] font-bold text-secondary uppercase ml-1">Correo Electrónico (Opcional)</label>
-                    <input type="email" value={birthdayData.correo} onChange={e => setBirthdayData({...birthdayData, correo: e.target.value})} className="w-full bg-black border border-[#1A1A1A] focus:border-secondary rounded-xl px-4 py-2.5 text-sm focus:outline-none transition-colors text-white" placeholder="correo@ejemplo.com" />
+                    <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1">Correo Electrónico (Opcional)</label>
+                    <input type="email" value={birthdayData.correo} onChange={e => setBirthdayData({...birthdayData, correo: e.target.value})} className="w-full bg-[#151515] border border-[#FF6A00]/25 focus:border-primary rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-white placeholder-gray-600" placeholder="correo@ejemplo.com" />
                   </div>
                   
-                  <button disabled={isSubmittingBirthday} type="submit" className="w-full bg-secondary text-black hover:bg-primary hover:text-white py-3 rounded-xl font-bold text-sm border-2 border-secondary hover:border-primary mt-2 disabled:opacity-70 flex justify-center items-center cursor-pointer transition-colors">
+                  <button disabled={isSubmittingBirthday} type="submit" className="w-full bg-gradient-to-b from-[#FF9A1F] via-[#F4511E] to-[#D94700] text-white py-3.5 rounded-xl font-bold text-sm mt-2 disabled:opacity-70 flex justify-center items-center cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-orange-600/20 border-0 uppercase tracking-wide">
                     {isSubmittingBirthday ? <Loader2 size={18} className="animate-spin" /> : "Guardar mis datos"}
                   </button>
                 </form>
@@ -782,29 +782,29 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[70] bg-black/90 flex items-center justify-center p-4"
+            className="fixed inset-0 z-[70] bg-black/95 flex items-center justify-center p-4"
           >
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="bg-black border-2 border-secondary w-full max-w-sm rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
+              className="bg-[#101010] border border-[#FF6A00]/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
             >
               <button
                 onClick={() => setShowReviewForm(false)}
-                className="absolute top-4 right-4 w-8 h-8 bg-black border border-[#1A1A1A] hover:border-secondary rounded-full flex items-center justify-center cursor-pointer text-white"
+                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-[#FF6A00]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
               >
                 <X size={18} />
               </button>
-
+ 
               <div className="flex flex-col items-center text-center mb-5 mt-2">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#FF9A1F] to-[#D94700] rounded-full flex items-center justify-center mb-3 shadow-md shadow-orange-950/20">
                   <Star size={24} className="text-white fill-white" />
                 </div>
-                <h2 className="font-title text-2xl text-white leading-none mb-2">¡CALIFÍCANOS!</h2>
-                <p className="text-xs text-secondary font-medium">Tu opinión es muy importante para nosotros.</p>
+                <h2 className="font-title text-2xl text-primary leading-none mb-2 uppercase tracking-wide">¡CALIFÍCANOS!</h2>
+                <p className="text-xs text-[#BDBDBD] font-medium">Tu opinión es muy importante para nosotros.</p>
               </div>
-
+ 
               {reviewSuccess ? (
                 <div className="bg-green-950/40 text-green-400 p-4 rounded-2xl text-center text-sm font-bold border border-green-500/20">
                   ¡Gracias por tu reseña! Nos ayuda a mejorar.
@@ -812,8 +812,8 @@ export default function App() {
               ) : (
                 <form onSubmit={handleReviewSubmit} className="space-y-5">
                   
-                  <div className="bg-black p-4 rounded-2xl border border-[#1A1A1A] flex flex-col items-center">
-                    <p className="text-xs font-bold text-secondary mb-2">Atención del Mozo</p>
+                  <div className="bg-[#151515] p-4 rounded-2xl border border-[#FF6A00]/15 flex flex-col items-center shadow-sm">
+                    <p className="text-xs font-bold text-[#BDBDBD] mb-2">Atención del Mozo</p>
                     <div className="flex gap-1">
                       {[1,2,3,4,5].map(star => (
                         <button 
@@ -821,14 +821,14 @@ export default function App() {
                           onClick={() => setReviewData({...reviewData, estrellasMozo: star})}
                           className="p-1 transition-transform hover:scale-110 cursor-pointer"
                         >
-                          <Star size={28} className={reviewData.estrellasMozo >= star ? "text-yellow-400 fill-yellow-400" : "text-gray-600"} />
+                          <Star size={28} className={reviewData.estrellasMozo >= star ? "text-[#FF9A1F] fill-[#FF9A1F]" : "text-gray-700"} />
                         </button>
                       ))}
                     </div>
                   </div>
-
-                  <div className="bg-black p-4 rounded-2xl border border-[#1A1A1A] flex flex-col items-center">
-                    <p className="text-xs font-bold text-secondary mb-2">Calidad de la Comida</p>
+ 
+                  <div className="bg-[#151515] p-4 rounded-2xl border border-[#FF6A00]/15 flex flex-col items-center shadow-sm">
+                    <p className="text-xs font-bold text-[#BDBDBD] mb-2">Calidad de la Comida</p>
                     <div className="flex gap-1">
                       {[1,2,3,4,5].map(star => (
                         <button 
@@ -836,24 +836,24 @@ export default function App() {
                           onClick={() => setReviewData({...reviewData, estrellasComida: star})}
                           className="p-1 transition-transform hover:scale-110 cursor-pointer"
                         >
-                          <Star size={28} className={reviewData.estrellasComida >= star ? "text-yellow-400 fill-yellow-400" : "text-gray-600"} />
+                          <Star size={28} className={reviewData.estrellasComida >= star ? "text-[#FF9A1F] fill-[#FF9A1F]" : "text-gray-700"} />
                         </button>
                       ))}
                     </div>
                   </div>
-
+ 
                   <div>
-                    <label className="text-[10px] font-bold text-secondary uppercase ml-1">Comentario (Opcional)</label>
+                    <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1">Comentario (Opcional)</label>
                     <textarea 
                       rows={3} 
                       value={reviewData.comentario} 
                       onChange={e => setReviewData({...reviewData, comentario: e.target.value})} 
-                      className="w-full bg-black border border-[#1A1A1A] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors resize-none mt-1 text-white" 
+                      className="w-full bg-[#151515] border border-[#FF6A00]/25 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors resize-none mt-1 text-white placeholder-gray-600" 
                       placeholder="Cuéntanos más sobre tu experiencia..." 
                     />
                   </div>
                   
-                  <button disabled={isSubmittingReview} type="submit" className="w-full bg-secondary text-black hover:bg-primary hover:text-white py-3 rounded-xl font-bold text-sm border-2 border-secondary hover:border-primary mt-2 disabled:opacity-70 flex justify-center items-center cursor-pointer transition-colors">
+                  <button disabled={isSubmittingReview} type="submit" className="w-full bg-gradient-to-b from-[#FF9A1F] via-[#F4511E] to-[#D94700] text-white py-3.5 rounded-xl font-bold text-sm mt-2 disabled:opacity-70 flex justify-center items-center cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-orange-600/20 border-0 uppercase tracking-wide">
                     {isSubmittingReview ? <Loader2 size={18} className="animate-spin" /> : "Enviar Reseña"}
                   </button>
                 </form>
@@ -862,30 +862,30 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
-
+ 
       <AnimatePresence>
         {optionModalDish && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[70] bg-black/90 flex items-center justify-center p-4"
+            className="fixed inset-0 z-[70] bg-black/95 flex items-center justify-center p-4"
           >
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="bg-black border-2 border-secondary w-full max-w-sm rounded-2xl p-6 shadow-2xl relative text-white"
+              className="bg-[#101010] border border-[#FF6A00]/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative text-white"
             >
               <button
                 onClick={() => setOptionModalDish(null)}
-                className="absolute top-4 right-4 w-8 h-8 bg-black border border-[#1A1A1A] hover:border-secondary rounded-full flex items-center justify-center cursor-pointer text-white"
+                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-[#FF6A00]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
               >
                 <X size={18} />
               </button>
-
+ 
               <div className="flex flex-col items-center text-center mb-5 mt-2">
-                <h2 className="font-title text-2xl text-white leading-none tracking-wider mb-2">
+                <h2 className="font-title text-2xl text-primary leading-none tracking-wider mb-2 uppercase">
                   {["Inca Kola / Coca Cola 600 ml", "Inca Kola / Coca Cola 1.5 L"].includes(optionModalDish.nombre)
                     ? "SELECCIONA SABOR"
                     : ["Limonada", "Chicha", "Maracuyá"].includes(optionModalDish.nombre)
@@ -893,9 +893,9 @@ export default function App() {
                       : "SELECCIONA OPCIÓN"
                   }
                 </h2>
-                <p className="text-xs text-secondary font-medium">{optionModalDish.nombre}</p>
+                <p className="text-xs text-[#BDBDBD] font-medium">{optionModalDish.nombre}</p>
               </div>
-
+ 
               <div className="space-y-3">
                 {(() => {
                   const delimiter = optionModalDish.precio.includes('|') ? '|' : '/';
@@ -911,7 +911,7 @@ export default function App() {
                     } else {
                       label = i === 0 ? "Porción Chica / Simple" : "Porción Grande / Especial";
                     }
-
+ 
                     return (
                       <button
                         key={i}
@@ -919,10 +919,10 @@ export default function App() {
                           addProductToCart(`${optionModalDish.nombre} (${label})`, price);
                           setOptionModalDish(null);
                         }}
-                        className="w-full bg-black hover:bg-primary/20 hover:text-secondary border border-[#1A1A1A] hover:border-secondary rounded-xl py-3 px-4 flex justify-between items-center font-bold text-sm transition-colors cursor-pointer text-left text-white"
+                        className="w-full bg-[#151515] hover:bg-[#FF6A00]/10 hover:text-white border border-[#FF6A00]/15 hover:border-[#FF6A00] rounded-xl py-3.5 px-4 flex justify-between items-center font-bold text-sm transition-colors cursor-pointer text-left text-white shadow-sm"
                       >
                         <span>{label}</span>
-                        <span className="text-secondary">{price}</span>
+                        <span className="text-[#FF6A00] font-black">{price}</span>
                       </button>
                     );
                   });
@@ -939,32 +939,32 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[70] bg-black/90 flex items-center justify-center p-4"
+            className="fixed inset-0 z-[70] bg-black/95 flex items-center justify-center p-4"
           >
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="bg-black border-2 border-secondary w-full max-w-sm rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
+              className="bg-[#101010] border border-[#FF6A00]/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
             >
               <button
                 onClick={() => setSaucesModalDish(null)}
-                className="absolute top-4 right-4 w-8 h-8 bg-black border border-[#1A1A1A] hover:border-secondary rounded-full flex items-center justify-center cursor-pointer text-white"
+                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-[#FF6A00]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
               >
                 <X size={18} />
               </button>
-
+ 
               <div className="flex flex-col items-center text-center mb-5 mt-2">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#FF9A1F] to-[#D94700] rounded-full flex items-center justify-center mb-3 shadow-md shadow-orange-950/20">
                   <Utensils size={24} className="text-white" />
                 </div>
-                <h2 className="font-title text-2xl text-white leading-none tracking-wide mb-1 uppercase">¿CÓMO DESEAS TU PLATO?</h2>
-                <p className="text-xs text-secondary font-medium">{saucesModalDish.nombre}</p>
+                <h2 className="font-title text-2xl text-primary leading-none tracking-wide mb-1 uppercase">¿CÓMO DESEAS TU PLATO?</h2>
+                <p className="text-xs text-[#BDBDBD] font-medium">{saucesModalDish.nombre}</p>
               </div>
-
+ 
               <div className="space-y-4">
                 <div>
-                  <label className="text-[10px] font-bold text-secondary uppercase ml-1 block mb-2">Selecciona tus cremas</label>
+                  <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1 block mb-2">Selecciona tus cremas</label>
                   <div className="grid grid-cols-2 gap-2">
                     {["Mayonesa", "Ají", "Chimichurri", "Mostaza", "Ketchup", "Vinagreta"].map(sauce => {
                       const isSelected = selectedSauces.includes(sauce);
@@ -979,8 +979,8 @@ export default function App() {
                           }}
                           className={`py-2 px-3 rounded-xl border font-bold text-xs transition-colors cursor-pointer text-center block w-full
                             ${isSelected 
-                              ? "bg-primary border-primary text-white" 
-                              : "bg-black border-[#1A1A1A] text-gray-400 hover:border-secondary hover:text-white"
+                              ? "bg-gradient-to-r from-[#FF9A1F] to-[#F4511E] border-transparent text-white shadow-sm" 
+                              : "bg-[#151515] border border-[#FF6A00]/15 text-gray-400 hover:border-primary hover:text-white"
                             }`}
                         >
                           {sauce}
@@ -989,24 +989,24 @@ export default function App() {
                     })}
                   </div>
                 </div>
-
+ 
                 <div>
-                  <label className="text-[10px] font-bold text-secondary uppercase ml-1 block mb-1">Nota / Especificación (Opcional)</label>
+                  <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1 block mb-1">Nota / Especificación (Opcional)</label>
                   <textarea
                     rows={2}
                     value={dishNote}
                     onChange={e => setDishNote(e.target.value)}
-                    className="w-full bg-black border border-[#1A1A1A] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors resize-none mt-1 text-white"
+                    className="w-full bg-[#151515] border border-[#FF6A00]/25 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors resize-none mt-1 text-white placeholder-gray-600"
                     placeholder="Ej. Papas bien fritas, sin ensalada, etc..."
                   />
                 </div>
-
+ 
                 <button
                   onClick={() => {
                     addProductToCart(saucesModalDish.nombre, saucesModalDish.precio, selectedSauces, dishNote);
                     setSaucesModalDish(null);
                   }}
-                  className="w-full bg-secondary text-black hover:bg-primary hover:text-white py-3 rounded-xl font-bold text-sm border-2 border-secondary hover:border-primary mt-2 flex justify-center items-center cursor-pointer transition-colors"
+                  className="w-full bg-gradient-to-b from-[#FF9A1F] via-[#F4511E] to-[#D94700] text-white py-3.5 rounded-xl font-bold text-sm mt-2 flex justify-center items-center cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-orange-600/20 border-0 uppercase tracking-wide"
                 >
                   Agregar al Pedido
                 </button>
@@ -1015,39 +1015,39 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
-
+ 
       <AnimatePresence>
         {showPaymentModal && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[70] bg-black/90 flex items-center justify-center p-4"
+            className="fixed inset-0 z-[70] bg-black/95 flex items-center justify-center p-4"
           >
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="bg-black border-2 border-secondary w-full max-w-sm rounded-2xl p-6 shadow-2xl relative text-white"
+              className="bg-[#101010] border border-[#FF6A00]/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative text-white"
             >
               <button
                 onClick={() => {
                   setShowPaymentModal(false);
                   setSelectedPaymentMethod(null);
                 }}
-                className="absolute top-4 right-4 w-8 h-8 bg-black border border-[#1A1A1A] hover:border-secondary rounded-full flex items-center justify-center cursor-pointer text-white"
+                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-[#FF6A00]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
               >
                 <X size={18} />
               </button>
-
+ 
               <div className="flex flex-col items-center text-center mb-5 mt-2">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#FF9A1F] to-[#D94700] rounded-full flex items-center justify-center mb-3 shadow-md shadow-orange-950/20">
                   <ShoppingBag size={24} className="text-white" />
                 </div>
-                <h2 className="font-title text-2xl text-white leading-none tracking-wide mb-1">MÉTODO DE PAGO</h2>
-                <p className="text-xs text-secondary font-medium">Selecciona cómo deseas pagar tu pedido antes de enviarlo</p>
+                <h2 className="font-title text-2xl text-primary leading-none tracking-wide mb-1 uppercase">MÉTODO DE PAGO</h2>
+                <p className="text-xs text-[#BDBDBD] font-medium">Selecciona cómo deseas pagar tu pedido antes de enviarlo</p>
               </div>
-
+ 
               <div className="space-y-3">
                 {["Efectivo", "Tarjeta", "Yape/Plin"].map(method => {
                   const isSelected = selectedPaymentMethod === method;
@@ -1055,34 +1055,34 @@ export default function App() {
                     <button
                       key={method}
                       onClick={() => setSelectedPaymentMethod(method)}
-                      className={`w-full py-3.5 px-4 rounded-xl border font-bold text-sm text-left flex justify-between items-center transition-colors cursor-pointer
+                      className={`w-full py-3.5 px-4 rounded-xl border font-bold text-sm text-left flex justify-between items-center transition-colors cursor-pointer shadow-sm
                         ${isSelected 
-                          ? "bg-secondary text-black border-secondary" 
-                          : "bg-black text-white border-[#1A1A1A] hover:border-secondary"
+                          ? "bg-gradient-to-r from-[#FF9A1F] to-[#D94700] text-white border-transparent" 
+                          : "bg-[#151515] text-white border border-[#FF6A00]/15 hover:border-primary"
                         }`}
                     >
                       <span>{method}</span>
-                      {isSelected && <span className="w-2 h-2 rounded-full bg-black"></span>}
+                      {isSelected && <span className="w-2.5 h-2.5 rounded-full bg-white shadow-sm"></span>}
                     </button>
                   );
                 })}
-
+ 
                 {selectedPaymentMethod === "Yape/Plin" && (
-                  <div className="bg-[#1A1A1A] border border-[#1A1A1A] p-4 rounded-xl space-y-2 mt-4 text-center">
-                    <p className="text-[10px] font-bold text-secondary uppercase tracking-wider">Detalles de Transferencia</p>
+                  <div className="bg-[#151515] border border-[#FF6A00]/25 p-4 rounded-xl space-y-2 mt-4 text-center shadow-inner">
+                    <p className="text-[10px] font-bold text-[#FF9A1F] uppercase tracking-wider">Detalles de Transferencia</p>
                     <div className="text-sm font-black text-white">Inversiones Darkred S.A.C.</div>
                     <div className="flex items-center justify-center gap-2">
-                      <span className="text-lg font-black text-secondary tracking-widest">992 047 922</span>
+                      <span className="text-lg font-black text-white tracking-widest">992 047 922</span>
                       <button
                         onClick={handleCopyNumber}
-                        className="py-1 px-2.5 bg-primary hover:bg-[#B91C1C] text-white text-[10px] font-black rounded-lg transition-colors cursor-pointer uppercase"
+                        className="py-1 px-3.5 bg-gradient-to-r from-[#FF9A1F] to-[#F4511E] hover:brightness-110 text-white text-[10px] font-black rounded-lg transition-colors cursor-pointer uppercase border-0 shadow-sm"
                       >
                         {copied ? "¡Copiado!" : "Copiar"}
                       </button>
                     </div>
                   </div>
                 )}
-
+ 
                 <button
                   disabled={!selectedPaymentMethod}
                   onClick={() => {
@@ -1092,7 +1092,7 @@ export default function App() {
                       setSelectedPaymentMethod(null);
                     }
                   }}
-                  className="w-full bg-[#25D366] hover:bg-[#1ebd53] text-white py-4 rounded-xl flex items-center justify-center gap-3 font-bold cursor-pointer transition-colors mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-b from-[#25D366] via-[#20ba59] to-[#128C7E] text-white py-4 rounded-xl flex items-center justify-center gap-3 font-bold cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-green-600/20 border-0 mt-4 disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wide"
                 >
                   Confirmar y Enviar a WhatsApp
                 </button>
@@ -1101,39 +1101,39 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
-
+ 
       <AnimatePresence>
         {complementModalDish && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[70] bg-black/90 flex items-center justify-center p-4"
+            className="fixed inset-0 z-[70] bg-black/95 flex items-center justify-center p-4"
           >
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="bg-black border-2 border-secondary w-full max-w-sm rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
+              className="bg-[#101010] border border-[#FF6A00]/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
             >
               <button
                 onClick={() => setComplementModalDish(null)}
-                className="absolute top-4 right-4 w-8 h-8 bg-black border border-[#1A1A1A] hover:border-secondary rounded-full flex items-center justify-center cursor-pointer text-white"
+                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-[#FF6A00]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
               >
                 <X size={18} />
               </button>
-
+ 
               <div className="flex flex-col items-center text-center mb-5 mt-2">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#FF9A1F] to-[#D94700] rounded-full flex items-center justify-center mb-3 shadow-md shadow-orange-950/20">
                   <Utensils size={24} className="text-white" />
                 </div>
-                <h2 className="font-title text-2xl text-white leading-none tracking-wide mb-1 uppercase">ARMA TU PLATO</h2>
-                <p className="text-xs text-secondary font-medium">{complementModalDish.nombre}</p>
+                <h2 className="font-title text-2xl text-primary leading-none tracking-wide mb-1 uppercase">ARMA TU PLATO</h2>
+                <p className="text-xs text-[#BDBDBD] font-medium">{complementModalDish.nombre}</p>
               </div>
-
+ 
               <div className="space-y-4">
                 <div>
-                  <label className="text-[10px] font-bold text-secondary uppercase ml-1 block mb-2">Selecciona el complemento</label>
+                  <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1 block mb-2">Selecciona el complemento</label>
                   <div className="space-y-2 max-h-48 overflow-y-auto pr-1 no-scrollbar">
                     {complementModalDish.complementos?.map(comp => {
                       const isSelected = selectedComplement?.id === comp.id;
@@ -1142,14 +1142,14 @@ export default function App() {
                           key={comp.id}
                           type="button"
                           onClick={() => setSelectedComplement(comp)}
-                          className={`w-full py-2.5 px-4 rounded-xl border font-bold text-xs flex justify-between items-center transition-colors cursor-pointer text-left
+                          className={`w-full py-2.5 px-4 rounded-xl border font-bold text-xs flex justify-between items-center transition-colors cursor-pointer text-left shadow-sm
                             ${isSelected
-                              ? "bg-secondary text-black border-secondary"
-                              : "bg-black border-[#1A1A1A] text-gray-300 hover:border-secondary"
+                              ? "bg-gradient-to-r from-[#FF9A1F] to-[#D94700] text-white border-transparent"
+                              : "bg-[#151515] border border-[#FF6A00]/15 text-gray-300 hover:border-primary"
                             }`}
                         >
                           <span>{comp.nombre}</span>
-                          <span className={isSelected ? "text-black font-extrabold" : "text-secondary"}>
+                          <span className={isSelected ? "text-white font-extrabold" : "text-[#FF9A1F]"}>
                             S/.{comp.precio.toFixed(2)}
                           </span>
                         </button>
@@ -1157,9 +1157,9 @@ export default function App() {
                     })}
                   </div>
                 </div>
-
+ 
                 <div>
-                  <label className="text-[10px] font-bold text-secondary uppercase ml-1 block mb-2">Selecciona tus cremas</label>
+                  <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1 block mb-2">Selecciona tus cremas</label>
                   <div className="grid grid-cols-2 gap-2">
                     {["Mayonesa", "Ají", "Chimichurri", "Mostaza", "Ketchup", "Vinagreta"].map(sauce => {
                       const isSelected = selectedSauces.includes(sauce);
@@ -1174,8 +1174,8 @@ export default function App() {
                           }}
                           className={`py-2 px-3 rounded-xl border font-bold text-xs transition-colors cursor-pointer text-center block w-full
                             ${isSelected
-                              ? "bg-primary border-primary text-white"
-                              : "bg-black border-[#1A1A1A] text-gray-400 hover:border-secondary hover:text-white"
+                              ? "bg-gradient-to-r from-[#FF9A1F] to-[#F4511E] border-transparent text-white shadow-sm"
+                              : "bg-[#151515] border border-[#FF6A00]/15 text-gray-400 hover:border-primary hover:text-white"
                             }`}
                         >
                           {sauce}
@@ -1184,18 +1184,18 @@ export default function App() {
                     })}
                   </div>
                 </div>
-
+ 
                 <div>
-                  <label className="text-[10px] font-bold text-secondary uppercase ml-1 block mb-1">Nota / Especificación (Opcional)</label>
+                  <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1 block mb-1">Nota / Especificación (Opcional)</label>
                   <textarea
                     rows={2}
                     value={dishNote}
                     onChange={e => setDishNote(e.target.value)}
-                    className="w-full bg-black border border-[#1A1A1A] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors resize-none mt-1 text-white"
+                    className="w-full bg-[#151515] border border-[#FF6A00]/25 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors resize-none mt-1 text-white placeholder-gray-600"
                     placeholder="Ej. Sin ensalada, cremas aparte, etc..."
                   />
                 </div>
-
+ 
                 <button
                   onClick={() => {
                     if (selectedComplement) {
@@ -1208,7 +1208,7 @@ export default function App() {
                       setComplementModalDish(null);
                     }
                   }}
-                  className="w-full bg-secondary text-black hover:bg-primary hover:text-white py-3 rounded-xl font-bold text-sm border-2 border-secondary hover:border-primary mt-2 flex justify-center items-center cursor-pointer transition-colors"
+                  className="w-full bg-gradient-to-b from-[#FF9A1F] via-[#F4511E] to-[#D94700] text-white py-3.5 rounded-xl font-bold text-sm mt-2 flex justify-center items-center cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-orange-600/20 border-0 uppercase tracking-wide"
                 >
                   Agregar al Pedido
                 </button>
@@ -1217,7 +1217,7 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
-
+ 
     </div>
   );
 }
