@@ -373,8 +373,8 @@ export default function App() {
   }
 
   return (
-    <div className="max-w-md mx-auto bg-wood min-h-screen relative shadow-2xl overflow-hidden flex flex-col font-sans text-white border-x border-primary/10">
-      <header className="sticky top-0 bg-black/90 backdrop-blur-md z-50 px-5 py-2 flex justify-between items-center border-b border-primary/25">
+    <div className="max-w-md mx-auto bg-wood min-h-screen relative shadow-2xl overflow-hidden flex flex-col font-sans text-white border-x border-[#FF6A00]/10">
+      <header className="sticky top-0 bg-black/90 backdrop-blur-md z-50 px-5 py-2 flex justify-between items-center border-b border-[#FF6A00]/25">
         <div className="flex items-center">
           <img src="/logo.png" alt={RESTAURANTE_NAME} className="h-10 w-auto object-contain" />
         </div>
@@ -385,7 +385,7 @@ export default function App() {
               target="_blank"
               rel="noopener noreferrer"
               whileTap={{ scale: 0.95 }}
-              className="w-11 h-11 bg-[#101010] border border-primary/20 hover:border-primary rounded-full flex items-center justify-center text-primary hover:text-white cursor-pointer transition-colors"
+              className="w-11 h-11 bg-[#101010] border border-[#FF6A00]/20 hover:border-primary rounded-full flex items-center justify-center text-primary hover:text-secondary cursor-pointer transition-colors"
             >
               <Facebook size={22} />
             </motion.a>
@@ -396,7 +396,7 @@ export default function App() {
               target="_blank"
               rel="noopener noreferrer"
               whileTap={{ scale: 0.95 }}
-              className="w-11 h-11 bg-[#101010] border border-primary/20 hover:border-primary rounded-full flex items-center justify-center text-primary hover:text-white cursor-pointer transition-colors"
+              className="w-11 h-11 bg-[#101010] border border-[#FF6A00]/20 hover:border-primary rounded-full flex items-center justify-center text-primary hover:text-secondary cursor-pointer transition-colors"
             >
               <MapPin size={22} />
             </motion.a>
@@ -404,7 +404,7 @@ export default function App() {
           <motion.div
             onClick={() => cartCount > 0 && setShowSummary(true)}
             whileTap={{ scale: 0.95 }}
-            className="w-11 h-11 bg-[#101010] border border-primary/20 hover:border-primary rounded-full flex items-center justify-center relative cursor-pointer transition-colors text-primary hover:text-white"
+            className="w-11 h-11 bg-[#101010] border border-[#FF6A00]/20 hover:border-primary rounded-full flex items-center justify-center relative cursor-pointer transition-colors text-primary hover:text-secondary"
           >
             <ShoppingBag size={22} />
             {cartCount > 0 && (
@@ -415,33 +415,33 @@ export default function App() {
           </motion.div>
         </div>
       </header>
- 
-      <div className="w-full bg-gradient-to-r from-[#991B1B] via-[#DC2626] to-[#991B1B] py-2 overflow-hidden flex items-center shadow-md">
+
+      <div className="w-full bg-gradient-to-r from-[#D94700] via-[#FF8A00] to-[#D94700] py-2.5 overflow-hidden flex items-center shadow-md">
         <div className="animate-marquee flex gap-6 text-white font-slogan font-black text-[11px] tracking-widest uppercase whitespace-nowrap">
           {[...Array(10)].map((_, i) => (
             <span key={i}>{MARQUEE_TEXT}</span>
           ))}
         </div>
       </div>
- 
-      <div className="px-5 pt-3">
+
+      <div className="px-5 pt-4">
         <motion.button 
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setShowBirthdayForm(true)}
-          className="w-full bg-gradient-to-r from-[#B91C1C] via-[#DC2626] to-[#B91C1C] text-white py-2.5 px-3 rounded-xl flex items-center justify-center gap-2 font-bold text-[9px] sm:text-[10px] leading-tight uppercase tracking-wide relative overflow-hidden group text-center cursor-pointer shadow-lg shadow-red-950/30 border border-primary/20"
+          className="w-full bg-gradient-to-r from-[#D94700] via-[#FF9A1F] to-[#D94700] text-white py-3.5 px-4 rounded-2xl flex items-center justify-center gap-2 font-bold text-[10px] sm:text-[11px] uppercase tracking-wide relative overflow-hidden group text-center cursor-pointer shadow-lg shadow-orange-950/30 border border-[#FF9A1F]/20"
         >
-          <Gift size={16} className="animate-bounce shrink-0 text-white" />
-          <span>¡Celebra tu cumpleaños con sabor BravaZa y recibe una sorpresa especial! 🎁🔥 <span className="text-white font-black underline ml-1 hover:text-red-100 transition-colors">Regístrate aquí</span></span>
+          <Gift size={18} className="animate-bounce shrink-0 text-white" />
+          <span>¡Celebra tu cumpleaños con sabor BravaZa y recibe una sorpresa especial! 🎁🔥 <span className="text-white font-black underline ml-1 hover:text-orange-100 transition-colors">Regístrate aquí</span></span>
         </motion.button>
       </div>
- 
-      <div className="px-5 pt-3 pb-2">
-        <div className="relative w-full rounded-2xl overflow-hidden aspect-[2.4/1] bg-black border border-[#1A1A1A]">
+
+      <div className="px-5 pt-4 pb-3">
+        <div className="relative w-full rounded-2xl overflow-hidden aspect-[2/1] bg-black border border-[#1A1A1A]">
           <img src={BANNER_PATH} alt={RESTAURANTE_NAME} className="w-full h-full object-cover opacity-90" />
         </div>
       </div>
- 
+
       <div className="px-5 py-3 overflow-x-auto no-scrollbar">
         <div className="flex gap-2 w-max">
           {categories.map(cat => (
@@ -450,8 +450,8 @@ export default function App() {
               onClick={() => scrollToCategory(cat.id)}
               className={`px-5 py-2.5 rounded-full text-[13px] font-category tracking-wide uppercase whitespace-nowrap transition-all duration-200 border cursor-pointer shadow-sm
                 ${activeCategory === cat.id
-                  ? 'bg-gradient-to-b from-[#DC2626] via-[#B91C1C] to-[#991B1B] text-white border-transparent shadow-md shadow-red-950/30'
-                  : 'bg-[#101010] text-white border-primary/30 hover:bg-primary/10 hover:border-primary hover:text-white'
+                  ? 'bg-gradient-to-b from-[#FF9A1F] via-[#F4511E] to-[#D94700] text-white border-transparent shadow-md shadow-orange-900/30'
+                  : 'bg-[#101010] text-white border-[#FF6A00]/30 hover:bg-[#FF6A00]/10 hover:border-[#FF6A00] hover:text-white'
                 }`}
             >
               {cat.nombre}
@@ -465,21 +465,21 @@ export default function App() {
           <section key={cat.id} id={`cat-${cat.id}`} className="mb-10 scroll-mt-28">
             <div className="mb-5 pt-2">
               <div className="flex items-center gap-2.5 mb-1">
-                <span className="w-1.5 h-6.5 bg-gradient-to-b from-primary to-[#B91C1C] rounded-sm shrink-0 shadow-sm"></span>
+                <span className="w-1.5 h-6.5 bg-gradient-to-b from-[#FF9A1F] to-[#D94700] rounded-sm shrink-0 shadow-sm"></span>
                 <h3 className="font-category text-white text-[26px] leading-none tracking-wider uppercase category-underline">
                   {cat.nombre}
                 </h3>
               </div>
             </div>
- 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+            <div className="grid grid-cols-2 gap-4">
               {cat.items.map((dish, idx) => (
                 <motion.div
                   key={idx}
                   whileHover={{ y: -4 }}
-                  className="bg-[#101010] rounded-[18px] overflow-hidden flex flex-row sm:flex-col border border-primary/20 hover:border-primary/60 transition-all duration-200 shadow-md shadow-black/45 h-full"
+                  className="bg-[#101010] rounded-[18px] overflow-hidden flex flex-col border border-[#FF6A00]/20 hover:border-[#FF6A00]/60 transition-all duration-200 shadow-md shadow-black/45 h-full"
                 >
-                  <div className={`w-28 h-28 sm:w-full sm:h-auto sm:aspect-square flex items-center justify-center relative overflow-hidden border-r sm:border-r-0 sm:border-b border-primary/10 shrink-0 ${dish.imagen ? 'bg-white' : 'bg-[#151515]'}`}>
+                  <div className={`aspect-square flex items-center justify-center relative overflow-hidden border-b border-[#FF6A00]/10 ${dish.imagen ? 'bg-white' : 'bg-[#151515]'}`}>
                     {dish.imagen ? (
                       <img
                         src={dish.imagen}
@@ -489,33 +489,32 @@ export default function App() {
                       />
                     ) : (
                       <div className="w-full h-full bg-[#151515] flex flex-col items-center justify-center p-4 text-center">
-                        <Utensils className="text-primary w-8 h-8 mb-1" />
-                        <span className="font-brand font-black text-[9px] text-secondary uppercase tracking-widest">
+                        <Utensils className="text-[#FF6A00] w-8 h-8 mb-1" />
+                        <span className="font-brand font-black text-[9px] text-[#FF9A1F] uppercase tracking-widest">
                           BravaZa
                         </span>
                       </div>
                     )}
                   </div>
                   
-                  <div className="p-4 flex flex-col flex-1 min-w-0 justify-between">
-                    <div>
-                      <h4 className="font-dish font-bold text-white text-[15px] sm:text-[15px] tracking-wide leading-tight mb-1 truncate sm:whitespace-normal">
-                        {dish.nombre}
-                      </h4>
-                      {dish.descripcion && (
-                        <p className="font-sans text-[11px] text-[#BDBDBD] leading-tight mb-2 line-clamp-2 sm:line-clamp-3">
-                          {dish.descripcion}
-                        </p>
-                      )}
-                    </div>
+                  <div className="p-4 flex flex-col flex-1">
+                    <h4 className="font-dish font-bold text-white text-[15px] tracking-wide leading-tight mb-1">
+                      {dish.nombre}
+                    </h4>
+                    {dish.descripcion && (
+                      <p className="font-sans text-[11px] text-[#BDBDBD] leading-tight mb-2 line-clamp-3">
+                        {dish.descripcion}
+                      </p>
+                    )}
+                    <div className="flex-1"></div>
                     <div className="flex items-center justify-between mt-2">
-                      <span className="font-price font-bold text-secondary text-[17px] tracking-wide whitespace-nowrap">
+                      <span className="font-price font-bold text-[#FF6A00] text-[17px] tracking-wide whitespace-nowrap">
                         {getDisplayPrice(dish)}
                       </span>
                       <motion.button
                         whileTap={{ scale: 0.8 }}
                         onClick={() => addToCart(dish, cat.id)}
-                        className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 shrink-0 cursor-pointer bg-gradient-to-br from-primary to-[#B91C1C] text-white hover:scale-105 active:brightness-90 shadow-md shadow-red-950/20"
+                        className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 shrink-0 cursor-pointer bg-gradient-to-br from-[#FF9A1F] to-[#F4511E] text-white hover:scale-105 active:brightness-90 shadow-md shadow-orange-950/20"
                       >
                         <Plus size={16} strokeWidth={3} />
                       </motion.button>
@@ -526,27 +525,27 @@ export default function App() {
             </div>
           </section>
         ))}
- 
-        <section className="mt-8 mb-4 border border-primary/25 bg-[#101010] rounded-[18px] p-5 text-center shadow-md">
-          <h3 className="font-title text-primary text-[22px] leading-tight mb-2 uppercase tracking-wide">¿Cómo estuvo todo?</h3>
+
+        <section className="mt-8 mb-4 border border-[#FF6A00]/25 bg-[#101010] rounded-[18px] p-5 text-center shadow-md">
+          <h3 className="font-title text-[#FF6A00] text-[22px] leading-tight mb-2 uppercase tracking-wide">¿Cómo estuvo todo?</h3>
           <p className="text-[11px] text-[#BDBDBD] mb-4 px-4">Ayúdanos a mejorar calificando tu experiencia con nosotros</p>
           <motion.button 
             whileTap={{ scale: 0.95 }}
             onClick={() => setShowReviewForm(true)}
-            className="w-full bg-gradient-to-b from-[#DC2626] via-[#B91C1C] to-[#991B1B] text-white px-6 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 mx-auto cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-red-950/30 uppercase tracking-wide border-0"
+            className="w-full bg-gradient-to-b from-[#FF9A1F] via-[#F4511E] to-[#D94700] text-white px-6 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 mx-auto cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-orange-950/30 uppercase tracking-wide border-0"
           >
             <Star size={18} className="fill-white" />
             Reseña nuestra comida
           </motion.button>
         </section>
- 
-        <footer className="mt-8 pt-8 pb-10 border-t border-primary/20 bg-transparent flex flex-col items-center justify-center text-center">
-          <img src={LOGO_FOOTER_PATH} alt={RESTAURANTE_NAME} className="w-24 h-24 mb-4 object-contain rounded-2xl border border-primary/25 bg-black p-1 shadow-sm" />
+
+        <footer className="mt-8 pt-8 pb-10 border-t border-[#FF6A00]/20 bg-transparent flex flex-col items-center justify-center text-center">
+          <img src={LOGO_FOOTER_PATH} alt={RESTAURANTE_NAME} className="w-24 h-24 mb-4 object-contain rounded-2xl border border-[#FF6A00]/25 bg-black p-1 shadow-sm" />
           <p className="font-brand font-black text-lg text-primary tracking-wide">{RESTAURANTE_NAME}</p>
           <p className="text-xs text-secondary mt-1 max-w-[250px]">{RESTAURANTE_SLOGAN}</p>
           <p className="text-[10px] text-gray-500 mt-6">© 2026 Todos los derechos reservados.</p>
         </footer>
- 
+
         <div className="bg-transparent py-6 flex flex-col items-center justify-center">
           <p className="text-[10px] font-bold tracking-[0.2em] uppercase mb-1 text-gray-500">Digital Menu Experience</p>
           <motion.a 
@@ -556,8 +555,8 @@ export default function App() {
             className="flex items-center gap-1 font-bold text-sm tracking-tight group cursor-pointer"
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-white group-hover:text-secondary transition-colors duration-200">Hecho por Tyma</span>
-            <span className="text-secondary group-hover:text-white transition-colors duration-200">Solutions</span>
+            <span className="text-white group-hover:text-[#FF9A1F] transition-colors duration-200">Hecho por Tyma</span>
+            <span className="text-[#FF9A1F] group-hover:text-white transition-colors duration-200">Solutions</span>
           </motion.a>
         </div>
       </main>
@@ -572,7 +571,7 @@ export default function App() {
           >
             <div className="glass rounded-[20px] p-4 flex items-center justify-between shadow-2xl">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-primary to-[#B91C1C] rounded-xl flex items-center justify-center relative overflow-hidden shadow-md shadow-red-950/15">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#FF9A1F] to-[#D94700] rounded-xl flex items-center justify-center relative overflow-hidden shadow-md shadow-orange-950/15">
                   <ShoppingBag size={20} className="text-white" />
                 </div>
                 <div>
@@ -582,7 +581,7 @@ export default function App() {
               </div>
               <button
                 onClick={() => setShowSummary(true)}
-                className="bg-gradient-to-r from-[#DC2626] via-[#B91C1C] to-[#991B1B] text-white px-6 py-3 rounded-xl flex items-center gap-2 font-bold text-sm border-0 transition-all hover:brightness-110 active:scale-95 shadow-md shadow-red-950/20 cursor-pointer uppercase tracking-wider"
+                className="bg-gradient-to-r from-[#FF9A1F] via-[#F4511E] to-[#D94700] text-white px-6 py-3 rounded-xl flex items-center gap-2 font-bold text-sm border-0 transition-all hover:brightness-110 active:scale-95 shadow-md shadow-orange-950/20 cursor-pointer uppercase tracking-wider"
               >
                 Ver Pedido
                 <ChevronRight size={18} />
@@ -610,7 +609,7 @@ export default function App() {
                 <h2 className="font-title text-2xl text-primary uppercase tracking-wide">Mi Pedido</h2>
                 <button
                   onClick={() => setShowSummary(false)}
-                  className="w-10 h-10 bg-[#151515] border border-[#DC2626]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
+                  className="w-10 h-10 bg-[#151515] border border-[#FF6A00]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
                 >
                   <X size={20} />
                 </button>
@@ -619,7 +618,7 @@ export default function App() {
                 {cart.map(item => (
                   <div
                     key={`${item.nombre}-${item.precio}-${JSON.stringify(item.cremas || [])}-${item.nota || ''}`}
-                    className="flex items-center gap-4 bg-[#151515] border border-[#DC2626]/15 p-4 rounded-xl shadow-sm"
+                    className="flex items-center gap-4 bg-[#151515] border border-[#FF6A00]/15 p-4 rounded-xl shadow-sm"
                   >
                     <div className="flex-1 min-w-0">
                       <h4 className="font-dish font-semibold text-white text-sm truncate">{item.nombre}</h4>
@@ -635,25 +634,25 @@ export default function App() {
                         </p>
                       )}
                     </div>
-                    <div className="flex items-center gap-3 bg-[#101010] px-3 py-1.5 rounded-xl border border-[#DC2626]/15">
+                    <div className="flex items-center gap-3 bg-[#101010] px-3 py-1.5 rounded-xl border border-[#FF6A00]/15">
                       <button onClick={() => updateQuantity(item.nombre, item.precio, -1, item.cremas, item.nota)} className="text-white hover:text-primary cursor-pointer transition-colors">
                         <Minus size={16} />
                       </button>
                       <span className="font-dish font-bold text-sm w-4 text-center text-white">{item.cantidad}</span>
-                      <button onClick={() => updateQuantity(item.nombre, item.precio, 1, item.cremas, item.nota)} className="text-primary hover:text-white cursor-pointer transition-colors">
+                      <button onClick={() => updateQuantity(item.nombre, item.precio, 1, item.cremas, item.nota)} className="text-primary hover:text-secondary cursor-pointer transition-colors">
                         <Plus size={16} />
                       </button>
                     </div>
                     <button
                       onClick={() => updateQuantity(item.nombre, item.precio, -item.cantidad, item.cremas, item.nota)}
-                      className="text-primary hover:text-white ml-1 cursor-pointer transition-colors"
+                      className="text-primary hover:text-secondary ml-1 cursor-pointer transition-colors"
                     >
                       <Trash2 size={18} />
                     </button>
                   </div>
                 ))}
               </div>
-              <div className="border-t border-dashed border-[#DC2626]/30 pt-6 mb-8">
+              <div className="border-t border-dashed border-[#FF6A00]/30 pt-6 mb-8">
                 <div className="flex justify-between items-center">
                   <h3 className="font-dish text-xl font-bold text-white uppercase tracking-wide">Total a pagar</h3>
                   <h3 className="font-dish text-2xl font-black text-primary">S/.{calculateTotal().toFixed(2)}</h3>
@@ -664,7 +663,7 @@ export default function App() {
                   setShowSummary(false);
                   setShowPaymentModal(true);
                 }}
-                className="w-full bg-gradient-to-b from-[#FACC15] via-[#DC2626] to-[#B91C1C] text-white py-4 rounded-xl flex items-center justify-center gap-3 font-bold cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-red-600/20 border-0 uppercase tracking-wide"
+                className="w-full bg-gradient-to-b from-[#FF9A1F] via-[#F4511E] to-[#D94700] text-white py-4 rounded-xl flex items-center justify-center gap-3 font-bold cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-orange-600/20 border-0 uppercase tracking-wide"
               >
                 Completar Pedido (Pagar)
                 <ChevronRight size={20} />
@@ -717,17 +716,17 @@ export default function App() {
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="bg-[#101010] border border-[#DC2626]/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
+              className="bg-[#101010] border border-[#FF6A00]/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
             >
               <button
                 onClick={() => setShowBirthdayForm(false)}
-                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-[#DC2626]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
+                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-[#FF6A00]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
               >
                 <X size={18} />
               </button>
  
               <div className="flex flex-col items-center text-center mb-5 mt-2">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#FACC15] to-[#B91C1C] rounded-full flex items-center justify-center mb-3 shadow-md shadow-red-950/20">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#FF9A1F] to-[#D94700] rounded-full flex items-center justify-center mb-3 shadow-md shadow-orange-950/20">
                   <Gift size={24} className="text-white" />
                 </div>
                 <h2 className="font-title text-2xl text-primary leading-none tracking-wide mb-2">¡TU CUMPLEAÑOS!</h2>
@@ -742,29 +741,29 @@ export default function App() {
                 <form onSubmit={handleBirthdaySubmit} className="space-y-3">
                   <div>
                     <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1">Nombre Completo</label>
-                    <input required type="text" value={birthdayData.nombre} onChange={e => setBirthdayData({...birthdayData, nombre: e.target.value})} className="w-full bg-[#151515] border border-[#DC2626]/25 focus:border-primary rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-white placeholder-gray-600" placeholder="Ej. Juan Pérez" />
+                    <input required type="text" value={birthdayData.nombre} onChange={e => setBirthdayData({...birthdayData, nombre: e.target.value})} className="w-full bg-[#151515] border border-[#FF6A00]/25 focus:border-primary rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-white placeholder-gray-600" placeholder="Ej. Juan Pérez" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1">Teléfono</label>
                     <input required type="tel" minLength={9} maxLength={11} pattern="[0-9]*" value={birthdayData.telefono} onChange={e => {
                       const val = e.target.value.replace(/\D/g, '');
                       setBirthdayData({...birthdayData, telefono: val});
-                    }} className="w-full bg-[#151515] border border-[#DC2626]/25 focus:border-primary rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-white placeholder-gray-600" placeholder="Ej. 987654321" />
+                    }} className="w-full bg-[#151515] border border-[#FF6A00]/25 focus:border-primary rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-white placeholder-gray-600" placeholder="Ej. 987654321" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1">Fecha de Nacimiento</label>
-                    <input required type="date" value={birthdayData.fechaNacimiento} onChange={e => setBirthdayData({...birthdayData, fechaNacimiento: e.target.value})} className="w-full bg-[#151515] border border-[#DC2626]/25 focus:border-primary rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-white" />
+                    <input required type="date" value={birthdayData.fechaNacimiento} onChange={e => setBirthdayData({...birthdayData, fechaNacimiento: e.target.value})} className="w-full bg-[#151515] border border-[#FF6A00]/25 focus:border-primary rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-white" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1">Distrito</label>
-                    <input required type="text" value={birthdayData.distrito} onChange={e => setBirthdayData({...birthdayData, distrito: e.target.value})} className="w-full bg-[#151515] border border-[#DC2626]/25 focus:border-primary rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-white placeholder-gray-600" placeholder="Ej. Miraflores" />
+                    <input required type="text" value={birthdayData.distrito} onChange={e => setBirthdayData({...birthdayData, distrito: e.target.value})} className="w-full bg-[#151515] border border-[#FF6A00]/25 focus:border-primary rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-white placeholder-gray-600" placeholder="Ej. Miraflores" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1">Correo Electrónico (Opcional)</label>
-                    <input type="email" value={birthdayData.correo} onChange={e => setBirthdayData({...birthdayData, correo: e.target.value})} className="w-full bg-[#151515] border border-[#DC2626]/25 focus:border-primary rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-white placeholder-gray-600" placeholder="correo@ejemplo.com" />
+                    <input type="email" value={birthdayData.correo} onChange={e => setBirthdayData({...birthdayData, correo: e.target.value})} className="w-full bg-[#151515] border border-[#FF6A00]/25 focus:border-primary rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-white placeholder-gray-600" placeholder="correo@ejemplo.com" />
                   </div>
                   
-                  <button disabled={isSubmittingBirthday} type="submit" className="w-full bg-gradient-to-b from-[#FACC15] via-[#DC2626] to-[#B91C1C] text-white py-3.5 rounded-xl font-bold text-sm mt-2 disabled:opacity-70 flex justify-center items-center cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-red-600/20 border-0 uppercase tracking-wide">
+                  <button disabled={isSubmittingBirthday} type="submit" className="w-full bg-gradient-to-b from-[#FF9A1F] via-[#F4511E] to-[#D94700] text-white py-3.5 rounded-xl font-bold text-sm mt-2 disabled:opacity-70 flex justify-center items-center cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-orange-600/20 border-0 uppercase tracking-wide">
                     {isSubmittingBirthday ? <Loader2 size={18} className="animate-spin" /> : "Guardar mis datos"}
                   </button>
                 </form>
@@ -786,17 +785,17 @@ export default function App() {
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="bg-[#101010] border border-[#DC2626]/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
+              className="bg-[#101010] border border-[#FF6A00]/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
             >
               <button
                 onClick={() => setShowReviewForm(false)}
-                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-[#DC2626]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
+                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-[#FF6A00]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
               >
                 <X size={18} />
               </button>
  
               <div className="flex flex-col items-center text-center mb-5 mt-2">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#FACC15] to-[#B91C1C] rounded-full flex items-center justify-center mb-3 shadow-md shadow-red-950/20">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#FF9A1F] to-[#D94700] rounded-full flex items-center justify-center mb-3 shadow-md shadow-orange-950/20">
                   <Star size={24} className="text-white fill-white" />
                 </div>
                 <h2 className="font-title text-2xl text-primary leading-none mb-2 uppercase tracking-wide">¡CALIFÍCANOS!</h2>
@@ -810,7 +809,7 @@ export default function App() {
               ) : (
                 <form onSubmit={handleReviewSubmit} className="space-y-5">
                   
-                  <div className="bg-[#151515] p-4 rounded-2xl border border-[#DC2626]/15 flex flex-col items-center shadow-sm">
+                  <div className="bg-[#151515] p-4 rounded-2xl border border-[#FF6A00]/15 flex flex-col items-center shadow-sm">
                     <p className="text-xs font-bold text-[#BDBDBD] mb-2">Atención del Mozo</p>
                     <div className="flex gap-1">
                       {[1,2,3,4,5].map(star => (
@@ -819,13 +818,13 @@ export default function App() {
                           onClick={() => setReviewData({...reviewData, estrellasMozo: star})}
                           className="p-1 transition-transform hover:scale-110 cursor-pointer"
                         >
-                          <Star size={28} className={reviewData.estrellasMozo >= star ? "text-[#FACC15] fill-[#FACC15]" : "text-gray-700"} />
+                          <Star size={28} className={reviewData.estrellasMozo >= star ? "text-[#FF9A1F] fill-[#FF9A1F]" : "text-gray-700"} />
                         </button>
                       ))}
                     </div>
                   </div>
  
-                  <div className="bg-[#151515] p-4 rounded-2xl border border-[#DC2626]/15 flex flex-col items-center shadow-sm">
+                  <div className="bg-[#151515] p-4 rounded-2xl border border-[#FF6A00]/15 flex flex-col items-center shadow-sm">
                     <p className="text-xs font-bold text-[#BDBDBD] mb-2">Calidad de la Comida</p>
                     <div className="flex gap-1">
                       {[1,2,3,4,5].map(star => (
@@ -834,7 +833,7 @@ export default function App() {
                           onClick={() => setReviewData({...reviewData, estrellasComida: star})}
                           className="p-1 transition-transform hover:scale-110 cursor-pointer"
                         >
-                          <Star size={28} className={reviewData.estrellasComida >= star ? "text-[#FACC15] fill-[#FACC15]" : "text-gray-700"} />
+                          <Star size={28} className={reviewData.estrellasComida >= star ? "text-[#FF9A1F] fill-[#FF9A1F]" : "text-gray-700"} />
                         </button>
                       ))}
                     </div>
@@ -846,12 +845,12 @@ export default function App() {
                       rows={3} 
                       value={reviewData.comentario} 
                       onChange={e => setReviewData({...reviewData, comentario: e.target.value})} 
-                      className="w-full bg-[#151515] border border-[#DC2626]/25 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors resize-none mt-1 text-white placeholder-gray-600" 
+                      className="w-full bg-[#151515] border border-[#FF6A00]/25 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors resize-none mt-1 text-white placeholder-gray-600" 
                       placeholder="Cuéntanos más sobre tu experiencia..." 
                     />
                   </div>
                   
-                  <button disabled={isSubmittingReview} type="submit" className="w-full bg-gradient-to-b from-[#FACC15] via-[#DC2626] to-[#B91C1C] text-white py-3.5 rounded-xl font-bold text-sm mt-2 disabled:opacity-70 flex justify-center items-center cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-red-600/20 border-0 uppercase tracking-wide">
+                  <button disabled={isSubmittingReview} type="submit" className="w-full bg-gradient-to-b from-[#FF9A1F] via-[#F4511E] to-[#D94700] text-white py-3.5 rounded-xl font-bold text-sm mt-2 disabled:opacity-70 flex justify-center items-center cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-orange-600/20 border-0 uppercase tracking-wide">
                     {isSubmittingReview ? <Loader2 size={18} className="animate-spin" /> : "Enviar Reseña"}
                   </button>
                 </form>
@@ -873,11 +872,11 @@ export default function App() {
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="bg-[#101010] border border-[#DC2626]/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative text-white"
+              className="bg-[#101010] border border-[#FF6A00]/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative text-white"
             >
               <button
                 onClick={() => setOptionModalDish(null)}
-                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-[#DC2626]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
+                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-[#FF6A00]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
               >
                 <X size={18} />
               </button>
@@ -917,10 +916,10 @@ export default function App() {
                           addProductToCart(`${optionModalDish.nombre} (${label})`, price);
                           setOptionModalDish(null);
                         }}
-                        className="w-full bg-[#151515] hover:bg-[#DC2626]/10 hover:text-white border border-[#DC2626]/15 hover:border-[#DC2626] rounded-xl py-3.5 px-4 flex justify-between items-center font-bold text-sm transition-colors cursor-pointer text-left text-white shadow-sm"
+                        className="w-full bg-[#151515] hover:bg-[#FF6A00]/10 hover:text-white border border-[#FF6A00]/15 hover:border-[#FF6A00] rounded-xl py-3.5 px-4 flex justify-between items-center font-bold text-sm transition-colors cursor-pointer text-left text-white shadow-sm"
                       >
                         <span>{label}</span>
-                        <span className="text-[#DC2626] font-black">{price}</span>
+                        <span className="text-[#FF6A00] font-black">{price}</span>
                       </button>
                     );
                   });
@@ -943,17 +942,17 @@ export default function App() {
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="bg-[#101010] border border-[#DC2626]/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
+              className="bg-[#101010] border border-[#FF6A00]/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
             >
               <button
                 onClick={() => setSaucesModalDish(null)}
-                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-[#DC2626]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
+                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-[#FF6A00]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
               >
                 <X size={18} />
               </button>
  
               <div className="flex flex-col items-center text-center mb-5 mt-2">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#FACC15] to-[#B91C1C] rounded-full flex items-center justify-center mb-3 shadow-md shadow-red-950/20">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#FF9A1F] to-[#D94700] rounded-full flex items-center justify-center mb-3 shadow-md shadow-orange-950/20">
                   <Utensils size={24} className="text-white" />
                 </div>
                 <h2 className="font-title text-2xl text-primary leading-none tracking-wide mb-1 uppercase">¿CÓMO DESEAS TU PLATO?</h2>
@@ -977,8 +976,8 @@ export default function App() {
                           }}
                           className={`py-2 px-3 rounded-xl border font-bold text-xs transition-colors cursor-pointer text-center block w-full
                             ${isSelected 
-                              ? "bg-gradient-to-r from-[#FACC15] to-[#DC2626] border-transparent text-white shadow-sm" 
-                              : "bg-[#151515] border border-[#DC2626]/15 text-gray-400 hover:border-primary hover:text-white"
+                              ? "bg-gradient-to-r from-[#FF9A1F] to-[#F4511E] border-transparent text-white shadow-sm" 
+                              : "bg-[#151515] border border-[#FF6A00]/15 text-gray-400 hover:border-primary hover:text-white"
                             }`}
                         >
                           {sauce}
@@ -994,7 +993,7 @@ export default function App() {
                     rows={2}
                     value={dishNote}
                     onChange={e => setDishNote(e.target.value)}
-                    className="w-full bg-[#151515] border border-[#DC2626]/25 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors resize-none mt-1 text-white placeholder-gray-600"
+                    className="w-full bg-[#151515] border border-[#FF6A00]/25 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors resize-none mt-1 text-white placeholder-gray-600"
                     placeholder="Ej. Papas bien fritas, sin ensalada, etc..."
                   />
                 </div>
@@ -1004,7 +1003,7 @@ export default function App() {
                     addProductToCart(saucesModalDish.nombre, saucesModalDish.precio, selectedSauces, dishNote);
                     setSaucesModalDish(null);
                   }}
-                  className="w-full bg-gradient-to-b from-[#FACC15] via-[#DC2626] to-[#B91C1C] text-white py-3.5 rounded-xl font-bold text-sm mt-2 flex justify-center items-center cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-red-600/20 border-0 uppercase tracking-wide"
+                  className="w-full bg-gradient-to-b from-[#FF9A1F] via-[#F4511E] to-[#D94700] text-white py-3.5 rounded-xl font-bold text-sm mt-2 flex justify-center items-center cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-orange-600/20 border-0 uppercase tracking-wide"
                 >
                   Agregar al Pedido
                 </button>
@@ -1026,23 +1025,23 @@ export default function App() {
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="bg-[#101010] border border-[#DC2626]/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative text-white"
+              className="bg-[#101010] border border-red-600/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative text-white"
             >
               <button
                 onClick={() => {
                   setShowPaymentModal(false);
                   setSelectedPaymentMethod(null);
                 }}
-                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-[#DC2626]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
+                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-red-600/30 hover:border-red-600 rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
               >
                 <X size={18} />
               </button>
  
               <div className="flex flex-col items-center text-center mb-5 mt-2">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#FACC15] to-[#B91C1C] rounded-full flex items-center justify-center mb-3 shadow-md shadow-red-950/20">
+                <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center mb-3 shadow-md shadow-red-950/20">
                   <ShoppingBag size={24} className="text-white" />
                 </div>
-                <h2 className="font-title text-2xl text-primary leading-none tracking-wide mb-1 uppercase">MÉTODO DE PAGO</h2>
+                <h2 className="font-title text-2xl text-red-600 leading-none tracking-wide mb-1 uppercase">MÉTODO DE PAGO</h2>
                 <p className="text-xs text-[#BDBDBD] font-medium">Selecciona cómo deseas pagar tu pedido antes de enviarlo</p>
               </div>
  
@@ -1055,25 +1054,25 @@ export default function App() {
                       onClick={() => setSelectedPaymentMethod(method)}
                       className={`w-full py-3.5 px-4 rounded-xl border font-bold text-sm text-left flex justify-between items-center transition-colors cursor-pointer shadow-sm
                         ${isSelected 
-                          ? "bg-[#FACC15] text-black border-transparent" 
-                          : "bg-[#151515] text-white border border-[#DC2626]/15 hover:border-primary"
+                          ? "bg-gradient-to-r from-red-500 to-red-700 text-white border-transparent" 
+                          : "bg-[#151515] text-white border border-red-600/15 hover:border-red-600"
                         }`}
                     >
                       <span>{method}</span>
-                      {isSelected && <span className="w-2.5 h-2.5 rounded-full bg-black shadow-sm"></span>}
+                      {isSelected && <span className="w-2.5 h-2.5 rounded-full bg-white shadow-sm"></span>}
                     </button>
                   );
                 })}
  
                 {selectedPaymentMethod === "Yape/Plin" && (
-                  <div className="bg-[#151515] border border-[#DC2626]/25 p-4 rounded-xl space-y-2 mt-4 text-center shadow-inner">
-                    <p className="text-[10px] font-bold text-[#FACC15] uppercase tracking-wider">Detalles de Transferencia</p>
+                  <div className="bg-[#151515] border border-red-600/25 p-4 rounded-xl space-y-2 mt-4 text-center shadow-inner">
+                    <p className="text-[10px] font-bold text-red-500 uppercase tracking-wider">Detalles de Transferencia</p>
                     <div className="text-sm font-black text-white">Inversiones Darkred S.A.C.</div>
                     <div className="flex items-center justify-center gap-2">
-                      <span className="text-lg font-black text-[#FACC15] tracking-widest">992 047 922</span>
+                      <span className="text-lg font-black text-white tracking-widest">992 047 922</span>
                       <button
                         onClick={handleCopyNumber}
-                        className="py-1 px-3.5 bg-[#DC2626] hover:bg-[#B91C1C] text-white text-[10px] font-black rounded-lg transition-colors cursor-pointer uppercase border-0 shadow-sm"
+                        className="py-1 px-3.5 bg-gradient-to-r from-red-500 to-red-600 hover:brightness-110 text-white text-[10px] font-black rounded-lg transition-colors cursor-pointer uppercase border-0 shadow-sm"
                       >
                         {copied ? "¡Copiado!" : "Copiar"}
                       </button>
@@ -1112,17 +1111,17 @@ export default function App() {
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="bg-[#101010] border border-[#DC2626]/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
+              className="bg-[#101010] border border-[#FF6A00]/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-white"
             >
               <button
                 onClick={() => setComplementModalDish(null)}
-                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-[#DC2626]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
+                className="absolute top-4 right-4 w-8 h-8 bg-[#151515] border border-[#FF6A00]/30 hover:border-primary rounded-full flex items-center justify-center cursor-pointer text-white transition-colors"
               >
                 <X size={18} />
               </button>
  
               <div className="flex flex-col items-center text-center mb-5 mt-2">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#FACC15] to-[#B91C1C] rounded-full flex items-center justify-center mb-3 shadow-md shadow-red-950/20">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#FF9A1F] to-[#D94700] rounded-full flex items-center justify-center mb-3 shadow-md shadow-orange-950/20">
                   <Utensils size={24} className="text-white" />
                 </div>
                 <h2 className="font-title text-2xl text-primary leading-none tracking-wide mb-1 uppercase">ARMA TU PLATO</h2>
@@ -1142,13 +1141,13 @@ export default function App() {
                           onClick={() => setSelectedComplement(comp)}
                           className={`w-full py-2.5 px-4 rounded-xl border font-bold text-xs flex justify-between items-center transition-colors cursor-pointer text-left shadow-sm
                             ${isSelected
-                              ? "bg-[#FACC15] text-black border-transparent"
-                              : "bg-[#151515] border border-[#DC2626]/15 text-gray-300 hover:border-primary"
+                              ? "bg-gradient-to-r from-[#FF9A1F] to-[#D94700] text-white border-transparent"
+                              : "bg-[#151515] border border-[#FF6A00]/15 text-gray-300 hover:border-primary"
                             }`}
                         >
                           <span>{comp.nombre}</span>
                           {comp.precio > 0 && (
-                            <span className={isSelected ? "text-black font-extrabold" : "text-[#FACC15]"}>
+                            <span className={isSelected ? "text-white font-extrabold" : "text-[#FF9A1F]"}>
                               + S/.{comp.precio.toFixed(2)}
                             </span>
                           )}
@@ -1174,8 +1173,8 @@ export default function App() {
                           }}
                           className={`py-2 px-3 rounded-xl border font-bold text-xs transition-colors cursor-pointer text-center block w-full
                             ${isSelected
-                              ? "bg-[#DC2626] border-transparent text-white shadow-sm"
-                              : "bg-[#151515] border border-[#DC2626]/15 text-gray-400 hover:border-primary hover:text-white"
+                              ? "bg-gradient-to-r from-[#FF9A1F] to-[#F4511E] border-transparent text-white shadow-sm"
+                              : "bg-[#151515] border border-[#FF6A00]/15 text-gray-400 hover:border-primary hover:text-white"
                             }`}
                         >
                           {sauce}
@@ -1191,7 +1190,7 @@ export default function App() {
                     rows={2}
                     value={dishNote}
                     onChange={e => setDishNote(e.target.value)}
-                    className="w-full bg-[#151515] border border-[#DC2626]/25 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors resize-none mt-1 text-white placeholder-gray-600"
+                    className="w-full bg-[#151515] border border-[#FF6A00]/25 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors resize-none mt-1 text-white placeholder-gray-600"
                     placeholder="Ej. Sin ensalada, cremas aparte, etc..."
                   />
                 </div>
@@ -1210,7 +1209,7 @@ export default function App() {
                       setComplementModalDish(null);
                     }
                   }}
-                  className="w-full bg-gradient-to-b from-[#FACC15] via-[#DC2626] to-[#B91C1C] text-white py-3.5 rounded-xl font-bold text-sm mt-2 flex justify-center items-center cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-red-600/20 border-0 uppercase tracking-wide"
+                  className="w-full bg-gradient-to-b from-[#FF9A1F] via-[#F4511E] to-[#D94700] text-white py-3.5 rounded-xl font-bold text-sm mt-2 flex justify-center items-center cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-orange-600/20 border-0 uppercase tracking-wide"
                 >
                   Agregar al Pedido
                 </button>

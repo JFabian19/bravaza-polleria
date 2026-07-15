@@ -12,18 +12,18 @@
   --font-slogan: "Montserrat", sans-serif;
   
   /* COLORES DE BRAVAZA POLLERÍA */
-  --color-primary: #DC2626;      /* Rojo Brasa/Fuego */
-  --color-secondary: #FACC15;    /* Amarillo Brasa */
-  --color-dark: #0D0D0D;         /* Negro Carbón */
-  --color-light: #000000;        /* Negro Puro / Fondo */
+  --color-primary: #FF6A00;      /* Naranja Principal */
+  --color-secondary: #FF9A1F;    /* Naranja Claro */
+  --color-dark: #101010;         /* Negro Carbón */
+  --color-light: #080808;        /* Negro Puro / Fondo */
   
   --color-orange-dark: #D94700;
   --color-text-secondary: #BDBDBD;
   --color-border-orange: rgba(255, 106, 0, 0.45);
   
   --shadow-glass: none;
-  --glass-bg: #0D0D0D;
-  --glass-border: #DC2626;
+  --glass-bg: #101010;
+  --glass-border: rgba(255, 106, 0, 0.45);
 }
 
 body {
@@ -96,6 +96,6 @@ body {
   left: 0;
   width: 50px;
   height: 3.5px;
-  background: var(--color-primary);
+  background: linear-gradient(90deg, #FF6A00, #D94700);
   border-radius: 2px;
 }
