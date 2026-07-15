@@ -26,25 +26,25 @@ export const DEFAULT_MENU_DATA: Category[] = [
         nombre: "Alitas",
         precio: "S/22.00",
         descripcion: "8 unidades.",
-        imagen: "/images/alitas_comenzar.jpg"
+        imagen: "/images/para-comenzar/alitas_comenzar.jpg"
       },
       {
         nombre: "Chicharrón de pollo",
         precio: "S/20.00",
         descripcion: "",
-        imagen: "/images/chicharron_pollo.png"
+        imagen: "/images/para-comenzar/chicharron_pollo.png"
       },
       {
         nombre: "Salchipapa",
         precio: "S/15.00",
         descripcion: "",
-        imagen: "/images/salchipapa.jpg"
+        imagen: "/images/para-comenzar/salchipapa.jpg"
       },
       {
         nombre: "Tequeños Bravazas",
         precio: "S/16.00",
         descripcion: "8 unidades.",
-        imagen: "/images/tequenos_bravazas.png"
+        imagen: "/images/para-comenzar/tequenos_bravazas.png"
       }
     ]
   },
@@ -56,67 +56,67 @@ export const DEFAULT_MENU_DATA: Category[] = [
         nombre: "Lomo saltado",
         precio: "S/28.00",
         descripcion: "",
-        imagen: "/images/lomo_saltado_criollo.jpg"
+        imagen: "/images/criollos/lomo_saltado_criollo.jpg"
       },
       {
         nombre: "Pollo saltado",
         precio: "S/22.00",
         descripcion: "",
-        imagen: "/images/pollo_saltado.jpg"
+        imagen: "/images/criollos/pollo_saltado.jpg"
       },
       {
         nombre: "Tallarín saltado de pollo",
         precio: "S/25.00",
         descripcion: "",
-        imagen: "/images/tallarin_pollo_criollo.jpg"
+        imagen: "/images/criollos/tallarin_pollo_criollo.jpg"
       },
       {
         nombre: "Tallarín saltado de carne",
         precio: "S/28.00",
         descripcion: "",
-        imagen: "/images/tallarin_carne_criollo.png"
+        imagen: "/images/criollos/tallarin_carne_criollo.png"
       },
       {
         nombre: "Lomo saltado a lo pobre",
         precio: "S/32.00",
         descripcion: "",
-        imagen: "/images/lomo_pobre.png"
+        imagen: "/images/criollos/lomo_pobre.png"
       },
       {
         nombre: "Churrasco a lo pobre",
         precio: "S/30.00",
         descripcion: "",
-        imagen: "/images/churrasco_pobre.jpg"
+        imagen: "/images/criollos/churrasco_pobre.jpg"
       },
       {
         nombre: "Pechuga a lo pobre",
         precio: "S/27.00",
         descripcion: "",
-        imagen: "/images/pechuga_pobre.png"
+        imagen: "/images/criollos/pechuga_pobre.png"
       },
       {
         nombre: "Chaufa de pollo",
         precio: "S/20.00",
         descripcion: "",
-        imagen: "/images/chaufa_pollo.png"
+        imagen: "/images/criollos/chaufa_pollo.png"
       },
       {
         nombre: "Chaufa de carne",
         precio: "S/25.00",
         descripcion: "",
-        imagen: "/images/chaufa_carne.png"
+        imagen: "/images/criollos/chaufa_carne.png"
       },
       {
         nombre: "Chaufa mixto",
         precio: "S/28.00",
         descripcion: "",
-        imagen: "/images/chaufa_mixto.png"
+        imagen: "/images/criollos/chaufa_mixto.png"
       },
       {
         nombre: "Aeropuerto especial",
         precio: "S/28.00",
         descripcion: "",
-        imagen: "/images/aeropuerto.jpg"
+        imagen: "/images/criollos/aeropuerto.jpg"
       }
     ]
   },
@@ -128,7 +128,7 @@ export const DEFAULT_MENU_DATA: Category[] = [
         nombre: "Brasa en pasta",
         precio: "S/25.00",
         descripcion: "Salsa a elección: pesto, huancaína o Alfredo.",
-        imagen: "/images/brasa_pasta.png",
+        imagen: "/images/pastas-bravazas/brasa_pasta.png",
         requiere_complemento: true,
         complementos: [
           { id: "pesto", nombre: "Salsa Pesto", precio: 0 },
@@ -140,7 +140,7 @@ export const DEFAULT_MENU_DATA: Category[] = [
         nombre: "Churrasco en pasta",
         precio: "S/31.00",
         descripcion: "Salsa a elección: pesto, huancaína o Alfredo.",
-        imagen: "/images/churrasco_pasta.png",
+        imagen: "/images/pastas-bravazas/churrasco_pasta.png",
         requiere_complemento: true,
         complementos: [
           { id: "pesto", nombre: "Salsa Pesto", precio: 0 },
@@ -152,7 +152,7 @@ export const DEFAULT_MENU_DATA: Category[] = [
         nombre: "Pechuga en pasta",
         precio: "S/27.00",
         descripcion: "Salsa a elección: pesto, huancaína o Alfredo.",
-        imagen: "/images/pechuga_pasta.png",
+        imagen: "/images/pastas-bravazas/pechuga_pasta.png",
         requiere_complemento: true,
         complementos: [
           { id: "pesto", nombre: "Salsa Pesto", precio: 0 },
@@ -164,7 +164,7 @@ export const DEFAULT_MENU_DATA: Category[] = [
         nombre: "Lomo en pasta",
         precio: "S/30.00",
         descripcion: "Salsa a elección: pesto, huancaína o Alfredo.",
-        imagen: "/images/lomo_pasta.jpg",
+        imagen: "/images/pastas-bravazas/lomo_pasta.jpg",
         requiere_complemento: true,
         complementos: [
           { id: "pesto", nombre: "Salsa Pesto", precio: 0 },
@@ -182,37 +182,37 @@ export const DEFAULT_MENU_DATA: Category[] = [
         nombre: "1/4 pollo + papas + ensalada",
         precio: "S/18.00",
         descripcion: "",
-        imagen: "/images/pollo_1_4.jpg"
+        imagen: "/images/del-horno-a-tu-mesa/pollo_1_4.jpg"
       },
       {
         nombre: "1/4 chaufero",
         precio: "S/24.00",
         descripcion: "1/4 de pollo, chaufa, papas, ensalada y cremas.",
-        imagen: "/images/un_cuarto_chaufero.jpg"
+        imagen: "/images/del-horno-a-tu-mesa/un_cuarto_chaufero.jpg"
       },
       {
         nombre: "1/4 parrillero",
         precio: "S/22.00",
         descripcion: "1/4 de pollo, chorizo, papas, ensalada y cremas.",
-        imagen: "/images/un_cuarto_parrillero.png"
+        imagen: "/images/del-horno-a-tu-mesa/un_cuarto_parrillero.png"
       },
       {
         nombre: "1/4 anticuchero",
         precio: "S/24.00",
         descripcion: "1/4 de pollo, anticuchos, papas, ensalada y cremas.",
-        imagen: "/images/un_cuarto_anticuchero.png"
+        imagen: "/images/del-horno-a-tu-mesa/un_cuarto_anticuchero.png"
       },
       {
         nombre: "1/2 pollo + papas + ensalada",
         precio: "S/34.00",
         descripcion: "",
-        imagen: "/images/pollo_1_2.jpg"
+        imagen: "/images/del-horno-a-tu-mesa/pollo_1_2.jpg"
       },
       {
         nombre: "1 pollo + papas + ensalada",
         precio: "S/60.00",
         descripcion: "",
-        imagen: "/images/pollo_1.png"
+        imagen: "/images/del-horno-a-tu-mesa/pollo_1.png"
       }
     ]
   },
@@ -224,13 +224,13 @@ export const DEFAULT_MENU_DATA: Category[] = [
         nombre: "1/8 pollo + papas + ensalada + chicha",
         precio: "S/14.00",
         descripcion: "",
-        imagen: "/images/pollo_1_8.jpg"
+        imagen: "/images/para-los-engreídos/pollo_1_8.jpg"
       },
       {
         nombre: "8 nuggets + papas + chicha",
         precio: "S/14.00",
         descripcion: "",
-        imagen: "/images/nuggets_redondos.jpg"
+        imagen: "/images/para-los-engreídos/nuggets_redondos.jpg"
       }
     ]
   },
@@ -242,13 +242,13 @@ export const DEFAULT_MENU_DATA: Category[] = [
         nombre: "Caldo de gallina",
         precio: "S/15.00",
         descripcion: "",
-        imagen: "/images/caldo_gallina.jpg"
+        imagen: "/images/caldos/caldo_gallina.jpg"
       },
       {
         nombre: "Dieta de pollo",
         precio: "S/15.00",
         descripcion: "",
-        imagen: "/images/dieta_pollo.jpg"
+        imagen: "/images/caldos/dieta_pollo.jpg"
       }
     ]
   },
@@ -260,37 +260,37 @@ export const DEFAULT_MENU_DATA: Category[] = [
         nombre: "Porción de papas",
         precio: "S/14.00",
         descripcion: "",
-        imagen: "/images/papas_fritas.png"
+        imagen: "/images/guarniciones/papas_fritas.png"
       },
       {
         nombre: "1/2 porción de papas",
         precio: "S/8.00",
         descripcion: "",
-        imagen: "/images/medio_papas.jpg"
+        imagen: "/images/guarniciones/medio_papas.jpg"
       },
       {
         nombre: "Porción de arroz blanco",
         precio: "S/5.50",
         descripcion: "",
-        imagen: "/images/arroz_blanco.jpg"
+        imagen: "/images/guarniciones/arroz_blanco.jpg"
       },
       {
         nombre: "Plátano frito",
         precio: "S/5.00",
         descripcion: "",
-        imagen: "/images/platano_frito.png"
+        imagen: "/images/guarniciones/platano_frito.png"
       },
       {
         nombre: "Huevo frito",
         precio: "S/3.00",
         descripcion: "",
-        imagen: "/images/huevo_frito.png"
+        imagen: "/images/guarniciones/huevo_frito.png"
       },
       {
         nombre: "Ensalada Bravaza",
         precio: "S/10.00",
         descripcion: "",
-        imagen: "/images/ensalada_bravaza.jpg"
+        imagen: "/images/guarniciones/ensalada_bravaza.jpg"
       }
     ]
   },
@@ -302,67 +302,67 @@ export const DEFAULT_MENU_DATA: Category[] = [
         nombre: "Anticuchos",
         precio: "S/24.00",
         descripcion: "Acompañados de papas sancochadas y choclo.",
-        imagen: "/images/anticuchos_entrada.jpg"
+        imagen: "/images/entradas-parrilleras-y-cortes/anticuchos_entrada.jpg"
       },
       {
         nombre: "Mollejitas 250 gr",
         precio: "S/20.00",
         descripcion: "Acompañadas de papas fritas and ensalada.",
-        imagen: "/images/mollejitas_250g.png"
+        imagen: "/images/entradas-parrilleras-y-cortes/mollejitas_250g.png"
       },
       {
         nombre: "Chorizo finas hierbas",
         precio: "S/18.00",
         descripcion: "Acompañado de papas fritas.",
-        imagen: "/images/chorizo_hierbas.png"
+        imagen: "/images/entradas-parrilleras-y-cortes/chorizo_hierbas.png"
       },
       {
         nombre: "Pechuga 250 gr",
         precio: "S/24.00",
         descripcion: "Acompañada de papas fritas y ensalada.",
-        imagen: "/images/pechuga_250g.jpg"
+        imagen: "/images/entradas-parrilleras-y-cortes/pechuga_250g.jpg"
       },
       {
         nombre: "Pechuga rellena",
         precio: "S/30.00",
         descripcion: "Rellena de tocino, jamón y queso; acompañada de papas y ensalada.",
-        imagen: "/images/pechuga_rellena.png"
+        imagen: "/images/entradas-parrilleras-y-cortes/pechuga_rellena.png"
       },
       {
         nombre: "Pechuga light",
         precio: "S/25.00",
         descripcion: "Acompañada de verduras frescas y palta.",
-        imagen: "/images/pechuga_light.jpg"
+        imagen: "/images/entradas-parrilleras-y-cortes/pechuga_light.jpg"
       },
       {
         nombre: "Chuleta 250 gr",
         precio: "S/24.00",
         descripcion: "Acompañada de papas fritas y ensalada con palta.",
-        imagen: "/images/chuleta_250g.jpg"
+        imagen: "/images/entradas-parrilleras-y-cortes/chuleta_250g.jpg"
       },
       {
         nombre: "Churrasco 250 gr",
         precio: "S/26.00",
         descripcion: "Acompañado de papas fritas y ensalada con palta.",
-        imagen: "/images/churrasco_250g.jpg"
+        imagen: "/images/entradas-parrilleras-y-cortes/churrasco_250g.jpg"
       },
       {
         nombre: "Bife ancho 300 gr",
         precio: "S/43.00",
         descripcion: "Acompañado de papas fritas y ensalada con palta.",
-        imagen: "/images/bife_ancho_300g.jpg"
+        imagen: "/images/entradas-parrilleras-y-cortes/bife_ancho_300g.jpg"
       },
       {
         nombre: "Bife angosto 300 gr",
         precio: "S/43.00",
         descripcion: "Acompañado de papas fritas y ensalada con palta.",
-        imagen: "/images/bife_angosto_300g.jpg"
+        imagen: "/images/entradas-parrilleras-y-cortes/bife_angosto_300g.jpg"
       },
       {
         nombre: "Picaña 300 gr",
         precio: "S/46.00",
         descripcion: "Acompañada de papas fritas y ensalada con palta.",
-        imagen: "/images/picana_300g.jpg"
+        imagen: "/images/entradas-parrilleras-y-cortes/picana_300g.jpg"
       }
     ]
   },
@@ -374,19 +374,19 @@ export const DEFAULT_MENU_DATA: Category[] = [
         nombre: "Parrilla Pareja",
         precio: "S/80.00",
         descripcion: "Incluye 1/4 de pollo, 1 churrasco, 1 chuleta, 1 molleja, 1 porción de anticuchos, 1 chorizo finas hierbas, papas y ensalada con palta.",
-        imagen: "/images/parrilla_pareja.png"
+        imagen: "/images/parrillas-familiares/parrilla_pareja.png"
       },
       {
         nombre: "Parrilla Bravaza",
         precio: "S/130.00",
         descripcion: "Incluye 1/2 pollo, 1 churrasco, 1 chuleta, 1 pechuga, 1 molleja, 1 anticucho, 2 chorizos finas hierbas, papas y ensalada con palta.",
-        imagen: "/images/parrilla_bravaza.jpg"
+        imagen: "/images/parrillas-familiares/parrilla_bravaza.jpg"
       },
       {
         nombre: "Parrilla Premium",
         precio: "S/140.00",
         descripcion: "Incluye 1 bife ancho, 1 bife angosto, 1 picaña, 3 chorizos finas hierbas, vino, papas y ensalada de palta.",
-        imagen: "/images/parrilla_premium.jpg"
+        imagen: "/images/parrillas-familiares/parrilla_premium.jpg"
       }
     ]
   },
@@ -398,61 +398,61 @@ export const DEFAULT_MENU_DATA: Category[] = [
         nombre: "Pisco sour clásico",
         precio: "S/18.00",
         descripcion: "",
-        imagen: "/images/pisco_sour_clasico.jpg"
+        imagen: "/images/cocteles-happy-day/pisco_sour_clasico.jpg"
       },
       {
         nombre: "Pisco sour de maracuyá",
         precio: "S/18.00",
         descripcion: "",
-        imagen: "/images/pisco_sour_maracuya.png"
+        imagen: "/images/cocteles-happy-day/pisco_sour_maracuya.png"
       },
       {
         nombre: "Chilcano clásico",
         precio: "S/18.00",
         descripcion: "",
-        imagen: "/images/chilcano_clasico.jpg"
+        imagen: "/images/cocteles-happy-day/chilcano_clasico.jpg"
       },
       {
         nombre: "Chilcano de maracuyá",
         precio: "S/18.00",
         descripcion: "",
-        imagen: "/images/chilcano_maracuya.png"
+        imagen: "/images/cocteles-happy-day/chilcano_maracuya.png"
       },
       {
         nombre: "Piña colada",
         precio: "S/20.00",
         descripcion: "",
-        imagen: "/images/pina_colada.png"
+        imagen: "/images/cocteles-happy-day/pina_colada.png"
       },
       {
         nombre: "Algarrobina",
         precio: "S/20.00",
         descripcion: "",
-        imagen: "/images/algarrobina.png"
+        imagen: "/images/cocteles-happy-day/algarrobina.png"
       },
       {
         nombre: "Daiquiri de durazno",
         precio: "S/18.00",
         descripcion: "",
-        imagen: "/images/daiquiri_durazno.png"
+        imagen: "/images/cocteles-happy-day/daiquiri_durazno.png"
       },
       {
         nombre: "Mojito",
         precio: "S/19.00",
         descripcion: "",
-        imagen: "/images/mojito.png"
+        imagen: "/images/cocteles-happy-day/mojito.png"
       },
       {
         nombre: "Cuba libre",
         precio: "S/18.00",
         descripcion: "",
-        imagen: "/images/cuba_libre.png"
+        imagen: "/images/cocteles-happy-day/cuba_libre.png"
       },
       {
         nombre: "Sangría 1 litro",
         precio: "S/30.00",
         descripcion: "",
-        imagen: "/images/sangria_1l.png"
+        imagen: "/images/cocteles-happy-day/sangria_1l.png"
       }
     ]
   },
@@ -464,73 +464,73 @@ export const DEFAULT_MENU_DATA: Category[] = [
         nombre: "Tacama Rose Semi Seco",
         precio: "S/40.00",
         descripcion: "",
-        imagen: "/images/tacama_rose.png"
+        imagen: "/images/vinos-y-cervezas/tacama_rose.png"
       },
       {
         nombre: "Tacama Amore de Ica",
         precio: "S/45.00",
         descripcion: "",
-        imagen: "/images/tacama_amore.png"
+        imagen: "/images/vinos-y-cervezas/tacama_amore.png"
       },
       {
         nombre: "Tabernero Vittoria Rose",
         precio: "S/45.00",
         descripcion: "",
-        imagen: "/images/tabernero_vittoria.png"
+        imagen: "/images/vinos-y-cervezas/tabernero_vittoria.png"
       },
       {
         nombre: "Casillero del Diablo Carmenere",
         precio: "S/60.00",
         descripcion: "",
-        imagen: "/images/casillero_diablo.png"
+        imagen: "/images/vinos-y-cervezas/casillero_diablo.png"
       },
       {
         nombre: "Tacama Gran Tinto",
         precio: "S/50.00",
         descripcion: "",
-        imagen: "/images/tacama_gran_tinto.png"
+        imagen: "/images/vinos-y-cervezas/tacama_gran_tinto.png"
       },
       {
         nombre: "Queirolo Borgoña",
         precio: "S/35.00",
         descripcion: "",
-        imagen: "/images/queirolo_borgona.png"
+        imagen: "/images/vinos-y-cervezas/queirolo_borgona.png"
       },
       {
         nombre: "Queirolo Rose",
         precio: "S/35.00",
         descripcion: "",
-        imagen: "/images/queirolo_rose.png"
+        imagen: "/images/vinos-y-cervezas/queirolo_rose.png"
       },
       {
         nombre: "Corona / Heineken",
         precio: "S/10.00",
         descripcion: "",
-        imagen: "/images/corona_heineken.png"
+        imagen: "/images/vinos-y-cervezas/corona_heineken.png"
       },
       {
         nombre: "Cusqueña Trigo",
         precio: "S/10.00",
         descripcion: "",
-        imagen: "/images/cusquena_trigo.png"
+        imagen: "/images/vinos-y-cervezas/cusquena_trigo.png"
       },
       {
         nombre: "Cusqueña Negra",
         precio: "S/11.00",
         descripcion: "",
-        imagen: "/images/cusquena_negra.png"
+        imagen: "/images/vinos-y-cervezas/cusquena_negra.png"
       },
       {
         nombre: "Pilsen",
         precio: "S/9.00",
         descripcion: "",
-        imagen: "/images/pilsen.png"
+        imagen: "/images/vinos-y-cervezas/pilsen.png"
       },
       {
         nombre: "Pilsen lata",
         precio: "S/7.50",
         descripcion: "",
-        imagen: "/images/pilsen_lata.png"
+        imagen: "/images/vinos-y-cervezas/pilsen_lata.png"
       }
     ]
   },
@@ -542,25 +542,25 @@ export const DEFAULT_MENU_DATA: Category[] = [
         nombre: "Gaseosa personal 192 ml",
         precio: "S/2.50",
         descripcion: "",
-        imagen: "/images/gaseosa_personal.png"
+        imagen: "/images/gaseosas/gaseosa_personal.png"
       },
       {
         nombre: "Gaseosa 600 ml",
         precio: "S/6.00",
         descripcion: "",
-        imagen: "/images/gaseosa_600ml.png"
+        imagen: "/images/gaseosas/gaseosa_600ml.png"
       },
       {
         nombre: "Gaseosa 1 1/2 L",
         precio: "S/12.00",
         descripcion: "",
-        imagen: "/images/gaseosa_1_5l.jpg"
+        imagen: "/images/gaseosas/gaseosa_1_5l.jpg"
       },
       {
         nombre: "Agua mineral",
         precio: "S/3.50",
         descripcion: "",
-        imagen: "/images/agua_personal.png"
+        imagen: "/images/gaseosas/agua_personal.png"
       }
     ]
   },
@@ -572,49 +572,49 @@ export const DEFAULT_MENU_DATA: Category[] = [
         nombre: "Limonada",
         precio: "S/7.00",
         descripcion: "Presentación en vaso.",
-        imagen: "/images/limonada.png"
+        imagen: "/images/bebidas-naturales/limonada.png"
       },
       {
         nombre: "Limonada",
         precio: "S/15.00",
         descripcion: "Presentación en jarra.",
-        imagen: "/images/limonada.png"
+        imagen: "/images/bebidas-naturales/limonada_jarra.png"
       },
       {
         nombre: "Chicha",
         precio: "S/7.00",
         descripcion: "Presentación en vaso.",
-        imagen: "/images/chicha.png"
+        imagen: "/images/bebidas-naturales/chicha.png"
       },
       {
         nombre: "Chicha",
         precio: "S/15.00",
         descripcion: "Presentación en jarra.",
-        imagen: "/images/chicha.png"
+        imagen: "/images/bebidas-naturales/chicha_jarra.png"
       },
       {
         nombre: "Maracuyá",
         precio: "S/7.00",
         descripcion: "Presentación en vaso.",
-        imagen: "/images/maracuya.png"
+        imagen: "/images/bebidas-naturales/maracuya.png"
       },
       {
         nombre: "Maracuyá",
         precio: "S/15.00",
         descripcion: "Presentación en jarra.",
-        imagen: "/images/maracuya.png"
+        imagen: "/images/bebidas-naturales/maracuya_jarra.png"
       },
       {
         nombre: "Naranjada",
         precio: "S/7.00",
         descripcion: "Presentación en vaso.",
-        imagen: "/images/naranjada.png"
+        imagen: "/images/bebidas-naturales/naranjada.png"
       },
       {
         nombre: "Naranjada",
         precio: "S/15.00",
         descripcion: "Presentación en jarra.",
-        imagen: "/images/naranjada.png"
+        imagen: "/images/bebidas-naturales/naranjada_jarra.png"
       }
     ]
   },
@@ -626,25 +626,25 @@ export const DEFAULT_MENU_DATA: Category[] = [
         nombre: "Frutos rojos",
         precio: "S/10.00",
         descripcion: "",
-        imagen: "/images/frozen_frutos_rojos.png"
+        imagen: "/images/frozen/frozen_frutos_rojos.png"
       },
       {
         nombre: "Chicha",
         precio: "S/10.00",
         descripcion: "",
-        imagen: "/images/frozen_chicha.png"
+        imagen: "/images/frozen/frozen_chicha.png"
       },
       {
         nombre: "Maracuyá",
         precio: "S/10.00",
         descripcion: "",
-        imagen: "/images/frozen_maracuya.png"
+        imagen: "/images/frozen/frozen_maracuya.png"
       },
       {
         nombre: "Limón",
         precio: "S/10.00",
         descripcion: "",
-        imagen: "/images/frozen_limon.png"
+        imagen: "/images/frozen/frozen_limon.png"
       }
     ]
   }
