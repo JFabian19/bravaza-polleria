@@ -428,6 +428,10 @@ export default function App() {
         <motion.button 
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.95 }}
+          animate={{ 
+            boxShadow: ["0px 0px 0px 0px rgba(239, 68, 68, 0.6)", "0px 0px 20px 8px rgba(239, 68, 68, 0)", "0px 0px 0px 0px rgba(239, 68, 68, 0)"] 
+          }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
           onClick={() => setShowBirthdayForm(true)}
           className="w-full bg-gradient-to-r from-[#D94700] via-[#FF9A1F] to-[#D94700] text-white py-3.5 px-4 rounded-2xl flex items-center justify-center gap-2 font-bold text-[10px] sm:text-[11px] uppercase tracking-wide relative overflow-hidden group text-center cursor-pointer shadow-lg shadow-orange-950/30 border border-[#FF9A1F]/20"
         >
