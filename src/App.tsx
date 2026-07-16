@@ -416,7 +416,7 @@ export default function App() {
         </div>
       </header>
 
-      <div className="w-full bg-gradient-to-r from-[#D94700] via-[#FF8A00] to-[#D94700] py-2.5 overflow-hidden flex items-center shadow-md">
+      <div className="w-full bg-gradient-to-r from-[#B91C1C] via-[#DC2626] to-[#B91C1C] py-2.5 overflow-hidden flex items-center shadow-md">
         <div className="animate-marquee flex gap-6 text-white font-slogan font-black text-[11px] tracking-widest uppercase whitespace-nowrap">
           {[...Array(10)].map((_, i) => (
             <span key={i}>{MARQUEE_TEXT}</span>
