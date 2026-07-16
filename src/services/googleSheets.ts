@@ -1,7 +1,6 @@
 import Papa from 'papaparse';
 
-// Coloca aquí tu ID de Google Sheets (lo encuentras en la URL de tu hoja de cálculo)
-export const SHEET_ID = '';
+export const SHEET_ID = '1JlvdeAIt2FQEzFfxkX4xzT5eMsa9bXt00TAHVxa7Xd0';
 
 export interface SheetDish {
   categoría: string;
@@ -38,7 +37,7 @@ export const fetchSheetData = async <T>(sheetName: string): Promise<T[]> => {
 
 // Configura aquí la URL de tu Google Apps Script Web App para poder enviar datos
 // Instrucciones: Crea un Apps Script, pega el código que te di, impleméntalo como Aplicación Web y pega la URL de ejecución aquí.
-export const WEB_APP_URL = '';
+export const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxYNlHrzNDzUVvgnn-R7XjIjjjq2cNKePe8AKGgaJDOkp8GhqrJArYmzUxnouUj_Qyv/exec';
 
 export const submitSheetData = async (sheetName: string, data: any): Promise<boolean> => {
   if (!WEB_APP_URL) {

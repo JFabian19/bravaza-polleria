@@ -313,7 +313,7 @@ export default function App() {
   const handleBirthdaySubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmittingBirthday(true);
-    const success = await submitSheetData('Cumpleaños', {
+    const success = await submitSheetData('Fidelización', {
       timestamp: new Date().toLocaleString('es-PE'),
       nombre: birthdayData.nombre,
       telefono: birthdayData.telefono,
