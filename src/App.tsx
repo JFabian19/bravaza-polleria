@@ -79,6 +79,7 @@ export default function App() {
   const [saucesModalDish, setSaucesModalDish] = useState<Dish | null>(null);
   const [selectedSauces, setSelectedSauces] = useState<string[]>([]);
   const [dishNote, setDishNote] = useState<string>('');
+  const [selectedSabor, setSelectedSabor] = useState<string>('Crispy');
 
   // States for Payment Modal
   const [showPaymentModal, setShowPaymentModal] = useState(false);
@@ -234,6 +235,7 @@ export default function App() {
       setSaucesModalDish(dish);
       setSelectedSauces([]);
       setDishNote('');
+      setSelectedSabor('Crispy');
       return;
     }
 
@@ -442,7 +444,7 @@ export default function App() {
 
       <div className="px-5 pt-4 pb-3">
         <div className="relative w-full rounded-2xl overflow-hidden aspect-[2/1] bg-black border border-[#1A1A1A]">
-          <img src={BANNER_PATH} alt={RESTAURANTE_NAME} className="w-full h-full object-cover opacity-90" />
+          <img src={BANNER_PATH} alt={RESTAURANTE_NAME} fetchPriority="high" decoding="async" className="w-full h-full object-cover opacity-90" />
         </div>
       </div>
 
@@ -488,6 +490,8 @@ export default function App() {
                       <img
                         src={dish.imagen}
                         alt={dish.nombre}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
                         onClick={() => setSelectedImage(dish.imagen)}
                       />
@@ -964,10 +968,38 @@ export default function App() {
               </div>
  
               <div className="space-y-4">
+                {saucesModalDish.nombre.toLowerCase().includes('alitas') && (
+                  <div>
+                    <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1 block mb-2">Selecciona el sabor</label>
+                    <div className="grid grid-cols-3 gap-2">
+                      {["Crispy", "Bbq", "Acevichadas"].map(sabor => {
+                        const isSel = selectedSabor === sabor;
+                        return (
+                          <button
+                            key={sabor}
+                            type="button"
+                            onClick={() => setSelectedSabor(sabor)}
+                            className={`py-2 px-1.5 rounded-xl border font-bold text-xs transition-colors cursor-pointer text-center block w-full
+                              ${isSel 
+                                ? "bg-gradient-to-r from-[#FF9A1F] to-[#F4511E] border-transparent text-white shadow-sm" 
+                                : "bg-[#151515] border border-[#FF6A00]/15 text-gray-400 hover:border-primary hover:text-white"
+                              }`}
+                          >
+                            {sabor}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
                 <div>
                   <label className="text-[10px] font-bold text-[#BDBDBD] uppercase ml-1 block mb-2">Selecciona tus cremas</label>
                   <div className="grid grid-cols-2 gap-2">
-                    {["Mayonesa", "Ají", "Chimichurri", "Mostaza", "Ketchup", "Vinagreta"].map(sauce => {
+                    {(saucesModalDish.nombre.toLowerCase().includes('alitas')
+                      ? ["Mayonesa", "Ají"]
+                      : ["Mayonesa", "Ají", "Chimichurri", "Mostaza", "Ketchup", "Vinagreta"]
+                    ).map(sauce => {
                       const isSelected = selectedSauces.includes(sauce);
                       return (
                         <button
@@ -1004,7 +1036,10 @@ export default function App() {
  
                 <button
                   onClick={() => {
-                    addProductToCart(saucesModalDish.nombre, saucesModalDish.precio, selectedSauces, dishNote);
+                    const finalNombre = saucesModalDish.nombre.toLowerCase().includes('alitas')
+                      ? `${saucesModalDish.nombre} (${selectedSabor})`
+                      : saucesModalDish.nombre;
+                    addProductToCart(finalNombre, saucesModalDish.precio, selectedSauces, dishNote);
                     setSaucesModalDish(null);
                   }}
                   className="w-full bg-gradient-to-b from-[#FF9A1F] via-[#F4511E] to-[#D94700] text-white py-3.5 rounded-xl font-bold text-sm mt-2 flex justify-center items-center cursor-pointer transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-orange-600/20 border-0 uppercase tracking-wide"
